@@ -1,9 +1,8 @@
 module top(
- bit input A,
  
 
 
-)
+);
 
 
 
@@ -11,4 +10,4 @@ module top(
 
 
 
-endmodule;
+endmodule

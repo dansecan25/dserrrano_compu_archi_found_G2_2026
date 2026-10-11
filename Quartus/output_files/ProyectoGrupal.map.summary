@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Fri Oct  9 22:12:19 2026
+Analysis & Elaboration Status : Successful - Sat Oct 10 23:18:17 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : ProyectoGrupal
-Top-level Entity Name : de0_nano_soc_baseline
+Top-level Entity Name : sr_latch
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

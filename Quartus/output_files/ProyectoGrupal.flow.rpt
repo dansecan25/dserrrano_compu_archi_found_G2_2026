@@ -1,5 +1,5 @@
 Flow report for ProyectoGrupal
-Fri Oct  9 22:12:19 2026
+Sat Oct 10 23:18:17 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,10 +41,10 @@ on the Quartus Prime software download page.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Flow Status                 ; Flow Failed - Fri Oct  9 22:12:19 2026          ;
+; Flow Status                 ; Successful - Sat Oct 10 23:18:17 2026           ;
 ; Quartus Prime Version       ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name               ; ProyectoGrupal                                  ;
-; Top-level Entity Name       ; de0_nano_soc_baseline                           ;
+; Top-level Entity Name       ; sr_latch                                        ;
 ; Family                      ; Cyclone V                                       ;
 ; Device                      ; 5CSEMA4U23C6                                    ;
 ; Timing Models               ; Final                                           ;
@@ -63,58 +63,66 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/09/2026 22:12:12 ;
+; Start date & time ; 10/10/2026 23:18:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ProyectoGrupal      ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                          ;
-+-------------------------------------+----------------------------------------+----------------+-----------------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value  ; Entity Name           ; Section Id                        ;
-+-------------------------------------+----------------------------------------+----------------+-----------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 270664622078980.179160553240692        ; --             ; --                    ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --             ; --                    ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --             ; --                    ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --             ; --                    ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --             ; --                    ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --             ; --                    ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)            ; <None>         ; --                    ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --             ; --                    ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --             ; --                    ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --             ; --                    ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --             ; de0_nano_soc_baseline ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --             ; de0_nano_soc_baseline ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --             ; de0_nano_soc_baseline ; Top                               ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --             ; --                    ; --                                ;
-; TOP_LEVEL_ENTITY                    ; de0_nano_soc_baseline                  ; ProyectoGrupal ; --                    ; --                                ;
-+-------------------------------------+----------------------------------------+----------------+-----------------------+-----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++--------------------------------------+----------------------------------------+----------------+-------------+-----------------------------------+
+; Assignment Name                      ; Value                                  ; Default Value  ; Entity Name ; Section Id                        ;
++--------------------------------------+----------------------------------------+----------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 270664622078980.179169588919528        ; --             ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --             ; --          ; tb_sr_latch                       ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --             ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --             ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --             ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --             ; --          ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_sr_latch                            ; --             ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --             ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)            ; <None>         ; --          ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --             ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; ../TB/tb_sr_latch.sv                   ; --             ; --          ; tb_sr_latch                       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_sr_latch                            ; --             ; --          ; tb_sr_latch                       ;
+; EDA_TEST_BENCH_NAME                  ; tb_sr_latch                            ; --             ; --          ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --             ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --             ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --             ; --          ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --             ; sr_latch    ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --             ; sr_latch    ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --             ; sr_latch    ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --             ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --             ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --             ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; sr_latch                               ; ProyectoGrupal ; --          ; --                                ;
++--------------------------------------+----------------------------------------+----------------+-------------+-----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4794 MB             ; 00:00:18                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:18                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4792 MB             ; 00:00:18                           ;
+; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:18                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DSCLAPSANK       ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; DSCLAPSANK       ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal
+quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal --analysis_and_elaboration
 
 
 

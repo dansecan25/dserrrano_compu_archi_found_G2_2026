@@ -1,5 +1,5 @@
-Analysis & Synthesis report for ProyectoGrupal
-Fri Oct  9 22:12:19 2026
+Analysis & Elaboration report for ProyectoGrupal
+Sat Oct 10 23:18:17 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -7,10 +7,10 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -34,109 +34,22 @@ on the Quartus Prime software download page.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Fri Oct  9 22:12:19 2026               ;
-; Quartus Prime Version       ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
-; Revision Name               ; ProyectoGrupal                                  ;
-; Top-level Entity Name       ; de0_nano_soc_baseline                           ;
-; Family                      ; Cyclone V                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                                ;
-+---------------------------------------------------------------------------------+-----------------------+--------------------+
-; Option                                                                          ; Setting               ; Default Value      ;
-+---------------------------------------------------------------------------------+-----------------------+--------------------+
-; Device                                                                          ; 5CSEMA4U23C6          ;                    ;
-; Top-level entity name                                                           ; de0_nano_soc_baseline ; ProyectoGrupal     ;
-; Family name                                                                     ; Cyclone V             ; Cyclone V          ;
-; Use smart compilation                                                           ; Off                   ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                    ; On                 ;
-; Enable compact report table                                                     ; Off                   ; Off                ;
-; Restructure Multiplexers                                                        ; Auto                  ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                   ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                   ; Off                ;
-; Preserve fewer node names                                                       ; On                    ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable                ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001          ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993             ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto                  ; Auto               ;
-; Safe State Machine                                                              ; Off                   ; Off                ;
-; Extract Verilog State Machines                                                  ; On                    ; On                 ;
-; Extract VHDL State Machines                                                     ; On                    ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                   ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000                  ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                   ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                    ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                    ; On                 ;
-; Parallel Synthesis                                                              ; On                    ; On                 ;
-; DSP Block Balancing                                                             ; Auto                  ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                    ; On                 ;
-; Power-Up Don't Care                                                             ; On                    ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                   ; Off                ;
-; Remove Duplicate Registers                                                      ; On                    ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                   ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                   ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                   ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                   ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                   ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                    ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                   ; Off                ;
-; Optimization Technique                                                          ; Balanced              ; Balanced           ;
-; Carry Chain Length                                                              ; 70                    ; 70                 ;
-; Auto Carry Chains                                                               ; On                    ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                    ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                   ; Off                ;
-; Auto ROM Replacement                                                            ; On                    ; On                 ;
-; Auto RAM Replacement                                                            ; On                    ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                    ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto                  ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto                  ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                    ; On                 ;
-; Strict RAM Replacement                                                          ; Off                   ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                    ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                   ; Off                ;
-; Auto Resource Sharing                                                           ; Off                   ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                   ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                   ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                   ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                    ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                   ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                    ; On                 ;
-; Report Parameter Settings                                                       ; On                    ; On                 ;
-; Report Source Assignments                                                       ; On                    ; On                 ;
-; Report Connectivity Checks                                                      ; On                    ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                   ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                     ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation    ; Normal compilation ;
-; HDL message level                                                               ; Level2                ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                   ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000                  ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                  ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                   ; 100                ;
-; Clock MUX Protection                                                            ; On                    ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                   ; Off                ;
-; Block Design Naming                                                             ; Auto                  ; Auto               ;
-; SDC constraint protection                                                       ; Off                   ; Off                ;
-; Synthesis Effort                                                                ; Auto                  ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                    ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                   ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium                ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto                  ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                    ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                    ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                   ; Off                ;
-+---------------------------------------------------------------------------------+-----------------------+--------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                  ;
++-------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sat Oct 10 23:18:17 2026           ;
+; Quartus Prime Version         ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                 ; ProyectoGrupal                                  ;
+; Top-level Entity Name         ; sr_latch                                        ;
+; Family                        ; Cyclone V                                       ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
+; Total registers               ; N/A until Partition Merge                       ;
+; Total pins                    ; N/A until Partition Merge                       ;
+; Total virtual pins            ; N/A until Partition Merge                       ;
+; Total block memory bits       ; N/A until Partition Merge                       ;
+; Total PLLs                    ; N/A until Partition Merge                       ;
+; Total DLLs                    ; N/A until Partition Merge                       ;
++-------------------------------+-------------------------------------------------+
 
 
 +------------------------------------------+
@@ -155,26 +68,140 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA4U23C6       ;                    ;
+; Top-level entity name                                                           ; sr_latch           ; ProyectoGrupal     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Oct  9 22:12:11 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal
-Info (125068): Revision "ProyectoGrupal" was previously opened in Quartus Prime software version 16.1.0 Lite Edition. Created Quartus Prime Default Settings File C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/ProyectoGrupal_assignment_defaults.qdf, which contains the default assignment setting information from Quartus Prime software version 16.1.0 Lite Edition.
-Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/altera_lite/24.1std/quartus/bin64/assignment_defaults.qdf
+    Info: Processing started: Sat Oct 10 23:18:09 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/tb/tb_storage_reg_8.sv
+    Info (12023): Found entity 1: tb_storage_reg_8 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/TB/tb_storage_reg_8.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/tb/tb_sr_latch.sv
+    Info (12023): Found entity 1: tb_sr_latch File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/TB/tb_sr_latch.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/tb/tb_sn74hc595.sv
+    Info (12023): Found entity 1: tb_sn74hc595 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/TB/tb_sn74hc595.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/tb/tb_shift_reg_8.sv
+    Info (12023): Found entity 1: tb_shift_reg_8 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/TB/tb_shift_reg_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/tb/tb_output_buffer_8.sv
+    Info (12023): Found entity 1: tb_output_buffer_8 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/TB/tb_output_buffer_8.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/tb/tb_d_latch.sv
+    Info (12023): Found entity 1: tb_d_latch File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/TB/tb_d_latch.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/tb/tb_d_flipflop.sv
+    Info (12023): Found entity 1: tb_d_flipflop File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/TB/tb_d_flipflop.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/storage_reg_8.sv
+    Info (12023): Found entity 1: storage_reg_8 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/sr_latch.sv
+    Info (12023): Found entity 1: sr_latch File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/sn74hc595.sv
+    Info (12023): Found entity 1: sn74hc595 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/shift_reg_8.sv
+    Info (12023): Found entity 1: shift_reg_8 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/output_buffer_8.sv
+    Info (12023): Found entity 1: output_buffer_8 File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/d_latch.sv
+    Info (12023): Found entity 1: d_latch File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/d_flipflop.sv
+    Info (12023): Found entity 1: d_flipflop File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file de0_nano_soc_baseline.v
     Info (12023): Found entity 1: de0_nano_soc_baseline File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/de0_nano_soc_baseline.v Line: 40
-Error (10170): Verilog HDL syntax error at top.sv(2) near text: "bit";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 2
-Info (12021): Found 0 design units, including 0 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/top.sv
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4794 megabytes
-    Error: Processing ended: Fri Oct  9 22:12:19 2026
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:18
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dseca/documents/repositorios/dserrrano_compu_archi_found_g2_2026/rtl/top.sv
+    Info (12023): Found entity 1: top File: C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 1
+Info (12127): Elaborating entity "sr_latch" for the top level hierarchy
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4792 megabytes
+    Info: Processing ended: Sat Oct 10 23:18:17 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
 
 
