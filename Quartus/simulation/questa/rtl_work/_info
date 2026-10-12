@@ -9,55 +9,315 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/simulation/questa
-vsr_latch
+vd_flipflop
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1791696022
+Z2 !s110 1791845523
 !i10b 1
-!s100 ^B`[H<X[]Mkd=1Mla<V8C3
+!s100 G1be1U^K>RKWhEN_F:X1Z1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IK_`S_1l2BMc==@Pe1Czh11
+IKJYnS:@L3L:5zRK1QDif<1
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-Z5 w1791675334
-8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
-FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
-!i122 0
-L0 8 9
+Z5 w1791843853
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv
+!i122 9
+L0 8 13
 Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1791696022.000000
-!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv|
+Z7 !s108 1791845523.000000
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv|
 !i113 1
 Z8 o-sv -work work
-!s92 -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL
-Z9 tCvgOpt 0
-vtb_sr_latch
+Z9 !s92 -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL
+Z10 tCvgOpt 0
+vd_latch
 R1
 R2
 !i10b 1
-!s100 3N[YG[9c>5>MSBeGj=W431
+!s100 VNZlUg1KQ<;hSR_jZT9eJ3
 R3
-I17D=414Xb;2UKaIVlHDe83
+IVDIl[?O7SRS9HHCo9@SML2
 R4
 S1
 R0
 R5
-8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_sr_latch.sv
-FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_sr_latch.sv
-!i122 1
-L0 5 35
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv
+!i122 8
+L0 7 13
 R6
 r1
 !s85 0
 31
 R7
-!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_sr_latch.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_sr_latch.sv|
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv|
+!i113 1
+R8
+R9
+R10
+vfinger_decoder
+R1
+Z11 !s110 1791845521
+!i10b 1
+!s100 f7obTBK:oJlbO2L8IIh=:2
+R3
+IUZfi<Z@`=?9oNEYUCSaGk1
+R4
+S1
+R0
+Z12 w1791844978
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv
+!i122 2
+L0 7 16
+R6
+r1
+!s85 0
+31
+Z13 !s108 1791845521.000000
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv|
+!i113 1
+R8
+R9
+R10
+voutput_buffer_8
+R1
+Z14 !s110 1791845522
+!i10b 1
+!s100 [WU^=[UA=z>`?FDOYo@A>0
+R3
+I?a5EMEi]cYJ0]:kFS[^=c3
+R4
+S1
+R0
+R5
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv
+!i122 7
+L0 4 8
+R6
+r1
+!s85 0
+31
+Z15 !s108 1791845522.000000
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv|
+!i113 1
+R8
+R9
+R10
+vpassword_decoder
+R1
+R11
+!i10b 1
+!s100 7Ch6Hj<@jN`0hEBDch3iS3
+R3
+IfJ3d2R]dSAN=<9W`3PoZ?0
+R4
+S1
+R0
+w1791845079
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv
+!i122 1
+L0 5 13
+R6
+r1
+!s85 0
+31
+Z16 !s108 1791845520.000000
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv|
+!i113 1
+R8
+R9
+R10
+vshift_reg_8
+R1
+R14
+!i10b 1
+!s100 Kg>B^THIB9z4jKQ^N8lTd1
+R3
+IJXPA_KEVAX2_d1EP054783
+R4
+S1
+R0
+R5
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv
+!i122 6
+L0 5 27
+R6
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv|
+!i113 1
+R8
+R9
+R10
+vsn74hc595
+R1
+R14
+!i10b 1
+!s100 Bz[Nc30_8^>5S0;]n`J4[3
+R3
+I7dQo>N6Z16=^2YfEOMa=z1
+R4
+S1
+R0
+R5
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv
+!i122 5
+L0 6 18
+R6
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv|
+!i113 1
+R8
+R9
+R10
+vsr_latch
+R1
+R11
+!i10b 1
+!s100 ^B`[H<X[]Mkd=1Mla<V8C3
+R3
+IK_`S_1l2BMc==@Pe1Czh11
+R4
+S1
+R0
+R5
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
+!i122 4
+L0 8 9
+R6
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv|
+!i113 1
+R8
+R9
+R10
+vstorage_reg_8
+R1
+R11
+!i10b 1
+!s100 >nEglSgS6fmRH3mTU2BHW0
+R3
+I1jPjj>jbl4la;[6HmPNiY0
+R4
+S1
+R0
+R5
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv
+!i122 3
+L0 4 26
+R6
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv|
+!i113 1
+R8
+R9
+R10
+vtb_top
+R1
+!s110 1791845524
+!i10b 1
+!s100 QZmO@1Ic>LGeL[M@0?cak3
+R3
+IT`i_NU`Q6?Nz2N91JWQzL0
+R4
+S1
+R0
+w1791845328
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv
+!i122 11
+L0 5 74
+R6
+r1
+!s85 0
+31
+!s108 1791845524.000000
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv|
 !i113 1
 R8
 !s92 -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB
+R10
+vtop
+R1
+R2
+!i10b 1
+!s100 c^lKJQ=EWh=O>MUDzV`h01
+R3
+Ie=k33THo]PcDM;[`?UlMa2
+R4
+S1
+R0
+w1791845008
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv
+!i122 10
+L0 14 44
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv|
+!i113 1
+R8
 R9
+R10
+vy_latch_bank
+R1
+!s110 1791845520
+!i10b 1
+!s100 iha2Nk7Dg<]Q:lNIh]CU62
+R3
+Ie`>zozP8i`NdFA7VD^0k>2
+R4
+S1
+R0
+R12
+8C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv
+FC:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv
+!i122 0
+L0 5 18
+R6
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL|C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv|
+!i113 1
+R8
+R9
+R10

@@ -45,11 +45,21 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv}
 vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv}
 
-vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_sr_latch.sv}
+vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_sr_latch
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_top
 
 add wave *
 view structure
