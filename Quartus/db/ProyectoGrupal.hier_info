@@ -3,11 +3,26 @@ S1 => S1.IN1
 S2 => S2.IN1
 S3 => S3.IN1
 S4 => S4.IN1
-S5 => S5.IN1
+S5 => _.IN1
 CLK => CLK.IN2
 RST_N => RST_N.IN1
-ABRIR <= password_decoder:u_pass.ABRIR
-CERRAR <= password_decoder:u_pass.CERRAR
+ABRIR << ABRIR.DB_MAX_OUTPUT_PORT_TYPE
+CERRAR << CERRAR.DB_MAX_OUTPUT_PORT_TYPE
+SEG_A << display_7seg:u_display.a
+SEG_B << display_7seg:u_display.b
+SEG_C << display_7seg:u_display.c
+SEG_D << display_7seg:u_display.d
+SEG_E << display_7seg:u_display.e
+SEG_F << display_7seg:u_display.f
+SEG_G << display_7seg:u_display.g
+LED_CLK << CLK.DB_MAX_OUTPUT_PORT_TYPE
+LED_ABRIR << ABRIR.DB_MAX_OUTPUT_PORT_TYPE
+LED_CERRAR << CERRAR.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y1 << e1.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y2 << e2.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y3 << e3.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y4 << e4.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y5 << e5.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|finger_decoder:u_fingers
@@ -883,5 +898,20 @@ Q[4] <= Q.DB_MAX_OUTPUT_PORT_TYPE
 Q[5] <= Q.DB_MAX_OUTPUT_PORT_TYPE
 Q[6] <= Q.DB_MAX_OUTPUT_PORT_TYPE
 Q[7] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|display_7seg:u_display
+X => U4.IN0
+X => d.DATAIN
+X => U3.IN0
+Y => U3.IN1
+Y => U4.IN1
+a <= U3.DB_MAX_OUTPUT_PORT_TYPE
+b <= U4.DB_MAX_OUTPUT_PORT_TYPE
+c <= U4.DB_MAX_OUTPUT_PORT_TYPE
+d <= X.DB_MAX_OUTPUT_PORT_TYPE
+e <= <GND>
+f <= <GND>
+g <= U4.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -12,17 +12,35 @@ module top (
     input  logic CLK,
     input  logic RST_N,
     output logic ABRIR,
-    output logic CERRAR
+    output logic CERRAR,
+	 output wire SEG_A,
+    output wire SEG_B,
+    output wire SEG_C,
+    output wire SEG_D,
+    output wire SEG_E,
+    output wire SEG_F,
+    output wire SEG_G,
+	 output wire LED_CLK,
+    output wire LED_ABRIR,
+    output wire LED_CERRAR,
+	 
+	 //debugging
+	 output wire LED_Y1,
+	 output wire LED_Y2,
+	 output wire LED_Y3,
+	 output wire LED_Y4,
+	 output wire LED_Y5
+	 
 );
     wire y1, y2, y3, y4, y5;
     wire e1, e2, e3, e4, e5;
-    wire abrir_w, cerrar_w, detect;
+    wire abrir_w, cerrar_w, contra_detectada;
     wire nclk, nrst, y_reset;
     wire [7:0] sr_q;
     wire       sr_qh;
 
     finger_decoder u_fingers (
-        .S1(S1), .S2(S2), .S3(S3), .S4(S4), .S5(S5),
+        .S1(S1), .S2(S2), .S3(S3), .S4(S4), .S5(~S5),
         .Y1(y1), .Y2(y2), .Y3(y3), .Y4(y4), .Y5(y5)
     );
 	 
@@ -53,4 +71,28 @@ module top (
 
     assign ABRIR  = abrir_w;
     assign CERRAR = cerrar_w;
+	 
+	 // Display de siete segmentos, anodo comun
+    display_7seg u_display (
+        .X(ABRIR),
+        .Y(CERRAR),
+        .a(SEG_A),
+        .b(SEG_B),
+        .c(SEG_C),
+        .d(SEG_D),
+        .e(SEG_E),
+        .f(SEG_F),
+        .g(SEG_G)
+    );
+	 
+	 assign LED_CLK = CLK;
+	 assign LED_ABRIR = ABRIR;
+	 assign LED_CERRAR = CERRAR;
+	 
+	 assign LED_Y1 = e1;
+	 assign LED_Y2 = e2;
+	 assign LED_Y3 = e3;
+	 assign LED_Y4 = e4;
+	 assign LED_Y5 = e5;
+	 
 endmodule
