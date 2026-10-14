@@ -1,2 +1,46 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Quartus User Settings
+*.qws
+*.bak
+*.ppf
+*.ddb
+*.csv
+*.jdi
+
+# Compilation outputs
+*.sof
+*.pof
+*.sld
+
+
+# Compilation outputs
+*.sof
+*.pof
+# Quartus temporary files
+db/
+incremental_db/
+output_files/
+simulation/
+*.rpt
+*.summary
+*.smsg
+*.txt
+
+# Quartus temporary files
+db/
+incremental_db/
+output_files/
+simulation/
+*.rpt
+*.summary
+*.smsg
+*.txt
+
+# Quartus User Settings
+*.qws
+*.bak
+*.ppf
+*.ddb
+*.csv
+*.jdi
