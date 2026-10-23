@@ -1,46 +1,24 @@
-Analysis & Synthesis report for ProyectoGrupal
-Tue Oct 13 07:22:55 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Analysis & Elaboration report for ProyectoGrupal
+Fri Oct 23 10:33:38 2026
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. General Register Statistics
- 10. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff7"
- 11. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff6"
- 12. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff5"
- 13. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff4"
- 14. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff3"
- 15. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff2"
- 16. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1"
- 17. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff0"
- 18. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff7"
- 19. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff6"
- 20. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff5"
- 21. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff4"
- 22. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff3"
- 23. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff2"
- 24. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1"
- 25. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_master"
- 26. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0"
- 27. Port Connectivity Checks: "sn74hc595:u_sr"
- 28. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l5"
- 29. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l4"
- 30. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l3"
- 31. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l2"
- 32. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l1"
- 33. Post-Synthesis Netlist Statistics for Top Partition
- 34. Elapsed Time Per Partition
- 35. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "result_mux:u_mux"
+  6. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row5"
+  7. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row4"
+  8. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row3"
+  9. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row2"
+ 10. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row1"
+ 11. Port Connectivity Checks: "alu_sub:u_sub|adder_6:u_sub"
+ 12. Port Connectivity Checks: "alu_add:u_add|adder_6:u_add"
+ 13. Analysis & Elaboration Messages
 
 
 
@@ -64,36 +42,47 @@ on the Quartus Prime software download page.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Oct 13 07:22:55 2026           ;
-; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                   ; ProyectoGrupal                                  ;
-; Top-level Entity Name           ; top                                             ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 24                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                  ;
++-------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Fri Oct 23 10:33:38 2026           ;
+; Quartus Prime Version         ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                 ; ProyectoGrupal                                  ;
+; Top-level Entity Name         ; alu                                             ;
+; Family                        ; Cyclone V                                       ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
+; Total registers               ; N/A until Partition Merge                       ;
+; Total pins                    ; N/A until Partition Merge                       ;
+; Total virtual pins            ; N/A until Partition Merge                       ;
+; Total block memory bits       ; N/A until Partition Merge                       ;
+; Total PLLs                    ; N/A until Partition Merge                       ;
+; Total DLLs                    ; N/A until Partition Merge                       ;
++-------------------------------+-------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
-; Top-level entity name                                                           ; top                ; ProyectoGrupal     ;
+; Top-level entity name                                                           ; alu                ; ProyectoGrupal     ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -174,478 +163,212 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++------------------------------------------------+
+; Port Connectivity Checks: "result_mux:u_mux"   ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; R_ADD[11..7] ; Input ; Info     ; Stuck at GND ;
+; R_ROL[11..6] ; Input ; Info     ; Stuck at GND ;
+; R_ROR[11..6] ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                        ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
-; ../RTL/display_7seg.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv     ;         ;
-; ../RTL/y_latch_bank.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv     ;         ;
-; ../RTL/password_decoder.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv ;         ;
-; ../RTL/finger_decoder.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv   ;         ;
-; ../RTL/storage_reg_8.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv    ;         ;
-; ../RTL/sr_latch.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv         ;         ;
-; ../RTL/sn74hc595.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv        ;         ;
-; ../RTL/shift_reg_8.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv      ;         ;
-; ../RTL/output_buffer_8.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv  ;         ;
-; ../RTL/d_latch.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv          ;         ;
-; ../RTL/d_flipflop.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv       ;         ;
-; ../RTL/top.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv              ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------+
+; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row5" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; CIN  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row4" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; CIN  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row3" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; CIN  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row2" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; CIN  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row1" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; A[5] ; Input ; Info     ; Stuck at GND                   ;
+; CIN  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
 
 
 +---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 11        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 19        ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 2         ;
-;     -- 5 input functions                    ; 9         ;
-;     -- 4 input functions                    ; 5         ;
-;     -- <=3 input functions                  ; 3         ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 24        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 12        ;
-; Total fan-out                               ; 124       ;
-; Average fan-out                             ; 1.85      ;
-+---------------------------------------------+-----------+
+; Port Connectivity Checks: "alu_sub:u_sub|adder_6:u_sub" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; CIN  ; Input ; Info     ; Stuck at VCC                  ;
++------+-------+----------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name      ; Library Name ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+------------------+--------------+
-; |top                           ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 24   ; 0            ; |top                                                                                      ; top              ; work         ;
-;    |display_7seg:u_display|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|display_7seg:u_display                                                               ; display_7seg     ; work         ;
-;    |finger_decoder:u_fingers|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|finger_decoder:u_fingers                                                             ; finger_decoder   ; work         ;
-;    |password_decoder:u_pass|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|password_decoder:u_pass                                                              ; password_decoder ; work         ;
-;    |sn74hc595:u_sr|            ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr                                                                       ; sn74hc595        ; work         ;
-;       |shift_reg_8:u_shift|    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift                                                   ; shift_reg_8      ; work         ;
-;          |d_flipflop:u_ff0|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0                                  ; d_flipflop       ; work         ;
-;             |d_latch:u_master| ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_master                 ; d_latch          ; work         ;
-;                |sr_latch:u_sr| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_master|sr_latch:u_sr   ; sr_latch         ; work         ;
-;             |d_latch:u_slave|  ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_slave                  ; d_latch          ; work         ;
-;                |sr_latch:u_sr| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_slave|sr_latch:u_sr    ; sr_latch         ; work         ;
-;          |d_flipflop:u_ff1|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1                                  ; d_flipflop       ; work         ;
-;             |d_latch:u_master| ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1|d_latch:u_master                 ; d_latch          ; work         ;
-;                |sr_latch:u_sr| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1|d_latch:u_master|sr_latch:u_sr   ; sr_latch         ; work         ;
-;             |d_latch:u_slave|  ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1|d_latch:u_slave                  ; d_latch          ; work         ;
-;                |sr_latch:u_sr| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1|d_latch:u_slave|sr_latch:u_sr    ; sr_latch         ; work         ;
-;       |storage_reg_8:u_store|  ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|storage_reg_8:u_store                                                 ; storage_reg_8    ; work         ;
-;          |d_flipflop:u_ff1|    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1                                ; d_flipflop       ; work         ;
-;             |d_latch:u_master| ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1|d_latch:u_master               ; d_latch          ; work         ;
-;                |sr_latch:u_sr| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1|d_latch:u_master|sr_latch:u_sr ; sr_latch         ; work         ;
-;             |d_latch:u_slave|  ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1|d_latch:u_slave                ; d_latch          ; work         ;
-;                |sr_latch:u_sr| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1|d_latch:u_slave|sr_latch:u_sr  ; sr_latch         ; work         ;
-;    |y_latch_bank:u_ylatch|     ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|y_latch_bank:u_ylatch                                                                ; y_latch_bank     ; work         ;
-;       |sr_latch:u_l1|          ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|y_latch_bank:u_ylatch|sr_latch:u_l1                                                  ; sr_latch         ; work         ;
-;       |sr_latch:u_l2|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|y_latch_bank:u_ylatch|sr_latch:u_l2                                                  ; sr_latch         ; work         ;
-;       |sr_latch:u_l3|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|y_latch_bank:u_ylatch|sr_latch:u_l3                                                  ; sr_latch         ; work         ;
-;       |sr_latch:u_l4|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|y_latch_bank:u_ylatch|sr_latch:u_l4                                                  ; sr_latch         ; work         ;
-;       |sr_latch:u_l5|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|y_latch_bank:u_ylatch|sr_latch:u_l5                                                  ; sr_latch         ; work         ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
++---------------------------------------------------------+
+; Port Connectivity Checks: "alu_add:u_add|adder_6:u_add" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; CIN  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                                                  ;
-+------------------------------------------------------------------------------------------+----+
-; Logic Cell Name                                                                          ;    ;
-+------------------------------------------------------------------------------------------+----+
-; y_latch_bank:u_ylatch|sr_latch:u_l5|Q~0                                                  ;    ;
-; y_latch_bank:u_ylatch|sr_latch:u_l1|Q~0                                                  ;    ;
-; y_latch_bank:u_ylatch|sr_latch:u_l2|Q~0                                                  ;    ;
-; y_latch_bank:u_ylatch|sr_latch:u_l3|Q~0                                                  ;    ;
-; y_latch_bank:u_ylatch|sr_latch:u_l4|Q~0                                                  ;    ;
-; sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1|d_latch:u_slave|sr_latch:u_sr|Q~0  ;    ;
-; sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1|d_latch:u_master|sr_latch:u_sr|Q~0 ;    ;
-; sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1|d_latch:u_slave|sr_latch:u_sr|Q~0    ;    ;
-; sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1|d_latch:u_master|sr_latch:u_sr|Q~0   ;    ;
-; sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_slave|sr_latch:u_sr|Q~0    ;    ;
-; sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_master|sr_latch:u_sr|Q~0   ;    ;
-; Number of logic cells representing combinational loops                                   ; 11 ;
-+------------------------------------------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff7"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff6"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff5"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff4"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff3"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff2"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff0"                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff7"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff6"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff5"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff4"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff3"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff2"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_master"               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0"                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sn74hc595:u_sr"                                                                         ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; OE_N     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; Q[7..2]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; Q[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; QH_PRIME ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l5" ;
-+------+--------+----------+--------------------------------------+
-; Port ; Type   ; Severity ; Details                              ;
-+------+--------+----------+--------------------------------------+
-; QN   ; Output ; Info     ; Explicitly unconnected               ;
-+------+--------+----------+--------------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l4" ;
-+------+--------+----------+--------------------------------------+
-; Port ; Type   ; Severity ; Details                              ;
-+------+--------+----------+--------------------------------------+
-; QN   ; Output ; Info     ; Explicitly unconnected               ;
-+------+--------+----------+--------------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l3" ;
-+------+--------+----------+--------------------------------------+
-; Port ; Type   ; Severity ; Details                              ;
-+------+--------+----------+--------------------------------------+
-; QN   ; Output ; Info     ; Explicitly unconnected               ;
-+------+--------+----------+--------------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l2" ;
-+------+--------+----------+--------------------------------------+
-; Port ; Type   ; Severity ; Details                              ;
-+------+--------+----------+--------------------------------------+
-; QN   ; Output ; Info     ; Explicitly unconnected               ;
-+------+--------+----------+--------------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l1" ;
-+------+--------+----------+--------------------------------------+
-; Port ; Type   ; Severity ; Details                              ;
-+------+--------+----------+--------------------------------------+
-; QN   ; Output ; Info     ; Explicitly unconnected               ;
-+------+--------+----------+--------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 27                          ;
-;     normal            ; 27                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 5                           ;
-;         5 data inputs ; 9                           ;
-;         6 data inputs ; 2                           ;
-; boundary_port         ; 24                          ;
-;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.52                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Tue Oct 13 07:22:49 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Fri Oct 23 10:33:32 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/test_clock.sv
-    Info (12023): Found entity 1: test_clock File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/display_7seg.sv
-    Info (12023): Found entity 1: display_7seg File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_y_latch_bank.sv
-    Info (12023): Found entity 1: tb_y_latch_bank File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_top.sv
-    Info (12023): Found entity 1: tb_top File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_password_decoder.sv
-    Info (12023): Found entity 1: tb_password_decoder File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_finger_decoder.sv
-    Info (12023): Found entity 1: tb_finger_decoder File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_decoder.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/y_latch_bank.sv
-    Info (12023): Found entity 1: y_latch_bank File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/password_decoder.sv
-    Info (12023): Found entity 1: password_decoder File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/finger_decoder.sv
-    Info (12023): Found entity 1: finger_decoder File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 7
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_storage_reg_8.sv
-    Info (12023): Found entity 1: tb_storage_reg_8 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_storage_reg_8.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_sr_latch.sv
-    Info (12023): Found entity 1: tb_sr_latch File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_sr_latch.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_sn74hc595.sv
-    Info (12023): Found entity 1: tb_sn74hc595 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_sn74hc595.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_shift_reg_8.sv
-    Info (12023): Found entity 1: tb_shift_reg_8 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_shift_reg_8.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_output_buffer_8.sv
-    Info (12023): Found entity 1: tb_output_buffer_8 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_output_buffer_8.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_d_latch.sv
-    Info (12023): Found entity 1: tb_d_latch File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_d_latch.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/tb/tb_d_flipflop.sv
-    Info (12023): Found entity 1: tb_d_flipflop File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_d_flipflop.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/storage_reg_8.sv
-    Info (12023): Found entity 1: storage_reg_8 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/sr_latch.sv
-    Info (12023): Found entity 1: sr_latch File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv Line: 8
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/sn74hc595.sv
-    Info (12023): Found entity 1: sn74hc595 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/shift_reg_8.sv
-    Info (12023): Found entity 1: shift_reg_8 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/output_buffer_8.sv
-    Info (12023): Found entity 1: output_buffer_8 File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/d_latch.sv
-    Info (12023): Found entity 1: d_latch File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 7
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/d_flipflop.sv
-    Info (12023): Found entity 1: d_flipflop File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 8
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv
+    Info (12023): Found entity 1: alu_add File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/result_mux.sv
+    Info (12023): Found entity 1: result_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/result_mux.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv
+    Info (12023): Found entity 1: pwm File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/opcode_decoder.sv
+    Info (12023): Found entity 1: opcode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/opcode_decoder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/normalizer.sv
+    Info (12023): Found entity 1: normalizer File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/normalizer.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/full_adder.sv
+    Info (12023): Found entity 1: full_adder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/full_adder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv
+    Info (12023): Found entity 1: counter_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv
+    Info (12023): Found entity 1: comparator_lt_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_sub.sv
+    Info (12023): Found entity 1: alu_sub File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_sub.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_ror.sv
+    Info (12023): Found entity 1: alu_ror File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_ror.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_rol.sv
+    Info (12023): Found entity 1: alu_rol File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_rol.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_mul.sv
+    Info (12023): Found entity 1: alu_mul File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_mul.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv
+    Info (12023): Found entity 1: alu File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/adder_6.sv
+    Info (12023): Found entity 1: adder_6 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/adder_6.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv
+    Info (12023): Found entity 1: test_clock File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv
+    Info (12023): Found entity 1: display_7seg File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv
+    Info (12023): Found entity 1: tb_y_latch_bank File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv
+    Info (12023): Found entity 1: tb_top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv
+    Info (12023): Found entity 1: tb_password_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_decoder.sv
+    Info (12023): Found entity 1: tb_finger_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_decoder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv
+    Info (12023): Found entity 1: y_latch_bank File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv
+    Info (12023): Found entity 1: password_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv
+    Info (12023): Found entity 1: finger_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_storage_reg_8.sv
+    Info (12023): Found entity 1: tb_storage_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_storage_reg_8.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sr_latch.sv
+    Info (12023): Found entity 1: tb_sr_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sr_latch.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sn74hc595.sv
+    Info (12023): Found entity 1: tb_sn74hc595 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sn74hc595.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_shift_reg_8.sv
+    Info (12023): Found entity 1: tb_shift_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_shift_reg_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_output_buffer_8.sv
+    Info (12023): Found entity 1: tb_output_buffer_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_output_buffer_8.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_latch.sv
+    Info (12023): Found entity 1: tb_d_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_latch.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_flipflop.sv
+    Info (12023): Found entity 1: tb_d_flipflop File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_flipflop.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv
+    Info (12023): Found entity 1: storage_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
+    Info (12023): Found entity 1: sr_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv
+    Info (12023): Found entity 1: sn74hc595 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv
+    Info (12023): Found entity 1: shift_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv
+    Info (12023): Found entity 1: output_buffer_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv
+    Info (12023): Found entity 1: d_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv
+    Info (12023): Found entity 1: d_flipflop File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file de0_nano_soc_baseline.v
-    Info (12023): Found entity 1: de0_nano_soc_baseline File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/Quartus/de0_nano_soc_baseline.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/projects/funda/dserrrano_compu_archi_found_g2_2026/rtl/top.sv
-    Info (12023): Found entity 1: top File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 10
-Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "finger_decoder" for hierarchy "finger_decoder:u_fingers" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 45
-Warning (10036): Verilog HDL or VHDL warning at finger_decoder.sv(11): object "nS1" assigned a value but never read File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 11
-Info (12128): Elaborating entity "y_latch_bank" for hierarchy "y_latch_bank:u_ylatch" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 52
-Info (12128): Elaborating entity "sr_latch" for hierarchy "y_latch_bank:u_ylatch|sr_latch:u_l1" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv Line: 17
-Info (12128): Elaborating entity "password_decoder" for hierarchy "password_decoder:u_pass" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 58
-Warning (10036): Verilog HDL or VHDL warning at password_decoder.sv(12): object "nE3" assigned a value but never read File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 12
-Info (12128): Elaborating entity "sn74hc595" for hierarchy "sn74hc595:u_sr" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 67
-Info (12128): Elaborating entity "shift_reg_8" for hierarchy "sn74hc595:u_sr|shift_reg_8:u_shift" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 18
-Info (12128): Elaborating entity "d_flipflop" for hierarchy "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv Line: 14
-Info (12128): Elaborating entity "d_latch" for hierarchy "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0|d_latch:u_master" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 18
-Info (12128): Elaborating entity "storage_reg_8" for hierarchy "sn74hc595:u_sr|storage_reg_8:u_store" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 19
-Info (12128): Elaborating entity "output_buffer_8" for hierarchy "sn74hc595:u_sr|output_buffer_8:u_out" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 20
-Info (12128): Elaborating entity "display_7seg" for hierarchy "display_7seg:u_display" File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 86
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SEG_E" is stuck at GND File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 20
-    Warning (13410): Pin "SEG_F" is stuck at GND File: C:/Users/SPARK/Documents/Projects/Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 21
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 19 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4859 megabytes
-    Info: Processing ended: Tue Oct 13 07:22:55 2026
+    Info (12023): Found entity 1: de0_nano_soc_baseline File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/de0_nano_soc_baseline.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv
+    Info (12023): Found entity 1: top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_result_mux.sv
+    Info (12023): Found entity 1: tb_result_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_result_mux.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm.sv
+    Info (12023): Found entity 1: tb_pwm File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_opcode_decoder.sv
+    Info (12023): Found entity 1: tb_opcode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_opcode_decoder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_normalizer.sv
+    Info (12023): Found entity 1: tb_normalizer File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_normalizer.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_full_adder.sv
+    Info (12023): Found entity 1: tb_full_adder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_full_adder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_counter_3.sv
+    Info (12023): Found entity 1: tb_counter_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_counter_3.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_comparator_lt_3.sv
+    Info (12023): Found entity 1: tb_comparator_lt_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_comparator_lt_3.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_sub.sv
+    Info (12023): Found entity 1: tb_alu_sub File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_sub.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_ror.sv
+    Info (12023): Found entity 1: tb_alu_ror File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_ror.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_rol.sv
+    Info (12023): Found entity 1: tb_alu_rol File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_rol.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_mul.sv
+    Info (12023): Found entity 1: tb_alu_mul File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_mul.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_add.sv
+    Info (12023): Found entity 1: tb_alu_add File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_add.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu.sv
+    Info (12023): Found entity 1: tb_alu File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv
+    Info (12023): Found entity 1: tb_adder_6 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv Line: 3
+Info (12127): Elaborating entity "alu" for the top level hierarchy
+Info (12128): Elaborating entity "opcode_decoder" for hierarchy "opcode_decoder:u_dec" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 18
+Info (12128): Elaborating entity "alu_add" for hierarchy "alu_add:u_add" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 20
+Info (12128): Elaborating entity "adder_6" for hierarchy "alu_add:u_add|adder_6:u_add" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv Line: 10
+Info (12128): Elaborating entity "full_adder" for hierarchy "alu_add:u_add|adder_6:u_add|full_adder:u_fa0" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/adder_6.sv Line: 13
+Info (12128): Elaborating entity "alu_sub" for hierarchy "alu_sub:u_sub" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 21
+Info (12128): Elaborating entity "alu_mul" for hierarchy "alu_mul:u_mul" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 22
+Info (12128): Elaborating entity "alu_rol" for hierarchy "alu_rol:u_rol" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 23
+Info (12128): Elaborating entity "alu_ror" for hierarchy "alu_ror:u_ror" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 24
+Info (12128): Elaborating entity "result_mux" for hierarchy "result_mux:u_mux" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 35
+Info (12128): Elaborating entity "normalizer" for hierarchy "normalizer:u_norm" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 37
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 720 megabytes
+    Info: Processing ended: Fri Oct 23 10:33:38 2026
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:14
 
 
