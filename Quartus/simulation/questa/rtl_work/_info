@@ -9,32 +9,58 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/simulation/questa
-vcomparator_lt_3
+vclock_divider
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1792777605
+Z2 !s110 1792786289
 !i10b 1
-!s100 `7Mz4Zd7h8d^HgSJVk8MG2
+!s100 ml5<`mlhmWG;KB8<>GgT=0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IP6BddaDPY9PYFdFc^LJNU0
+IQ24R;^bdEfWARKAS5]I7f3
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-Z5 w1792739275
-8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv
-F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv
-!i122 2
-L0 2 18
+Z5 w1792807764
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv
+!i122 0
+L0 11 137
 Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1792777605.000000
-!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv|
+Z7 !s108 1792786289.000000
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv|
 !i113 1
 Z8 o-sv -work work
 Z9 !s92 -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL
 Z10 tCvgOpt 0
+vcomparator_lt_3
+R1
+Z11 !s110 1792786290
+!i10b 1
+!s100 `7Mz4Zd7h8d^HgSJVk8MG2
+R3
+IP6BddaDPY9PYFdFc^LJNU0
+R4
+S1
+R0
+Z12 w1792739275
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv
+!i122 6
+L0 2 18
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv|
+!i113 1
+R8
+R9
+R10
 vcounter_3
 R1
 R2
@@ -45,10 +71,10 @@ I6QCZ`97_B=]ge:e3jZzQ:3
 R4
 S1
 R0
-R5
+R12
 8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv
 F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv
-!i122 1
+!i122 5
 L0 4 17
 R6
 r1
@@ -63,7 +89,7 @@ R9
 R10
 vd_flipflop
 R1
-R2
+R11
 !i10b 1
 !s100 G1be1U^K>RKWhEN_F:X1Z1
 R3
@@ -71,16 +97,16 @@ ImhSb=?R]Y;lJ=o;36WZR70
 R4
 S1
 R0
-Z11 w1792736735
+Z13 w1792736735
 8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv
 F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv
-!i122 5
+!i122 17
 L0 8 13
 R6
 r1
 !s85 0
 31
-R7
+Z14 !s108 1792786290.000000
 !s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv|
 !i113 1
@@ -89,7 +115,7 @@ R9
 R10
 vd_latch
 R1
-R2
+R11
 !i10b 1
 !s100 VNZlUg1KQ<;hSR_jZT9eJ3
 R3
@@ -97,18 +123,174 @@ IM4nVAMS[Rc`ZbM1iVNRR>0
 R4
 S1
 R0
-R11
+R13
 8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv
 F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv
-!i122 4
+!i122 16
 L0 7 13
 R6
 r1
 !s85 0
 31
-R7
+R14
 !s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv|
+!i113 1
+R8
+R9
+R10
+vdisplay_7seg
+R1
+R11
+!i10b 1
+!s100 0??iD3[RPb>XQP[iRL4[70
+R3
+IZ8=NjF;EL]SR2MLH]:d^F1
+R4
+S1
+R0
+Z15 w1792806984
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv
+!i122 7
+L0 5 40
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv|
+!i113 1
+R8
+R9
+R10
+vfinger_decoder
+R1
+R11
+!i10b 1
+!s100 f7obTBK:oJlbO2L8IIh=:2
+R3
+I[UMidQ]FTPbO720MOX7_D0
+R4
+S1
+R0
+R13
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv
+!i122 10
+L0 7 16
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv|
+!i113 1
+R8
+R9
+R10
+vflow_mux
+R1
+R2
+!i10b 1
+!s100 ;gk0mzXXZ>AQVORAFB5QK3
+R3
+I@Lee?4CPYiZh0:c4LczF?3
+R4
+S1
+R0
+R15
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv
+!i122 3
+L0 3 13
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv|
+!i113 1
+R8
+R9
+R10
+vmode_decoder
+R1
+R2
+!i10b 1
+!s100 [Ue]8YhEdRY=V`Q2_Rcho1
+R3
+Ibzd]b]V@z9lgco1lS0:QK3
+R4
+S1
+R0
+R15
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv
+!i122 2
+L0 6 13
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv|
+!i113 1
+R8
+R9
+R10
+voutput_buffer_8
+R1
+R11
+!i10b 1
+!s100 [WU^=[UA=z>`?FDOYo@A>0
+R3
+IlJ7GbeiHJohg1WfE_R<530
+R4
+S1
+R0
+R13
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv
+!i122 15
+L0 4 8
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv|
+!i113 1
+R8
+R9
+R10
+vpassword_decoder
+R1
+R11
+!i10b 1
+!s100 7Ch6Hj<@jN`0hEBDch3iS3
+R3
+Id0hm;ho3XfPZiQC=64D]?0
+R4
+S1
+R0
+R13
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv
+!i122 9
+L0 5 13
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv|
 !i113 1
 R8
 R9
@@ -123,10 +305,10 @@ IP>PkiF<NO7igb5lT]k8zM3
 R4
 S1
 R0
-R5
+R12
 8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv
 F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv
-!i122 0
+!i122 4
 L0 7 14
 R6
 r1
@@ -139,9 +321,87 @@ R7
 R8
 R9
 R10
-vsr_latch
+vpwm_test_ctrl
 R1
 R2
+!i10b 1
+!s100 >L4CmBVm<2B@oQ3[dVK=13
+R3
+IfE<do8FiNNo21e8beXh=20
+R4
+S1
+R0
+R15
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv
+!i122 1
+L0 12 49
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv|
+!i113 1
+R8
+R9
+R10
+vshift_reg_8
+R1
+R11
+!i10b 1
+!s100 Kg>B^THIB9z4jKQ^N8lTd1
+R3
+Im[n?jF?RZF>X9B<@3I>Cz2
+R4
+S1
+R0
+R13
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv
+!i122 14
+L0 5 27
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv|
+!i113 1
+R8
+R9
+R10
+vsn74hc595
+R1
+R11
+!i10b 1
+!s100 Bz[Nc30_8^>5S0;]n`J4[3
+R3
+IShB<b_Z1DTGWhJR0fJMVk2
+R4
+S1
+R0
+R13
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv
+!i122 13
+L0 6 18
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv|
+!i113 1
+R8
+R9
+R10
+vsr_latch
+R1
+R11
 !i10b 1
 !s100 ^B`[H<X[]Mkd=1Mla<V8C3
 R3
@@ -149,45 +409,123 @@ IjK7_<FeQUCb[HnEcU]O;82
 R4
 S1
 R0
-R11
+R13
 8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
 F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
-!i122 3
+!i122 12
 L0 8 9
 R6
 r1
 !s85 0
 31
-R7
+R14
 !s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv|
 !i113 1
 R8
 R9
 R10
-vtb_pwm
+vstorage_reg_8
 R1
-R2
+R11
 !i10b 1
-!s100 h1LciZXQ7c<z_lTdBnWIB2
+!s100 >nEglSgS6fmRH3mTU2BHW0
 R3
-I>O=daUP007YB`chLKSSEJ1
+Ia?A^TZ`gBAf2@BWPM^DIG2
 R4
 S1
 R0
-R5
-8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_pwm.sv
-F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_pwm.sv
-!i122 6
-L0 5 62
+R13
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv
+!i122 11
+L0 4 26
 R6
 r1
 !s85 0
 31
-R7
-!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_pwm.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_pwm.sv|
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv|
+!i113 1
+R8
+R9
+R10
+vtb_top
+R1
+R11
+!i10b 1
+!s100 BKf[;F]Q8JUi]dZSjH7:M3
+R3
+IjhO;mF>]?P9j=k:4HB5UX2
+R4
+S1
+R0
+R5
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv
+!i122 19
+L0 12 168
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv|
 !i113 1
 R8
 !s92 -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB
+R10
+vtop
+R1
+R11
+!i10b 1
+!s100 W=G8D;`74iRA6V9jTbG^[3
+R3
+IL[kc2]bFAUbGfKR6CghOl1
+R4
+S1
+R0
+R5
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv
+!i122 18
+L0 20 145
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv|
+!i113 1
+R8
+R9
+R10
+vy_latch_bank
+R1
+R11
+!i10b 1
+!s100 iha2Nk7Dg<]Q:lNIh]CU62
+R3
+I;OU=dI]<nRGk?X[5R;n^<3
+R4
+S1
+R0
+R13
+8/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv
+F/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv
+!i122 8
+L0 5 18
+R6
+r1
+!s85 0
+31
+R14
+!s107 /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL|/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv|
+!i113 1
+R8
+R9
 R10

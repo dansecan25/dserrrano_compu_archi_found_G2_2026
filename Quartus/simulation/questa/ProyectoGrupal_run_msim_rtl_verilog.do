@@ -45,16 +45,29 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv}
 vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv}
 vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv}
 vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv}
 vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv}
 vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv}
 vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv}
 
-vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_pwm.sv}
+vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_pwm
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_top
 
 add wave *
 view structure

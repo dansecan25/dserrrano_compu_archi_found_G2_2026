@@ -1,5 +1,5 @@
 Analysis & Elaboration report for ProyectoGrupal
-Fri Oct 23 11:46:26 2026
+Fri Oct 23 14:11:00 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -9,13 +9,71 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "d_flipflop:u_out"
-  6. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff2"
-  7. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff1"
-  8. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master"
-  9. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0"
- 10. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |top
+  5. Parameter Settings for User Entity Instance: clock_divider:u_div
+  6. Analysis & Elaboration Settings
+  7. Port Connectivity Checks: "pwm:u_pwm|d_flipflop:u_out"
+  8. Port Connectivity Checks: "pwm:u_pwm|counter_3:u_cnt|d_flipflop:u_ff2"
+  9. Port Connectivity Checks: "pwm:u_pwm|counter_3:u_cnt|d_flipflop:u_ff1"
+ 10. Port Connectivity Checks: "pwm:u_pwm|counter_3:u_cnt|d_flipflop:u_ff0"
+ 11. Port Connectivity Checks: "flow_mux:u_mux"
+ 12. Port Connectivity Checks: "pwm_test_ctrl:u_test|sn74hc595:u_sr2"
+ 13. Port Connectivity Checks: "pwm_test_ctrl:u_test|sn74hc595:u_sr1"
+ 14. Port Connectivity Checks: "pwm_test_ctrl:u_test|d_flipflop:u_run"
+ 15. Port Connectivity Checks: "pwm_test_ctrl:u_test|d_flipflop:u_sync2"
+ 16. Port Connectivity Checks: "pwm_test_ctrl:u_test|d_flipflop:u_sync1"
+ 17. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff7"
+ 18. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff6"
+ 19. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff5"
+ 20. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff4"
+ 21. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff3"
+ 22. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff2"
+ 23. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1"
+ 24. Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff0"
+ 25. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff7"
+ 26. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff6"
+ 27. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff5"
+ 28. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff4"
+ 29. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff3"
+ 30. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff2"
+ 31. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1"
+ 32. Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0"
+ 33. Port Connectivity Checks: "sn74hc595:u_sr"
+ 34. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l5"
+ 35. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l4"
+ 36. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l3"
+ 37. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l2"
+ 38. Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l1"
+ 39. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_out"
+ 40. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt26"
+ 41. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt25"
+ 42. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt24"
+ 43. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt23"
+ 44. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt22"
+ 45. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt21"
+ 46. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt20"
+ 47. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt19"
+ 48. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt18"
+ 49. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt17"
+ 50. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt16"
+ 51. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt15"
+ 52. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt14"
+ 53. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt13"
+ 54. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt12"
+ 55. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt11"
+ 56. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt10"
+ 57. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt9"
+ 58. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt8"
+ 59. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt7"
+ 60. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt6"
+ 61. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt5"
+ 62. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt4"
+ 63. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt3"
+ 64. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt2"
+ 65. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt1"
+ 66. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master"
+ 67. Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt0"
+ 68. Analysis & Elaboration Messages
 
 
 
@@ -42,10 +100,10 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                  ;
 +-------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Fri Oct 23 11:46:26 2026           ;
+; Analysis & Elaboration Status ; Successful - Fri Oct 23 14:11:00 2026           ;
 ; Quartus Prime Version         ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                 ; ProyectoGrupal                                  ;
-; Top-level Entity Name         ; pwm                                             ;
+; Top-level Entity Name         ; top                                             ;
 ; Family                        ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
 ; Total registers               ; N/A until Partition Merge                       ;
@@ -73,13 +131,33 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |top ;
++----------------+----------+-----------------------------------------+
+; Parameter Name ; Value    ; Type                                    ;
++----------------+----------+-----------------------------------------+
+; CLK_DIV_HALF   ; 75000000 ; Signed Integer                          ;
++----------------+----------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:u_div ;
++----------------+----------+--------------------------------------+
+; Parameter Name ; Value    ; Type                                 ;
++----------------+----------+--------------------------------------+
+; HALF_PERIOD    ; 75000000 ; Signed Integer                       ;
++----------------+----------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
-; Top-level entity name                                                           ; pwm                ; ProyectoGrupal     ;
+; Top-level entity name                                                           ; top                ; ProyectoGrupal     ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -161,7 +239,7 @@ on the Quartus Prime software download page.
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "d_flipflop:u_out"                                                                   ;
+; Port Connectivity Checks: "pwm:u_pwm|d_flipflop:u_out"                                                         ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -170,7 +248,7 @@ on the Quartus Prime software download page.
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff2"                                                   ;
+; Port Connectivity Checks: "pwm:u_pwm|counter_3:u_cnt|d_flipflop:u_ff2"                                         ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -179,7 +257,7 @@ on the Quartus Prime software download page.
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff1"                                                   ;
+; Port Connectivity Checks: "pwm:u_pwm|counter_3:u_cnt|d_flipflop:u_ff1"                                         ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -188,7 +266,47 @@ on the Quartus Prime software download page.
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master"                                  ;
+; Port Connectivity Checks: "pwm:u_pwm|counter_3:u_cnt|d_flipflop:u_ff0"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "flow_mux:u_mux"     ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; IN_NORMAL[1] ; Input ; Info     ; Stuck at GND ;
+; IN_FUNC2     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pwm_test_ctrl:u_test|sn74hc595:u_sr2"                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; OE_N     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Q[6..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; QH_PRIME ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pwm_test_ctrl:u_test|sn74hc595:u_sr1"                                                  ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; OE_N    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Q[6..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pwm_test_ctrl:u_test|d_flipflop:u_run"                                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -197,7 +315,486 @@ on the Quartus Prime software download page.
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0"                                                   ;
+; Port Connectivity Checks: "pwm_test_ctrl:u_test|d_flipflop:u_sync2"                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pwm_test_ctrl:u_test|d_flipflop:u_sync1"                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff7"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff6"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff5"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff4"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff3"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff2"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff1"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|storage_reg_8:u_store|d_flipflop:u_ff0"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CLR_N ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; QN    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff7"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff6"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff5"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff4"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff3"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff2"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff1"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr|shift_reg_8:u_shift|d_flipflop:u_ff0"                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sn74hc595:u_sr"                                                                         ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; OE_N     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Q[7..2]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Q[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; QH_PRIME ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l5" ;
++------+--------+----------+--------------------------------------+
+; Port ; Type   ; Severity ; Details                              ;
++------+--------+----------+--------------------------------------+
+; QN   ; Output ; Info     ; Explicitly unconnected               ;
++------+--------+----------+--------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l4" ;
++------+--------+----------+--------------------------------------+
+; Port ; Type   ; Severity ; Details                              ;
++------+--------+----------+--------------------------------------+
+; QN   ; Output ; Info     ; Explicitly unconnected               ;
++------+--------+----------+--------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l3" ;
++------+--------+----------+--------------------------------------+
+; Port ; Type   ; Severity ; Details                              ;
++------+--------+----------+--------------------------------------+
+; QN   ; Output ; Info     ; Explicitly unconnected               ;
++------+--------+----------+--------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l2" ;
++------+--------+----------+--------------------------------------+
+; Port ; Type   ; Severity ; Details                              ;
++------+--------+----------+--------------------------------------+
+; QN   ; Output ; Info     ; Explicitly unconnected               ;
++------+--------+----------+--------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "y_latch_bank:u_ylatch|sr_latch:u_l1" ;
++------+--------+----------+--------------------------------------+
+; Port ; Type   ; Severity ; Details                              ;
++------+--------+----------+--------------------------------------+
+; QN   ; Output ; Info     ; Explicitly unconnected               ;
++------+--------+----------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_out"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt26"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt25"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt24"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt23"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt22"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt21"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt20"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt19"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt18"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt17"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt16"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt15"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt14"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt13"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt12"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt11"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt10"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt9"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt8"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt7"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt6"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt5"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt4"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt3"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt2"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt1"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master"                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:u_div|d_flipflop:u_cnt0"                                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -211,10 +808,18 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Oct 23 11:46:20 2026
+    Info: Processing started: Fri Oct 23 14:10:54 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv
+    Info (12023): Found entity 1: clock_divider File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv
+    Info (12023): Found entity 1: pwm_test_ctrl File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv
+    Info (12023): Found entity 1: mode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv
+    Info (12023): Found entity 1: flow_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv
     Info (12023): Found entity 1: alu_add File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/result_mux.sv
@@ -246,11 +851,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/d
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv
     Info (12023): Found entity 1: test_clock File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv
-    Info (12023): Found entity 1: display_7seg File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv Line: 1
+    Info (12023): Found entity 1: display_7seg File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv
     Info (12023): Found entity 1: tb_y_latch_bank File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv
-    Info (12023): Found entity 1: tb_top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv Line: 5
+    Info (12023): Found entity 1: tb_top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv
     Info (12023): Found entity 1: tb_password_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_decoder.sv
@@ -292,7 +897,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/d
 Info (12021): Found 1 design units, including 1 entities, in source file de0_nano_soc_baseline.v
     Info (12023): Found entity 1: de0_nano_soc_baseline File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/de0_nano_soc_baseline.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv
-    Info (12023): Found entity 1: top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 10
+    Info (12023): Found entity 1: top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_result_mux.sv
     Info (12023): Found entity 1: tb_result_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_result_mux.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm.sv
@@ -321,15 +926,39 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/d
     Info (12023): Found entity 1: tb_alu File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv
     Info (12023): Found entity 1: tb_adder_6 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv Line: 3
-Info (12127): Elaborating entity "pwm" for the top level hierarchy
-Info (12128): Elaborating entity "counter_3" for hierarchy "counter_3:u_cnt" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 17
-Info (12128): Elaborating entity "d_flipflop" for hierarchy "counter_3:u_cnt|d_flipflop:u_ff0" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv Line: 15
-Info (12128): Elaborating entity "d_latch" for hierarchy "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 18
-Info (12128): Elaborating entity "sr_latch" for hierarchy "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master|sr_latch:u_sr" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 18
-Info (12128): Elaborating entity "comparator_lt_3" for hierarchy "comparator_lt_3:u_cmp" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 18
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 723 megabytes
-    Info: Processing ended: Fri Oct 23 11:46:26 2026
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm_test_ctrl.sv
+    Info (12023): Found entity 1: tb_pwm_test_ctrl File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm_test_ctrl.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_mode_decoder.sv
+    Info (12023): Found entity 1: tb_mode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_mode_decoder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_flow_mux.sv
+    Info (12023): Found entity 1: tb_flow_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_flow_mux.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_display_7seg.sv
+    Info (12023): Found entity 1: tb_display_7seg File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_display_7seg.sv Line: 4
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:u_div" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 62
+Warning (10230): Verilog HDL assignment warning at clock_divider.sv(18): truncated value with size 32 to match size of target (27) File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 18
+Info (12128): Elaborating entity "d_flipflop" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 83
+Info (12128): Elaborating entity "d_latch" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 18
+Info (12128): Elaborating entity "sr_latch" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master|sr_latch:u_sr" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 18
+Info (12128): Elaborating entity "finger_decoder" for hierarchy "finger_decoder:u_fingers" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 75
+Warning (10036): Verilog HDL or VHDL warning at finger_decoder.sv(11): object "nS1" assigned a value but never read File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 11
+Info (12128): Elaborating entity "y_latch_bank" for hierarchy "y_latch_bank:u_ylatch" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 82
+Info (12128): Elaborating entity "password_decoder" for hierarchy "password_decoder:u_pass" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 88
+Warning (10036): Verilog HDL or VHDL warning at password_decoder.sv(12): object "nE3" assigned a value but never read File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 12
+Info (12128): Elaborating entity "sn74hc595" for hierarchy "sn74hc595:u_sr" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 97
+Info (12128): Elaborating entity "shift_reg_8" for hierarchy "sn74hc595:u_sr|shift_reg_8:u_shift" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 18
+Info (12128): Elaborating entity "storage_reg_8" for hierarchy "sn74hc595:u_sr|storage_reg_8:u_store" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 19
+Info (12128): Elaborating entity "output_buffer_8" for hierarchy "sn74hc595:u_sr|output_buffer_8:u_out" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 20
+Info (12128): Elaborating entity "mode_decoder" for hierarchy "mode_decoder:u_mode" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 113
+Info (12128): Elaborating entity "pwm_test_ctrl" for hierarchy "pwm_test_ctrl:u_test" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 119
+Info (12128): Elaborating entity "flow_mux" for hierarchy "flow_mux:u_mux" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 129
+Info (12128): Elaborating entity "pwm" for hierarchy "pwm:u_pwm" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 139
+Info (12128): Elaborating entity "counter_3" for hierarchy "pwm:u_pwm|counter_3:u_cnt" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 17
+Info (12128): Elaborating entity "comparator_lt_3" for hierarchy "pwm:u_pwm|comparator_lt_3:u_cmp" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 18
+Info (12128): Elaborating entity "display_7seg" for hierarchy "display_7seg:u_display" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 151
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 717 megabytes
+    Info: Processing ended: Fri Oct 23 14:11:00 2026
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:14
 

@@ -18,6 +18,6 @@ Sim dir               :  simulation/questa
 
 Info: Starting NativeLink simulation with Questasim software
 Sourced NativeLink script /home/dansecan25/altera_lite/24.1std/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File ProyectoGrupal_run_msim_rtl_verilog.do already exists - backing up current file as ProyectoGrupal_run_msim_rtl_verilog.do.bak2
+Warning: File ProyectoGrupal_run_msim_rtl_verilog.do already exists - backing up current file as ProyectoGrupal_run_msim_rtl_verilog.do.bak4
 Info: Spawning QuestaSim Simulation software 
 Info: NativeLink simulation flow was successful
