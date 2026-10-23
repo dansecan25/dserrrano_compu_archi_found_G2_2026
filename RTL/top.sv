@@ -30,8 +30,6 @@ module top #(
     input  logic SW3,
     input  logic BTN_TEST_N,        // boton de la FPGA (activo en bajo)
 
-    output logic ABRIR,
-    output logic CERRAR,
     output wire  PWM_OUT,
     output wire  TEST_RUNNING,      // bandera: modo prueba en ejecucion
 
@@ -68,6 +66,8 @@ module top #(
     wire nclk, nrst, y_reset;
     wire [7:0] sr_q;
     wire       sr_qh;
+	 wire ABRIR;
+    wire CERRAR;
 
     finger_decoder u_fingers (
         .S1(S1), .S2(S2), .S3(S3), .S4(S4), .S5(~S5),

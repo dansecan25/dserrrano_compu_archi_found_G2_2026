@@ -4,11 +4,11 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "ABRIR",
+					"name" : "PWM_OUT",
 					"strict" : false
 				},
 				{
-					"name" : "CERRAR",
+					"name" : "TEST_RUNNING",
 					"strict" : false
 				},
 				{
@@ -20,11 +20,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SEG_C",
+					"name" : "SEG_D",
 					"strict" : false
 				},
 				{
-					"name" : "SEG_D",
+					"name" : "SEG_E",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_F",
 					"strict" : false
 				},
 				{
@@ -64,15 +68,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK",
+					"name" : "SW1",
 					"strict" : false
 				},
 				{
-					"name" : "S1",
+					"name" : "SW2",
 					"strict" : false
 				},
 				{
-					"name" : "S2",
+					"name" : "SW3",
 					"strict" : false
 				},
 				{
@@ -80,7 +84,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "S2",
+					"strict" : false
+				},
+				{
 					"name" : "S3",
+					"strict" : false
+				},
+				{
+					"name" : "S1",
 					"strict" : false
 				},
 				{
@@ -89,6 +101,14 @@
 				},
 				{
 					"name" : "S5",
+					"strict" : false
+				},
+				{
+					"name" : "CLK_50",
+					"strict" : false
+				},
+				{
+					"name" : "BTN_TEST_N",
 					"strict" : false
 				}
 			]
