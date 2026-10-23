@@ -1,5 +1,5 @@
 Analysis & Elaboration report for ProyectoGrupal
-Fri Oct 23 10:33:38 2026
+Fri Oct 23 11:46:26 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,15 +10,12 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "result_mux:u_mux"
-  6. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row5"
-  7. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row4"
-  8. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row3"
-  9. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row2"
- 10. Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row1"
- 11. Port Connectivity Checks: "alu_sub:u_sub|adder_6:u_sub"
- 12. Port Connectivity Checks: "alu_add:u_add|adder_6:u_add"
- 13. Analysis & Elaboration Messages
+  5. Port Connectivity Checks: "d_flipflop:u_out"
+  6. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff2"
+  7. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff1"
+  8. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master"
+  9. Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0"
+ 10. Analysis & Elaboration Messages
 
 
 
@@ -45,10 +42,10 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                  ;
 +-------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Fri Oct 23 10:33:38 2026           ;
+; Analysis & Elaboration Status ; Successful - Fri Oct 23 11:46:26 2026           ;
 ; Quartus Prime Version         ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                 ; ProyectoGrupal                                  ;
-; Top-level Entity Name         ; alu                                             ;
+; Top-level Entity Name         ; pwm                                             ;
 ; Family                        ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
 ; Total registers               ; N/A until Partition Merge                       ;
@@ -82,7 +79,7 @@ on the Quartus Prime software download page.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
-; Top-level entity name                                                           ; alu                ; ProyectoGrupal     ;
+; Top-level entity name                                                           ; pwm                ; ProyectoGrupal     ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -163,79 +160,49 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------------+
-; Port Connectivity Checks: "result_mux:u_mux"   ;
-+--------------+-------+----------+--------------+
-; Port         ; Type  ; Severity ; Details      ;
-+--------------+-------+----------+--------------+
-; R_ADD[11..7] ; Input ; Info     ; Stuck at GND ;
-; R_ROL[11..6] ; Input ; Info     ; Stuck at GND ;
-; R_ROR[11..6] ; Input ; Info     ; Stuck at GND ;
-+--------------+-------+----------+--------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "d_flipflop:u_out"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------+
-; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row5" ;
-+------+-------+----------+--------------------------------+
-; Port ; Type  ; Severity ; Details                        ;
-+------+-------+----------+--------------------------------+
-; CIN  ; Input ; Info     ; Stuck at GND                   ;
-+------+-------+----------+--------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff2"                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------+
-; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row4" ;
-+------+-------+----------+--------------------------------+
-; Port ; Type  ; Severity ; Details                        ;
-+------+-------+----------+--------------------------------+
-; CIN  ; Input ; Info     ; Stuck at GND                   ;
-+------+-------+----------+--------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff1"                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------+
-; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row3" ;
-+------+-------+----------+--------------------------------+
-; Port ; Type  ; Severity ; Details                        ;
-+------+-------+----------+--------------------------------+
-; CIN  ; Input ; Info     ; Stuck at GND                   ;
-+------+-------+----------+--------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master"                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------+
-; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row2" ;
-+------+-------+----------+--------------------------------+
-; Port ; Type  ; Severity ; Details                        ;
-+------+-------+----------+--------------------------------+
-; CIN  ; Input ; Info     ; Stuck at GND                   ;
-+------+-------+----------+--------------------------------+
-
-
-+----------------------------------------------------------+
-; Port Connectivity Checks: "alu_mul:u_mul|adder_6:u_row1" ;
-+------+-------+----------+--------------------------------+
-; Port ; Type  ; Severity ; Details                        ;
-+------+-------+----------+--------------------------------+
-; A[5] ; Input ; Info     ; Stuck at GND                   ;
-; CIN  ; Input ; Info     ; Stuck at GND                   ;
-+------+-------+----------+--------------------------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "alu_sub:u_sub|adder_6:u_sub" ;
-+------+-------+----------+-------------------------------+
-; Port ; Type  ; Severity ; Details                       ;
-+------+-------+----------+-------------------------------+
-; CIN  ; Input ; Info     ; Stuck at VCC                  ;
-+------+-------+----------+-------------------------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "alu_add:u_add|adder_6:u_add" ;
-+------+-------+----------+-------------------------------+
-; Port ; Type  ; Severity ; Details                       ;
-+------+-------+----------+-------------------------------+
-; CIN  ; Input ; Info     ; Stuck at GND                  ;
-+------+-------+----------+-------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_3:u_cnt|d_flipflop:u_ff0"                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; QN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------+
@@ -244,7 +211,7 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Oct 23 10:33:32 2026
+    Info: Processing started: Fri Oct 23 11:46:20 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -354,20 +321,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/d
     Info (12023): Found entity 1: tb_alu File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv
     Info (12023): Found entity 1: tb_adder_6 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv Line: 3
-Info (12127): Elaborating entity "alu" for the top level hierarchy
-Info (12128): Elaborating entity "opcode_decoder" for hierarchy "opcode_decoder:u_dec" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 18
-Info (12128): Elaborating entity "alu_add" for hierarchy "alu_add:u_add" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 20
-Info (12128): Elaborating entity "adder_6" for hierarchy "alu_add:u_add|adder_6:u_add" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv Line: 10
-Info (12128): Elaborating entity "full_adder" for hierarchy "alu_add:u_add|adder_6:u_add|full_adder:u_fa0" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/adder_6.sv Line: 13
-Info (12128): Elaborating entity "alu_sub" for hierarchy "alu_sub:u_sub" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 21
-Info (12128): Elaborating entity "alu_mul" for hierarchy "alu_mul:u_mul" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 22
-Info (12128): Elaborating entity "alu_rol" for hierarchy "alu_rol:u_rol" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 23
-Info (12128): Elaborating entity "alu_ror" for hierarchy "alu_ror:u_ror" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 24
-Info (12128): Elaborating entity "result_mux" for hierarchy "result_mux:u_mux" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 35
-Info (12128): Elaborating entity "normalizer" for hierarchy "normalizer:u_norm" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 37
+Info (12127): Elaborating entity "pwm" for the top level hierarchy
+Info (12128): Elaborating entity "counter_3" for hierarchy "counter_3:u_cnt" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 17
+Info (12128): Elaborating entity "d_flipflop" for hierarchy "counter_3:u_cnt|d_flipflop:u_ff0" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv Line: 15
+Info (12128): Elaborating entity "d_latch" for hierarchy "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 18
+Info (12128): Elaborating entity "sr_latch" for hierarchy "counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master|sr_latch:u_sr" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 18
+Info (12128): Elaborating entity "comparator_lt_3" for hierarchy "comparator_lt_3:u_cmp" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 18
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 720 megabytes
-    Info: Processing ended: Fri Oct 23 10:33:38 2026
+    Info: Peak virtual memory: 723 megabytes
+    Info: Processing ended: Fri Oct 23 11:46:26 2026
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:14
 

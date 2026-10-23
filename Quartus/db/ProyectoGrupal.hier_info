@@ -1,977 +1,207 @@
-|alu
-A[0] => A[0].IN5
-A[1] => A[1].IN5
-A[2] => A[2].IN5
-A[3] => A[3].IN5
-A[4] => A[4].IN5
-A[5] => A[5].IN5
-B[0] => B[0].IN3
-B[1] => B[1].IN3
-B[2] => B[2].IN3
-B[3] => B[3].IN3
-B[4] => B[4].IN3
-B[5] => B[5].IN3
-S[0] => S[0].IN1
-S[1] => S[1].IN1
-S[2] => S[2].IN1
-VALOR[0] << normalizer:u_norm.VALOR
-VALOR[1] << normalizer:u_norm.VALOR
-VALOR[2] << normalizer:u_norm.VALOR
+|pwm
+CLK => CLK.IN2
+RST_N => RST_N.IN2
+VALOR[0] => VALOR[0].IN1
+VALOR[1] => VALOR[1].IN1
+VALOR[2] => VALOR[2].IN1
+PWM_OUT <= d_flipflop:u_out.Q
 
 
-|alu|opcode_decoder:u_dec
-S2 => SEL_ROR.IN0
-S2 => SEL_ADD.IN0
-S2 => SEL_MUL.IN0
-S1 => SEL_MUL.IN1
-S1 => SEL_ADD.IN1
-S1 => SEL_ROR.IN1
-S0 => SEL_SUB.IN1
-S0 => SEL_ROL.IN1
-S0 => SEL_ADD.IN1
-S0 => SEL_MUL.IN1
-S0 => SEL_ROR.IN1
-SEL_ADD <= SEL_ADD.DB_MAX_OUTPUT_PORT_TYPE
-SEL_SUB <= SEL_SUB.DB_MAX_OUTPUT_PORT_TYPE
-SEL_MUL <= SEL_MUL.DB_MAX_OUTPUT_PORT_TYPE
-SEL_ROL <= SEL_ROL.DB_MAX_OUTPUT_PORT_TYPE
-SEL_ROR <= SEL_ROR.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt
+CLK => CLK.IN3
+RST_N => RST_N.IN3
+Q[0] <= d_flipflop:u_ff0.Q
+Q[1] <= d_flipflop:u_ff1.Q
+Q[2] <= d_flipflop:u_ff2.Q
 
 
-|alu|alu_add:u_add
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-F[0] <= adder_6:u_add.SUM
-F[1] <= adder_6:u_add.SUM
-F[2] <= adder_6:u_add.SUM
-F[3] <= adder_6:u_add.SUM
-F[4] <= adder_6:u_add.SUM
-F[5] <= adder_6:u_add.SUM
-F[6] <= adder_6:u_add.COUT
+|pwm|counter_3:u_cnt|d_flipflop:u_ff0
+D => D.IN1
+CLK => CLK.IN1
+CLR_N => CLR_N.IN2
+Q <= d_latch:u_slave.Q
+QN <= d_latch:u_slave.QN
 
 
-|alu|alu_add:u_add|adder_6:u_add
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-CIN => CIN.IN1
-SUM[0] <= full_adder:u_fa0.SUM
-SUM[1] <= full_adder:u_fa1.SUM
-SUM[2] <= full_adder:u_fa2.SUM
-SUM[3] <= full_adder:u_fa3.SUM
-SUM[4] <= full_adder:u_fa4.SUM
-SUM[5] <= full_adder:u_fa5.SUM
-COUT <= full_adder:u_fa5.COUT
+|pwm|counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
 
 
-|alu|alu_add:u_add|adder_6:u_add|full_adder:u_fa0
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_master|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|alu_add:u_add|adder_6:u_add|full_adder:u_fa1
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_slave
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
 
 
-|alu|alu_add:u_add|adder_6:u_add|full_adder:u_fa2
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff0|d_latch:u_slave|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|alu_add:u_add|adder_6:u_add|full_adder:u_fa3
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff1
+D => D.IN1
+CLK => CLK.IN1
+CLR_N => CLR_N.IN2
+Q <= d_latch:u_slave.Q
+QN <= d_latch:u_slave.QN
 
 
-|alu|alu_add:u_add|adder_6:u_add|full_adder:u_fa4
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff1|d_latch:u_master
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
 
 
-|alu|alu_add:u_add|adder_6:u_add|full_adder:u_fa5
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff1|d_latch:u_master|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|alu_sub:u_sub
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => nb[0].IN1
-B[1] => nb[1].IN1
-B[2] => nb[2].IN1
-B[3] => nb[3].IN1
-B[4] => nb[4].IN1
-B[5] => nb[5].IN1
-F[0] <= adder_6:u_sub.SUM
-F[1] <= adder_6:u_sub.SUM
-F[2] <= adder_6:u_sub.SUM
-F[3] <= adder_6:u_sub.SUM
-F[4] <= adder_6:u_sub.SUM
-F[5] <= adder_6:u_sub.SUM
-F[6] <= adder_6:u_sub.COUT
+|pwm|counter_3:u_cnt|d_flipflop:u_ff1|d_latch:u_slave
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
 
 
-|alu|alu_sub:u_sub|adder_6:u_sub
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-CIN => CIN.IN1
-SUM[0] <= full_adder:u_fa0.SUM
-SUM[1] <= full_adder:u_fa1.SUM
-SUM[2] <= full_adder:u_fa2.SUM
-SUM[3] <= full_adder:u_fa3.SUM
-SUM[4] <= full_adder:u_fa4.SUM
-SUM[5] <= full_adder:u_fa5.SUM
-COUT <= full_adder:u_fa5.COUT
+|pwm|counter_3:u_cnt|d_flipflop:u_ff1|d_latch:u_slave|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|alu_sub:u_sub|adder_6:u_sub|full_adder:u_fa0
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff2
+D => D.IN1
+CLK => CLK.IN1
+CLR_N => CLR_N.IN2
+Q <= d_latch:u_slave.Q
+QN <= d_latch:u_slave.QN
 
 
-|alu|alu_sub:u_sub|adder_6:u_sub|full_adder:u_fa1
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff2|d_latch:u_master
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
 
 
-|alu|alu_sub:u_sub|adder_6:u_sub|full_adder:u_fa2
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff2|d_latch:u_master|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|alu_sub:u_sub|adder_6:u_sub|full_adder:u_fa3
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff2|d_latch:u_slave
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
 
 
-|alu|alu_sub:u_sub|adder_6:u_sub|full_adder:u_fa4
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+|pwm|counter_3:u_cnt|d_flipflop:u_ff2|d_latch:u_slave|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|alu_sub:u_sub|adder_6:u_sub|full_adder:u_fa5
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul
-A[0] => comb.IN0
-A[0] => comb.IN0
-A[0] => comb.IN0
-A[0] => comb.IN0
-A[0] => comb.IN0
-A[0] => comb.IN0
+|pwm|comparator_lt_3:u_cmp
+A[0] => lt0.IN0
 A[1] => comb.IN0
-A[1] => comb.IN0
-A[1] => comb.IN0
-A[1] => comb.IN0
-A[1] => comb.IN0
-A[1] => comb.IN0
+A[1] => lt1.IN0
 A[2] => comb.IN0
-A[2] => comb.IN0
-A[2] => comb.IN0
-A[2] => comb.IN0
-A[2] => comb.IN0
-A[2] => comb.IN0
-A[3] => comb.IN0
-A[3] => comb.IN0
-A[3] => comb.IN0
-A[3] => comb.IN0
-A[3] => comb.IN0
-A[3] => comb.IN0
-A[4] => comb.IN0
-A[4] => comb.IN0
-A[4] => comb.IN0
-A[4] => comb.IN0
-A[4] => comb.IN0
-A[4] => comb.IN0
-A[5] => comb.IN0
-A[5] => comb.IN0
-A[5] => comb.IN0
-A[5] => comb.IN0
-A[5] => comb.IN0
-A[5] => comb.IN0
-B[0] => comb.IN1
-B[0] => comb.IN1
-B[0] => comb.IN1
-B[0] => comb.IN1
-B[0] => comb.IN1
-B[0] => comb.IN1
+A[2] => lt2.IN0
+B[0] => lt0.IN1
 B[1] => comb.IN1
-B[1] => comb.IN1
-B[1] => comb.IN1
-B[1] => comb.IN1
-B[1] => comb.IN1
-B[1] => comb.IN1
+B[1] => lt1.IN1
 B[2] => comb.IN1
-B[2] => comb.IN1
-B[2] => comb.IN1
-B[2] => comb.IN1
-B[2] => comb.IN1
-B[2] => comb.IN1
-B[3] => comb.IN1
-B[3] => comb.IN1
-B[3] => comb.IN1
-B[3] => comb.IN1
-B[3] => comb.IN1
-B[3] => comb.IN1
-B[4] => comb.IN1
-B[4] => comb.IN1
-B[4] => comb.IN1
-B[4] => comb.IN1
-B[4] => comb.IN1
-B[4] => comb.IN1
-B[5] => comb.IN1
-B[5] => comb.IN1
-B[5] => comb.IN1
-B[5] => comb.IN1
-B[5] => comb.IN1
-B[5] => comb.IN1
-F[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-F[1] <= adder_6:u_row1.SUM
-F[2] <= adder_6:u_row2.SUM
-F[3] <= adder_6:u_row3.SUM
-F[4] <= adder_6:u_row4.SUM
-F[5] <= adder_6:u_row5.SUM
-F[6] <= adder_6:u_row5.SUM
-F[7] <= adder_6:u_row5.SUM
-F[8] <= adder_6:u_row5.SUM
-F[9] <= adder_6:u_row5.SUM
-F[10] <= adder_6:u_row5.SUM
-F[11] <= adder_6:u_row5.COUT
-
-
-|alu|alu_mul:u_mul|adder_6:u_row1
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-CIN => CIN.IN1
-SUM[0] <= full_adder:u_fa0.SUM
-SUM[1] <= full_adder:u_fa1.SUM
-SUM[2] <= full_adder:u_fa2.SUM
-SUM[3] <= full_adder:u_fa3.SUM
-SUM[4] <= full_adder:u_fa4.SUM
-SUM[5] <= full_adder:u_fa5.SUM
-COUT <= full_adder:u_fa5.COUT
-
-
-|alu|alu_mul:u_mul|adder_6:u_row1|full_adder:u_fa0
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row1|full_adder:u_fa1
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row1|full_adder:u_fa2
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row1|full_adder:u_fa3
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row1|full_adder:u_fa4
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row1|full_adder:u_fa5
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row2
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-CIN => CIN.IN1
-SUM[0] <= full_adder:u_fa0.SUM
-SUM[1] <= full_adder:u_fa1.SUM
-SUM[2] <= full_adder:u_fa2.SUM
-SUM[3] <= full_adder:u_fa3.SUM
-SUM[4] <= full_adder:u_fa4.SUM
-SUM[5] <= full_adder:u_fa5.SUM
-COUT <= full_adder:u_fa5.COUT
-
-
-|alu|alu_mul:u_mul|adder_6:u_row2|full_adder:u_fa0
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row2|full_adder:u_fa1
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row2|full_adder:u_fa2
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row2|full_adder:u_fa3
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row2|full_adder:u_fa4
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row2|full_adder:u_fa5
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row3
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-CIN => CIN.IN1
-SUM[0] <= full_adder:u_fa0.SUM
-SUM[1] <= full_adder:u_fa1.SUM
-SUM[2] <= full_adder:u_fa2.SUM
-SUM[3] <= full_adder:u_fa3.SUM
-SUM[4] <= full_adder:u_fa4.SUM
-SUM[5] <= full_adder:u_fa5.SUM
-COUT <= full_adder:u_fa5.COUT
-
-
-|alu|alu_mul:u_mul|adder_6:u_row3|full_adder:u_fa0
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row3|full_adder:u_fa1
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row3|full_adder:u_fa2
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row3|full_adder:u_fa3
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row3|full_adder:u_fa4
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row3|full_adder:u_fa5
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row4
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-CIN => CIN.IN1
-SUM[0] <= full_adder:u_fa0.SUM
-SUM[1] <= full_adder:u_fa1.SUM
-SUM[2] <= full_adder:u_fa2.SUM
-SUM[3] <= full_adder:u_fa3.SUM
-SUM[4] <= full_adder:u_fa4.SUM
-SUM[5] <= full_adder:u_fa5.SUM
-COUT <= full_adder:u_fa5.COUT
-
-
-|alu|alu_mul:u_mul|adder_6:u_row4|full_adder:u_fa0
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row4|full_adder:u_fa1
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row4|full_adder:u_fa2
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row4|full_adder:u_fa3
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row4|full_adder:u_fa4
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row4|full_adder:u_fa5
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row5
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-A[4] => A[4].IN1
-A[5] => A[5].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-B[4] => B[4].IN1
-B[5] => B[5].IN1
-CIN => CIN.IN1
-SUM[0] <= full_adder:u_fa0.SUM
-SUM[1] <= full_adder:u_fa1.SUM
-SUM[2] <= full_adder:u_fa2.SUM
-SUM[3] <= full_adder:u_fa3.SUM
-SUM[4] <= full_adder:u_fa4.SUM
-SUM[5] <= full_adder:u_fa5.SUM
-COUT <= full_adder:u_fa5.COUT
-
-
-|alu|alu_mul:u_mul|adder_6:u_row5|full_adder:u_fa0
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row5|full_adder:u_fa1
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row5|full_adder:u_fa2
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row5|full_adder:u_fa3
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row5|full_adder:u_fa4
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_mul:u_mul|adder_6:u_row5|full_adder:u_fa5
-A => axb.IN0
-A => ab.IN0
-B => axb.IN1
-B => ab.IN1
-CIN => axb_cin.IN1
-CIN => SUM.IN1
-SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
-COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_rol:u_rol
-A[0] => F[1].DATAIN
-A[1] => F[2].DATAIN
-A[2] => F[3].DATAIN
-A[3] => F[4].DATAIN
-A[4] => F[5].DATAIN
-A[5] => F[0].DATAIN
-F[0] <= A[5].DB_MAX_OUTPUT_PORT_TYPE
-F[1] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
-F[2] <= A[1].DB_MAX_OUTPUT_PORT_TYPE
-F[3] <= A[2].DB_MAX_OUTPUT_PORT_TYPE
-F[4] <= A[3].DB_MAX_OUTPUT_PORT_TYPE
-F[5] <= A[4].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|alu_ror:u_ror
-A[0] => F[5].DATAIN
-A[1] => F[0].DATAIN
-A[2] => F[1].DATAIN
-A[3] => F[2].DATAIN
-A[4] => F[3].DATAIN
-A[5] => F[4].DATAIN
-F[0] <= A[1].DB_MAX_OUTPUT_PORT_TYPE
-F[1] <= A[2].DB_MAX_OUTPUT_PORT_TYPE
-F[2] <= A[3].DB_MAX_OUTPUT_PORT_TYPE
-F[3] <= A[4].DB_MAX_OUTPUT_PORT_TYPE
-F[4] <= A[5].DB_MAX_OUTPUT_PORT_TYPE
-F[5] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|result_mux:u_mux
-R_ADD[0] => R.IN0
-R_ADD[1] => R.IN0
-R_ADD[2] => R.IN0
-R_ADD[3] => R.IN0
-R_ADD[4] => R.IN0
-R_ADD[5] => R.IN0
-R_ADD[6] => R.IN0
-R_ADD[7] => R.IN0
-R_ADD[8] => R.IN0
-R_ADD[9] => R.IN0
-R_ADD[10] => R.IN0
-R_ADD[11] => R.IN0
-R_SUB[0] => R.IN0
-R_SUB[1] => R.IN0
-R_SUB[2] => R.IN0
-R_SUB[3] => R.IN0
-R_SUB[4] => R.IN0
-R_SUB[5] => R.IN0
-R_SUB[6] => R.IN0
-R_SUB[7] => R.IN0
-R_SUB[8] => R.IN0
-R_SUB[9] => R.IN0
-R_SUB[10] => R.IN0
-R_SUB[11] => R.IN0
-R_MUL[0] => R.IN0
-R_MUL[1] => R.IN0
-R_MUL[2] => R.IN0
-R_MUL[3] => R.IN0
-R_MUL[4] => R.IN0
-R_MUL[5] => R.IN0
-R_MUL[6] => R.IN0
-R_MUL[7] => R.IN0
-R_MUL[8] => R.IN0
-R_MUL[9] => R.IN0
-R_MUL[10] => R.IN0
-R_MUL[11] => R.IN0
-R_ROL[0] => R.IN0
-R_ROL[1] => R.IN0
-R_ROL[2] => R.IN0
-R_ROL[3] => R.IN0
-R_ROL[4] => R.IN0
-R_ROL[5] => R.IN0
-R_ROL[6] => R.IN0
-R_ROL[7] => R.IN0
-R_ROL[8] => R.IN0
-R_ROL[9] => R.IN0
-R_ROL[10] => R.IN0
-R_ROL[11] => R.IN0
-R_ROR[0] => R.IN0
-R_ROR[1] => R.IN0
-R_ROR[2] => R.IN0
-R_ROR[3] => R.IN0
-R_ROR[4] => R.IN0
-R_ROR[5] => R.IN0
-R_ROR[6] => R.IN0
-R_ROR[7] => R.IN0
-R_ROR[8] => R.IN0
-R_ROR[9] => R.IN0
-R_ROR[10] => R.IN0
-R_ROR[11] => R.IN0
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_ADD => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_SUB => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_MUL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROL => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-SEL_ROR => R.IN1
-R[0] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[1] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[2] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[3] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[4] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[5] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[6] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[7] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[8] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[9] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[10] <= R.DB_MAX_OUTPUT_PORT_TYPE
-R[11] <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|alu|normalizer:u_norm
-F[0] => VALOR[0].DATAIN
-F[1] => VALOR[1].DATAIN
-F[2] => VALOR[2].DATAIN
-F[3] => ~NO_FANOUT~
-F[4] => ~NO_FANOUT~
-F[5] => ~NO_FANOUT~
-F[6] => ~NO_FANOUT~
-F[7] => ~NO_FANOUT~
-F[8] => ~NO_FANOUT~
-F[9] => ~NO_FANOUT~
-F[10] => ~NO_FANOUT~
-F[11] => ~NO_FANOUT~
-VALOR[0] <= F[0].DB_MAX_OUTPUT_PORT_TYPE
-VALOR[1] <= F[1].DB_MAX_OUTPUT_PORT_TYPE
-VALOR[2] <= F[2].DB_MAX_OUTPUT_PORT_TYPE
+B[2] => lt2.IN1
+LT <= LT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pwm|d_flipflop:u_out
+D => D.IN1
+CLK => CLK.IN1
+CLR_N => CLR_N.IN2
+Q <= d_latch:u_slave.Q
+QN <= d_latch:u_slave.QN
+
+
+|pwm|d_flipflop:u_out|d_latch:u_master
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
+
+
+|pwm|d_flipflop:u_out|d_latch:u_master|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pwm|d_flipflop:u_out|d_latch:u_slave
+D => comb.IN0
+D => comb.IN0
+EN => comb.IN1
+EN => comb.IN1
+CLR_N => comb.IN1
+CLR_N => comb.IN1
+Q <= sr_latch:u_sr.Q
+QN <= sr_latch:u_sr.QN
+
+
+|pwm|d_flipflop:u_out|d_latch:u_slave|sr_latch:u_sr
+S => QN.IN0
+R => Q.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN.DB_MAX_OUTPUT_PORT_TYPE
 
 
