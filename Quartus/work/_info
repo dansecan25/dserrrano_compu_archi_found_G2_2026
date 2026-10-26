@@ -1,0 +1,104 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus
+T_opt
+!i145 1
+!i144 0
+!s110 1793003461
+V=LgH]<]aK3a3VoYe0zj762
+04 22 4 work tb_password_comparator fast 0
+=1-74563c29617d-6adf0fc5-29-2ec0
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U12 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+OL;O;2025.2;82
+vpassword_comparator
+Z2 2../RTL/password_equal.sv|../RTL/password_comparator.sv|../TB/tb_password_comparator.sv
+Z3 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z4 !s110 1793003444
+!i10b 1
+!s100 I<Z66LQedh3N]j_bM>dDF1
+I?cLSK?k=YeheQ4c^LJFa]0
+S1
+R1
+w1793000835
+8../RTL/password_comparator.sv
+F../RTL/password_comparator.sv
+!i122 2
+L0 22 104
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z7 !s108 1793003444.000000
+Z8 !s107 ../TB/tb_password_comparator.sv|../RTL/password_comparator.sv|../RTL/password_equal.sv|
+Z9 !s90 -reportprogress|300|-sv|../RTL/password_equal.sv|../RTL/password_comparator.sv|../TB/tb_password_comparator.sv|
+!i113 0
+Z10 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 tCvgOpt 0 defaultOptions 1085333592
+vpassword_equal
+R2
+R3
+R4
+!i10b 1
+!s100 NBG^hbKXD@WmNa>X7VNM23
+Ii4j[L3WDgePSo;D`KQTmX2
+S1
+R1
+w1792997057
+8../RTL/password_equal.sv
+F../RTL/password_equal.sv
+!i122 2
+L0 19 18
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vtb_password_comparator
+R2
+R3
+R4
+!i10b 1
+!s100 ]=Jm<3cDg[RCc<gn[:_G70
+I5@YWRl^Z8GN=eQCdC0N6K2
+S1
+R1
+w1793003078
+8../TB/tb_password_comparator.sv
+F../TB/tb_password_comparator.sv
+!i122 2
+L0 22 164
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
