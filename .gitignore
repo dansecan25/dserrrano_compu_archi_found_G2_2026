@@ -1,1 +1,39 @@
+
+# ==========================================
+# PROYECTO GRUPAL - FPGA DE10-NANO
+# ==========================================
+
+# Bases de datos generadas por Quartus
+/Quartus/db/
+/Quartus/incremental_db/
+
+# Archivos de compilacion y reportes
+/Quartus/output_files/
+/Quartus/greybox_tmp/
+
+# Archivos temporales de Quartus
 *.flock
+*.qws
+*.qdf
+*.qmsg
+*.rpt
+*.rpt.htm
+*.smsg
+*.summary
+*.done
+*.bak
+
+# Archivos generados por simulacion
+/Quartus/simulation/questa/rtl_work/
+/Quartus/simulation/questa/verilog_libs/
+/Quartus/simulation/questa/vsim.wlf
+/Quartus/simulation/questa/msim_transcript
+/Quartus/simulation/questa/*.vo
+/Quartus/simulation/questa/*.vho
+/Quartus/simulation/questa/*.xrf
+/Quartus/simulation/questa/*.sft
+
+# Archivos temporales de editores
+*~
+*.swp
+*.tmp
