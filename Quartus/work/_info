@@ -1,10 +1,20 @@
 m255
 K4
 z2
-!s12c _opt1
-Z0 !s99 nomlopt
-!s12c _opt
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
 R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s12c _opt1
+R1
+!s12c _opt
+R1
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -12,112 +22,254 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dC:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus
+Z2 dC:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus
 T_opt
 !i145 1
 !i144 0
 !s110 1793003461
 V=LgH]<]aK3a3VoYe0zj762
-Z2 04 22 4 work tb_password_comparator fast 0
+Z3 04 22 4 work tb_password_comparator fast 0
 =1-74563c29617d-6adf0fc5-29-2ec0
-R0
-Z3 !s12f OEM100
-Z4 !s12b OEM100
-Z5 !s124 OEM10U12 
-Z6 !s135 nogc
-Z7 o-quiet -auto_acc_if_foreign -work work +acc
-Z8 tCvgOpt 0 defaultOptions 1107585188
-n@_opt
-Z9 OL;O;2025.2;82
 R1
+Z4 !s12f OEM100
+Z5 !s12b OEM100
+Z6 !s124 OEM10U12 
+Z7 !s135 nogc
+Z8 o-quiet -auto_acc_if_foreign -work work +acc
+Z9 tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+Z10 OL;O;2025.2;82
+R2
 T_opt1
 !i145 1
 !i144 0
 !s110 1793067917
 Vogck5mmAkA0MAIMmgAP`42
-R2
-=1-74563c29617d-6ae00b8c-1af-2140
-R0
 R3
+=1-74563c29617d-6ae00b8c-1af-2140
+R1
 R4
 R5
 R6
 R7
 R8
-n@_opt1
 R9
+n@_opt1
+R10
+R2
+T_opt2
+!i145 1
+!i144 0
+!s110 1793082859
+Vc7G`ULM5YklBIGR2_S`la1
+04 24 4 work tb_password_memory_param fast 0
+=1-74563c29617d-6ae045ea-3d3-3ca8
+R1
+R4
+R5
+!s124 OEM10U23 
+R7
+o-quiet -auto_acc_if_foreign -work work -g N=10 +acc
+R9
+n@_opt2
+R10
 vpassword_comparator
-Z10 2../RTL/password_equal.sv|../RTL/password_comparator.sv|../TB/tb_password_comparator.sv
-Z11 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z12 !s110 1793067902
+Z11 2../RTL/password_slot.sv|../RTL/password_equal.sv|../RTL/password_comparator.sv|../RTL/password_memory.sv|../TB/tb_password_memory_param.sv
+Z12 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z13 !s110 1793082822
 !i10b 1
 !s100 W1^=7^QeO7UT18LJMS2gL2
 I`oNWAT70m?9z_HGBPz`<i3
 S1
-R1
-w1793067092
+R2
+w1793078866
 8../RTL/password_comparator.sv
 F../RTL/password_comparator.sv
-!i122 3
+!i122 9
 L0 21 56
-Z13 VDg1SIo80bB@j0V0VzS_@n1
-Z14 OL;L;2025.2;82
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+Z15 OL;L;2025.2;82
 r1
 !s85 0
 31
-Z15 !s108 1793067901.000000
-Z16 !s107 ../TB/tb_password_comparator.sv|../RTL/password_comparator.sv|../RTL/password_equal.sv|
-Z17 !s90 -reportprogress|300|-sv|../RTL/password_equal.sv|../RTL/password_comparator.sv|../TB/tb_password_comparator.sv|
+Z16 !s108 1793082822.000000
+Z17 !s107 ../TB/tb_password_memory_param.sv|../RTL/password_memory.sv|../RTL/password_comparator.sv|../RTL/password_equal.sv|../RTL/password_slot.sv|
+Z18 !s90 -reportprogress|300|-sv|../RTL/password_slot.sv|../RTL/password_equal.sv|../RTL/password_comparator.sv|../RTL/password_memory.sv|../TB/tb_password_memory_param.sv|
 !i113 0
-Z18 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z19 tCvgOpt 0 defaultOptions 1085333592
+Z19 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z20 tCvgOpt 0 defaultOptions 1085333592
 vpassword_equal
-R10
 R11
 R12
+R13
 !i10b 1
 !s100 NBG^hbKXD@WmNa>X7VNM23
 Ii4j[L3WDgePSo;D`KQTmX2
 S1
-R1
-w1793003917
+R2
+w1793068337
 8../RTL/password_equal.sv
 F../RTL/password_equal.sv
-!i122 3
+!i122 9
 L0 19 18
-R13
 R14
+R15
 r1
 !s85 0
 31
-R15
 R16
 R17
-!i113 0
 R18
+!i113 0
 R19
-vtb_password_comparator
-R10
+R20
+vpassword_memory
 R11
 R12
+R13
+!i10b 1
+!s100 6z1MX;F]Qj1l4JV1DiImc2
+I8:8M3:dRHj`cOLO3coShA3
+S1
+R2
+w1793081269
+8../RTL/password_memory.sv
+F../RTL/password_memory.sv
+!i122 9
+L0 19 112
+R14
+R15
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 0
+R19
+R20
+vpassword_slot
+R11
+R12
+R13
+!i10b 1
+!s100 ]H;gFVk<In>IA:eQ0<U`43
+IX65z4H<XfRP3f7K<H5H9]0
+S1
+R2
+w1793079298
+8../RTL/password_slot.sv
+F../RTL/password_slot.sv
+!i122 9
+L0 23 60
+R14
+R15
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 0
+R19
+R20
+vtb_password_comparator
+2../RTL/password_equal.sv|../RTL/password_comparator.sv|../TB/tb_password_comparator.sv
+R12
+!s110 1793067902
 !i10b 1
 !s100 ;Xz]1zj`@NC1e0[izK:A51
 ILKbG[>IOOMW[:3UA@R1XV0
 S1
-R1
+R2
 w1793067391
 8../TB/tb_password_comparator.sv
 F../TB/tb_password_comparator.sv
 !i122 3
 L0 22 168
-R13
 R14
+R15
 r1
 !s85 0
 31
+!s108 1793067901.000000
+!s107 ../TB/tb_password_comparator.sv|../RTL/password_comparator.sv|../RTL/password_equal.sv|
+!s90 -reportprogress|300|-sv|../RTL/password_equal.sv|../RTL/password_comparator.sv|../TB/tb_password_comparator.sv|
+!i113 0
+R19
+R20
+vtb_password_memory
+2../RTL/password_slot.sv|../RTL/password_equal.sv|../RTL/password_comparator.sv|../RTL/password_memory.sv|../TB/tb_password_memory.sv
+R12
+!s110 1793082090
+!i10b 1
+!s100 mc>BDVPLHKPWYigD``ZAD0
+I@PY:6>OzfROfWeF?UE`<91
+S1
+R2
+w1793081896
+8../TB/tb_password_memory.sv
+F../TB/tb_password_memory.sv
+!i122 7
+L0 17 303
+R14
 R15
+r1
+!s85 0
+31
+!s108 1793082090.000000
+!s107 ../TB/tb_password_memory.sv|../RTL/password_memory.sv|../RTL/password_comparator.sv|../RTL/password_equal.sv|../RTL/password_slot.sv|
+!s90 -reportprogress|300|-sv|../RTL/password_slot.sv|../RTL/password_equal.sv|../RTL/password_comparator.sv|../RTL/password_memory.sv|../TB/tb_password_memory.sv|
+!i113 0
+R19
+R20
+vtb_password_memory_param
+R11
+R12
+R13
+!i10b 1
+!s100 lJoici9=EX0mQ[Yg];]zl2
+IZHZEZ?UUR?NR5Pg8Hb<L>0
+S1
+R2
+w1793082177
+8../TB/tb_password_memory_param.sv
+F../TB/tb_password_memory_param.sv
+!i122 9
+L0 22 179
+R14
+R15
+r1
+!s85 0
+31
 R16
 R17
-!i113 0
 R18
+!i113 0
 R19
+R20
+vtb_password_slot
+2../RTL/password_slot.sv|../TB/tb_password_slot.sv
+R12
+!s110 1793079711
+!i10b 1
+!s100 IK7_jV_:I8[[18zONJcS60
+I:[VnZP16XHQiY0HB>P^WN0
+S1
+R2
+w1793079510
+8../TB/tb_password_slot.sv
+F../TB/tb_password_slot.sv
+!i122 4
+L0 25 205
+R14
+R15
+r1
+!s85 0
+31
+!s108 1793079711.000000
+!s107 ../TB/tb_password_slot.sv|../RTL/password_slot.sv|
+!s90 -reportprogress|300|-sv|../RTL/password_slot.sv|../TB/tb_password_slot.sv|
+!i113 0
+R19
+R20

@@ -544,6 +544,7 @@ set_location_assignment PIN_W20 -to SW3
 set_location_assignment PIN_AH16 -to TEST_RUNNING
 set_location_assignment PIN_V11 -to CLK_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_slot.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_comparator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/clock_divider.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/pwm_test_ctrl.sv
@@ -609,4 +610,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_display_7seg.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_equal.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_equal.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_comparator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_slot.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_memory_param.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

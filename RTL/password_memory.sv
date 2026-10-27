@@ -1,0 +1,130 @@
+
+/*
+ * password_memory
+ *
+ * Descripcion:
+ *   Administra un banco de N contrasenas de 9 bits.
+ *   Cada posicion contiene contrasena, tipo y validez.
+ *
+ * Operaciones al recibir register_pulse:
+ *   - Nueva: guarda en la primera posicion libre.
+ *   - Existente del mismo tipo: elimina.
+ *   - Existente de otro tipo: cambia el tipo.
+ *   - Nueva con memoria llena: no modifica nada.
+ *
+ * clear invalida todas las posiciones sin borrar
+ * fisicamente los bits de contrasena y tipo.
+ */
+
+module password_memory #(
+    parameter integer N = 10
+)(
+    input  logic           clk,
+    input  logic           clear,
+    input  logic           register_pulse, //señal usada para saber cuando realizar una operacion
+
+    input  logic [8:0]     password_in,
+    input  logic           type_in,
+    input  logic [N-1:0]   found,
+
+    output logic [9*N-1:0] stored_passwords,
+    output logic [N-1:0]   valid,
+    output logic [N-1:0]   password_type,
+    output logic           memory_full
+);
+
+    // Bus que identifica la primera posicion libre.
+    wire [N-1:0] free_select;
+
+    // Prefijo: todas las posiciones anteriores ocupadas.
+    wire [N:0] prefix_valid;
+
+    // Senales de operacion individuales.
+    wire [N-1:0] write_slot;
+    wire [N-1:0] delete_slot;
+    wire [N-1:0] change_slot;
+
+    // Coincidencias clasificadas por igualdad de tipo.
+    wire [N-1:0] same_type;
+    wire [N-1:0] different_type;
+
+    // Existe al menos una contrasena coincidente.
+    wire exists;
+
+    // Pulso habilitado solamente fuera de clear.
+    wire operation_en;
+
+
+    // Estado general de la memoria
+    assign exists = |found; //or de reduccion para ver si al menos hay una coincidencia valida
+    assign memory_full = &valid; //usando una reduccion and, si todos los bits del bus valid son 1 devuelve 1
+
+    assign operation_en = register_pulse & ~clear;
+
+    // Selector de la primera posicion libre
+    assign prefix_valid[0] = 1'b1;
+
+    genvar i;
+
+    generate
+        for (i = 0; i < N; i = i + 1) begin : GEN_MEMORY
+
+            // La posicion i se selecciona si esta libre
+            // y todas las anteriores estan ocupadas.
+            assign free_select[i] =
+                prefix_valid[i] & ~valid[i];
+
+            // Propagar el estado de ocupacion.
+            assign prefix_valid[i+1] =
+                prefix_valid[i] & valid[i];
+
+            // ----------------------
+            // Clasificacion de coincidencias
+            // ----------------------
+
+            // Contrasena existente del mismo tipo.
+            assign same_type[i] =
+                found[i] & ~(password_type[i] ^ type_in); //xor para comparar los bits 
+
+            // Contrasena existente del tipo contrario.
+            assign different_type[i] =
+                found[i] & (password_type[i] ^ type_in); //xor para comparar los bits 
+
+            // ----------------------
+            // Senales de operacion
+            // ----------------------
+
+            // Nueva contrasena: primera posicion libre.
+            assign write_slot[i] =
+                operation_en & ~exists & free_select[i];
+
+            // Repetida con el mismo tipo: eliminar.
+            assign delete_slot[i] =
+                operation_en & same_type[i];
+
+            // Repetida con tipo diferente: reclasificar.
+            assign change_slot[i] =
+                operation_en & different_type[i];
+
+
+            // Registro de la posicion i
+            password_slot slot (
+                .clk(clk),
+                .clear(clear),
+
+                .write_en(write_slot[i]),
+                .delete_en(delete_slot[i]),
+                .change_en(change_slot[i]),
+
+                .password_in(password_in),
+                .type_in(type_in),
+
+                .password_out(stored_passwords[9*i +: 9]),
+                .type_out(password_type[i]),
+                .valid_out(valid[i])
+            );
+
+        end
+    endgenerate
+
+endmodule

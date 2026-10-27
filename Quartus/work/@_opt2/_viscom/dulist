@@ -1,0 +1,5 @@
+1 13 password_slot 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 0 0 73 0
+1 15 password_memory 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 0 0 1019 0
+1 14 password_equal 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 0 0 16 0
+1 19 password_comparator 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 131072 0 159 0
+1 24 tb_password_memory_param 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 0 0 363 0

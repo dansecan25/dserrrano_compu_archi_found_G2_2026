@@ -11,7 +11,7 @@
  *
  *   Para cada posicion se verifica:
  *     - Coincidencia de contrasena.
- *     - Validez de la posicion. (para evitar problemas con 000 ej)
+ *     - Validez de la posicion. (para evitar problemas con 000 ej, además de funcionar para habilitar contraseñas)
  *     - Tipo: apertura (1) o cierre (0).
  *
  * Implementacion:
