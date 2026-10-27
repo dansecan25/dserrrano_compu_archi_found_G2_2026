@@ -28,6 +28,7 @@ module tb_password_comparator;
 
     logic ABRIR;
     logic CERRAR;
+	 logic [9:0] found;
 
     integer errors = 0;
 
@@ -38,32 +39,35 @@ module tb_password_comparator;
         .valid(valid),
         .password_type(password_type),
         .ABRIR(ABRIR),
-        .CERRAR(CERRAR)
+        .CERRAR(CERRAR),
+		  .found(found)
     );
 
     // Comprueba las salidas despues de estabilizar las señales.
     task automatic check_result(
         input logic expected_abrir,
         input logic expected_cerrar,
+		  input logic [9:0] expected_found,
         input string test_name
     );
         begin
             #10;
 
             if (ABRIR !== expected_abrir ||
-                CERRAR !== expected_cerrar) begin
+					 CERRAR !== expected_cerrar ||
+					 found !== expected_found) begin
 
-                $error("FALLO: %s | ABRIR=%b CERRAR=%b | Esperado=%b,%b",
-                       test_name, ABRIR, CERRAR,
-                       expected_abrir, expected_cerrar);
+					 $error("FALLO: %s | ABRIR=%b CERRAR=%b found=%b | Esperado=%b,%b,%b",
+							  test_name, ABRIR, CERRAR, found,
+							  expected_abrir, expected_cerrar, expected_found);
 
-                errors = errors + 1;
+					 errors = errors + 1;
 
-            end else begin
+				end else begin
 
-                $display("PASS: %s", test_name);
+					 $display("PASS: %s", test_name);
 
-            end
+				end
         end
     endtask
 
@@ -110,32 +114,32 @@ module tb_password_comparator;
 
         // 1. Contrasena valida de apertura.
         password_in = 9'b010_100_101;
-        check_result(1'b1, 1'b0, "245 permite apertura");
+        check_result(1'b1, 1'b0, 10'b0000000001, "245 permite apertura");
 
         // 2. Contrasena valida de cierre.
         password_in = 9'b001_010_011;
-        check_result(1'b0, 1'b1, "123 permite cierre");
+        check_result(1'b0, 1'b1, 10'b0000000010, "123 permite cierre");
 
         // 3. Otra contrasena valida de apertura.
         password_in = 9'b101_000_001;
-        check_result(1'b1, 1'b0, "501 permite apertura");
+        check_result(1'b1, 1'b0, 10'b0000000100, "501 permite apertura");
 
         // 4. Contrasena inexistente.
         password_in = 9'b100_100_100;
-        check_result(1'b0, 1'b0, "444 no registrada");
+        check_result(1'b0, 1'b0, 10'b0000000000, "444 no registrada");
 
         // 5. Posicion con valid = 0.
         password_in = 9'b011_011_011;
-        check_result(1'b0, 1'b0, "333 en posicion invalida");
+        check_result(1'b0, 1'b0, 10'b0000000000, "333 en posicion invalida");
 
         // 6. Ultima posicion del banco.
         password_in = 9'b101_101_101;
-        check_result(1'b0, 1'b1, "555 en posicion 9");
+        check_result(1'b0, 1'b1, 10'b1000000000, "555 en posicion 9");
 
         // 7. Ninguna contrasena registrada.
         valid = 10'b0;
         password_in = 9'b010_100_101;
-        check_result(1'b0, 1'b0, "Memoria vacia");
+        check_result(1'b0, 1'b0, 10'b0000000000, "Memoria vacia");
 
         // Restaurar posiciones ocupadas.
         valid[0] = 1'b1;
@@ -149,12 +153,12 @@ module tb_password_comparator;
         password_type[4] = 1'b1;
 
         password_in = 9'b000_000_000;
-        check_result(1'b1, 1'b0, "000 permite apertura");
+        check_result(1'b1, 1'b0, 10'b0000010000, "000 permite apertura");
 
         // 9. Cambiar la contrasena 245 de apertura a cierre.
         password_type[0] = 1'b0;
         password_in = 9'b010_100_101;
-        check_result(1'b0, 1'b1, "245 reclasificada a cierre");
+        check_result(1'b0, 1'b1, 10'b0000000001, "245 reclasificada a cierre");
 
         // 10. Caso incorrecto que la memoria debe evitar:
         // La misma contrasena aparece en dos posiciones
@@ -164,7 +168,7 @@ module tb_password_comparator;
         password_type[5] = 1'b1;
 
         password_in = 9'b010_100_101;
-        check_result(1'b1, 1'b1, "Duplicado con tipos opuestos");
+        check_result(1'b1, 1'b1, 10'b0000100001, "Duplicado con tipos opuestos");
 
         // -------------------------------------------------
         // Resultado final

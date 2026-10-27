@@ -3,122 +3,73 @@
  * password_comparator
  *
  * Descripcion:
- *   Compara una contrasena ingresada con un banco de
- *   10 contrasenas almacenadas. (PROVISIONAL)
+ *   Compara una contrasena ingresada con N contrasenas
+ *   almacenadas mediante comparadores en paralelo.
  *
- *   Cada contrasena es de 9 bits (3 digitos de 3 bits).
+ *   Cada contrasena ocupa 9 bits.
+ *   N determina la capacidad durante la elaboracion.
  *
- *   Para cada posicion de memoria se verifica:
- *     1. Si la contrasena coincide.
- *     2. Si la posicion contiene una contrasena valida. (para evitar problemas con 000 y falsos positivos)
- *     3. Si corresponde a apertura o cierre.
+ *   Para cada posicion se verifica:
+ *     - Coincidencia de contrasena.
+ *     - Validez de la posicion. (para evitar problemas con 000 ej)
+ *     - Tipo: apertura (1) o cierre (0).
  *
- *   password_type = 1 -> Apertura
- *   password_type = 0 -> Cierre
- *   valid         = 1 -> Posicion ocupada
- *
+ * Implementacion:
+ *   - N instancias de password_equal mediante generate. (Pregunta al profe 26 de oct 16:48)
  */
 
-module password_comparator (
-    input  logic [8:0]  password_in,
-    input  logic [89:0] stored_passwords, // bus de 90 bits: 10 contraseñas * 9 bits c/u
-    input  logic [9:0]  valid,
-    input  logic [9:0]  password_type,
+module password_comparator #(
+	//Este parametro limita la cantidad de comparadores que el sistema puede soportar en paralelo,
+	// se puede ampliar al máximo número de contraseñas posibles (6^3= 216)
+    parameter integer N = 10 
+)(
+    input  logic [8:0]   password_in,
+    input  logic [9*N-1:0] stored_passwords,
+    input  logic [N-1:0] valid,
+    input  logic [N-1:0] password_type,
 
     output logic ABRIR,
-    output logic CERRAR
+    output logic CERRAR,
+	 output logic [N-1:0] found //esta salida permite saber en que posición está la contraseña válida, sin importar el tipo
 );
 
-    // Resultado individual de los 10 comparadores.
-    wire [9:0] eq;
+    // Resultados individuales de los comparadores.
+    wire [N-1:0] eq;
 
     // Coincidencias autorizadas segun el tipo.
-    wire [9:0] match_abrir;
-    wire [9:0] match_cerrar;
-
-
-    // Comparadores de igualdad
-     
-    // Cada instancia recibe password_in y una posicion
-    // diferente del bus stored_passwords.
-
-    password_equal comparator_0 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[8:0]),
-        .equal(eq[0])
-    );
-
-    password_equal comparator_1 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[17:9]),
-        .equal(eq[1])
-    );
-
-    password_equal comparator_2 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[26:18]),
-        .equal(eq[2])
-    );
-
-    password_equal comparator_3 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[35:27]),
-        .equal(eq[3])
-    );
-
-    password_equal comparator_4 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[44:36]),
-        .equal(eq[4])
-    );
-
-    password_equal comparator_5 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[53:45]),
-        .equal(eq[5])
-    );
-
-    password_equal comparator_6 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[62:54]),
-        .equal(eq[6])
-    );
-
-    password_equal comparator_7 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[71:63]),
-        .equal(eq[7])
-    );
-
-    password_equal comparator_8 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[80:72]),
-        .equal(eq[8])
-    );
-
-    password_equal comparator_9 (
-        .password_in(password_in),
-        .password_stored(stored_passwords[89:81]),
-        .equal(eq[9])
-    );
- 
-    // clasificacion de las coincidencias 
-
-    // Una coincidencia autoriza apertura solamente si:
-    // - Los 9 bits coinciden.
-    // - La posicion esta ocupada.
-    // - El tipo de contrasena es apertura (1).
-    assign match_abrir = eq & valid & password_type;
-
-    // Una coincidencia autoriza cierre solamente si:
-    // - Los 9 bits coinciden.
-    // - La posicion esta ocupada.
-    // - El tipo de contrasena es cierre (0).
-    assign match_cerrar = eq & valid & (~password_type);
+    wire [N-1:0] match_abrir;
+    wire [N-1:0] match_cerrar;
+	 assign found = eq & valid;
 
 	 
-    // Salidas del banco de comparadores
-    // Basta una coincidencia valida para activar la salida.
+	 
+    // Generacion de N comparadores en paralelo
+    genvar i;
+
+    generate
+        for (i = 0; i < N; i = i + 1) begin : GEN_COMPARATORS
+
+            password_equal comparator (
+                .password_in(password_in),
+                .password_stored(stored_passwords[9*i +: 9]),
+                .equal(eq[i])
+            );
+
+        end
+    endgenerate
+
+
+    // Validacion y clasificacion
+	 
+    // Apertura: coincidencia, posicion valida y tipo 1.
+    assign match_abrir = eq & valid & password_type;
+
+    // Cierre: coincidencia, posicion valida y tipo 0.
+    assign match_cerrar = eq & valid & (~password_type);
+
+
+    // Salidas finales
+    // OR de reduccion: basta una coincidencia autorizada.
     assign ABRIR  = |match_abrir;
     assign CERRAR = |match_cerrar;
 

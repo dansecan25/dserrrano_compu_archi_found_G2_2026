@@ -1,0 +1,1 @@
+C:/altera_lite/25.1std/questa_fse/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 934320 work.tb_password_comparator -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt1 -id 1-74563c29617d-6ae00b8c-1af-2140 +__betafsm
