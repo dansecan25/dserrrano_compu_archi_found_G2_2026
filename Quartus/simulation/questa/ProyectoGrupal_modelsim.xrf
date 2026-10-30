@@ -1,4 +1,5 @@
 vendor_name = ModelSim
+source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_input_capture.sv
 source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_password_slot.sv
 source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_password_comparator.sv
 source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv
@@ -69,6 +70,11 @@ source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_ar
 source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/password_memory.sv
 source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_password_memory.sv
 source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_password_memory_param.sv
+source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder_6.sv
+source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_encoder_3.sv
+source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_input.sv
+source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/alu_input_capture.sv
+source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_capture_integration.sv
 source_file = 1, C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/db/ProyectoGrupal.cbx.xml
 design_name = top
 instance = comp, \PWM_OUT~output , PWM_OUT~output, top, 1

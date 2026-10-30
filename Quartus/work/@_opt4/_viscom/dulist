@@ -1,0 +1,4 @@
+1 16 finger_decoder_6 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 131072 0 126 0
+1 16 finger_encoder_3 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 0 0 57 0
+1 17 alu_input_capture 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 0 0 158 0
+1 29 tb_finger_capture_integration 4 fast 93 C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/work 0 0 0 0 369 0
