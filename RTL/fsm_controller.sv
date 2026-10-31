@@ -1,0 +1,424 @@
+
+/*
+ * Modulo: fsm_controller
+ *
+ * Descripcion:
+ *   Controlador principal del sistema de puerta.
+ *
+ *   Coordina captura, administracion de contrasenas,
+ *   validacion, movimiento y metodo de prueba.
+ *
+ *   Las señales sound_* son solicitudes al modulo
+ *   independiente del buzzer.
+ *
+ * Implementacion estructural:
+ *   - Codificacion one-hot de 17 estados.
+ *   - Ecuaciones booleanas de proximo estado.
+ *   - always_ff solamente para registros.
+ *   - Sin if, case ni operadores ternarios.
+ *
+ * Convenciones:
+ *   reset = 1 -> reset sincrono del controlador.
+ *   admin_type = 1 apertura, 0 cierre.
+ *   test_request = pulso sincrono de inicio.
+ *
+ * El modo de prueba comienza con la puerta cerrada
+ * y termina con la puerta cerrada.
+ */
+
+module fsm_controller #(
+    parameter integer N = 10
+)(
+    input logic clk,
+    input logic reset,
+
+    // Modos y seleccion de administracion.
+    input logic normal_mode,
+    input logic admin_mode,
+    input logic admin_type,
+    input logic test_request,
+
+    // Captura de datos.
+    input logic sample_pulse,
+    input logic digit_valid,
+    input logic opcode_valid,
+    input logic password_ready,
+
+    // Comparador y memoria.
+    input logic ABRIR,
+    input logic CERRAR,
+    input logic [N-1:0] found,
+    input logic [N-1:0] password_type,
+    input logic memory_full,
+
+    // Temporizador y controlador de prueba.
+    input logic movement_done,
+    input logic test_running,
+
+    // Control de captura.
+    output logic capture_reset,
+    output logic capture_opcode,
+    output logic capture_a,
+    output logic capture_b,
+	 output logic capture_active,
+
+    // Administracion de contrasenas.
+    output logic register_pulse,
+    output logic selected_type,
+
+    // Control de movimiento normal.
+    output logic motor_open,
+    output logic motor_close,
+    output logic movement_active,
+
+    // Inicio de prueba.
+    output logic test_start_pulse,
+
+    // Solicitudes al buzzer.
+    output logic sound_test,
+    output logic sound_opening,
+    output logic sound_closing,
+    output logic sound_registered,
+    output logic sound_valid,
+    output logic sound_invalid,
+
+    // Estado logico de la puerta.
+    output logic door_open
+);
+
+    // ==================================================
+    // Codificacion one-hot
+    // ==================================================
+
+    localparam integer I   = 0;
+    localparam integer O   = 1;
+    localparam integer A   = 2;
+    localparam integer B   = 3;
+    localparam integer E   = 4;
+    localparam integer AW  = 5;
+    localparam integer AR  = 6;
+    localparam integer RO  = 7;
+    localparam integer AD  = 8;
+    localparam integer V   = 9;
+    localparam integer VO  = 10;
+    localparam integer VE  = 11;
+    localparam integer P   = 12;
+    localparam integer C   = 13;
+    localparam integer TS  = 14;
+    localparam integer TW  = 15;
+    localparam integer TR  = 16;
+
+    logic [16:0] state;
+    wire  [16:0] next_state;
+
+    // ==================================================
+    // Condiciones auxiliares
+    // ==================================================
+
+    wire capture_request;
+    wire test_allowed;
+    wire cap_op_ok;
+    wire cap_digit_ok;
+    wire open_ok;
+    wire close_ok;
+    wire movement_ok;
+    wire known;
+
+    assign capture_request = admin_mode | normal_mode;
+
+    // El metodo de prueba inicia desde reposo
+    // cuando la posicion logica es cerrada.
+    assign test_allowed = test_request & ~door_open;
+
+    assign cap_op_ok = sample_pulse & opcode_valid;
+    assign cap_digit_ok = sample_pulse & digit_valid;
+
+    assign known = ABRIR | CERRAR;
+
+    // Evitar autorizar direcciones contradictorias.
+    assign open_ok =
+        ABRIR & ~CERRAR & ~door_open;
+
+    assign close_ok =
+        CERRAR & ~ABRIR & door_open;
+
+    assign movement_ok = open_ok | close_ok;
+
+    // ==================================================
+    // Seleccion de modo y tipo
+    // ==================================================
+
+    logic admin_selected;
+    logic selected_type_reg;
+
+    wire start_capture;
+    wire admin_selected_next;
+    wire selected_type_next;
+
+    assign start_capture =
+        state[I] & ~test_allowed & capture_request;
+
+    assign admin_selected_next =
+        (admin_selected & ~start_capture) |
+        (admin_mode & start_capture);
+
+    assign selected_type_next =
+        (selected_type_reg & ~start_capture) |
+        (admin_type & start_capture);
+
+    assign selected_type = selected_type_reg;
+
+    // ==================================================
+    // Clasificacion previa a escritura de memoria
+    // ==================================================
+
+    wire exists;
+    wire same_found;
+    wire different_found;
+
+    wire admin_new;
+    wire admin_changed;
+    wire admin_deleted;
+    wire admin_rejected;
+
+    logic result_success;
+    logic result_full;
+
+    wire result_success_next;
+    wire result_full_next;
+
+    assign exists = |found;
+
+    assign same_found =
+        |(found & ~(password_type ^ {N{selected_type}}));
+
+    assign different_found =
+        |(found & (password_type ^ {N{selected_type}}));
+
+    // Estas condiciones se calculan ANTES de que
+    // la memoria actualice sus registros.
+    assign admin_new =
+        ~exists & ~memory_full;
+
+    assign admin_changed = different_found;
+    assign admin_deleted = same_found;
+
+    assign admin_rejected =
+        ~exists & memory_full;
+
+    // El resultado queda registrado mientras se
+    // ejecuta el estado ADMIN_WRITE.
+    assign result_success_next =
+        (result_success & ~state[AW]) |
+        ((admin_new | admin_changed) & state[AW]);
+
+    assign result_full_next =
+        (result_full & ~state[AW]) |
+        (admin_rejected & state[AW]);
+
+    // ==================================================
+    // Ecuaciones de proximo estado
+    // ==================================================
+
+    // IDLE: reset o retorno desde operaciones terminadas.
+    assign next_state[I] =
+        reset |
+        (~reset &
+          (
+            (state[I] & ~test_allowed & ~capture_request) |
+            (state[P] & movement_done) |
+            (state[C] & movement_done) |
+            state[RO] |
+            state[AD] |
+            state[VE] |
+            (state[VO] & ~movement_ok) |
+            (state[TR] & ~test_running)
+          )
+        );
+
+    // Captura secuencial: OpCode -> A -> B.
+    assign next_state[O] =
+        ~reset &
+        (
+            start_capture |
+            (state[O] & ~cap_op_ok)
+        );
+
+    assign next_state[A] =
+        ~reset &
+        (
+            (state[O] & cap_op_ok) |
+            (state[A] & ~cap_digit_ok)
+        );
+
+    assign next_state[B] =
+        ~reset &
+        (
+            (state[A] & cap_digit_ok) |
+            (state[B] & ~cap_digit_ok)
+        );
+
+    // Esperar que los tres registros se actualicen.
+    assign next_state[E] =
+        ~reset &
+        (
+            (state[B] & cap_digit_ok) |
+            (state[E] & ~password_ready)
+        );
+
+    // Administracion.
+    assign next_state[AW] =
+        ~reset & state[E] &
+        password_ready & admin_selected;
+
+    assign next_state[AR] =
+        ~reset & state[AW];
+
+    assign next_state[RO] =
+        ~reset & state[AR] & result_success;
+
+    assign next_state[AD] =
+        ~reset & state[AR] & ~result_success;
+
+    // Validacion.
+    assign next_state[V] =
+        ~reset & state[E] &
+        password_ready & ~admin_selected;
+
+    assign next_state[VO] =
+        ~reset & state[V] &
+        known & ~(ABRIR & CERRAR);
+
+    assign next_state[VE] =
+        ~reset & state[V] &
+        (~known | (ABRIR & CERRAR));
+
+    // Movimiento normal.
+    assign next_state[P] =
+        ~reset &
+        (
+            (state[VO] & open_ok) |
+            (state[P] & ~movement_done)
+        );
+
+    assign next_state[C] =
+        ~reset &
+        (
+            (state[VO] & close_ok) |
+            (state[C] & ~movement_done)
+        );
+
+    // Prueba: lanzamiento, espera y ejecucion.
+    assign next_state[TS] =
+        ~reset & state[I] & test_allowed;
+
+    assign next_state[TW] =
+        ~reset &
+        (
+            state[TS] |
+            (state[TW] & ~test_running)
+        );
+
+    assign next_state[TR] =
+        ~reset &
+        (
+            (state[TW] & test_running) |
+            (state[TR] & test_running)
+        );
+
+    // ==================================================
+    // Registro de la posicion de la puerta
+    // ==================================================
+
+    wire set_open;
+    wire clear_open;
+    wire door_open_next;
+
+    assign set_open = state[P] & movement_done;
+
+    assign clear_open =
+        (state[C] & movement_done) |
+        (state[TR] & ~test_running);
+
+    assign door_open_next =
+        ~reset &
+        (set_open | (door_open & ~clear_open));
+
+    // ==================================================
+    // Registros secuenciales
+    // ==================================================
+
+    always_ff @(posedge clk) begin
+        state <= next_state;
+
+        admin_selected <=
+            ~reset & admin_selected_next;
+
+        selected_type_reg <=
+            ~reset & selected_type_next;
+
+        result_success <=
+            ~reset & result_success_next;
+
+        result_full <=
+            ~reset & result_full_next;
+
+        door_open <= door_open_next;
+    end
+
+    // ==================================================
+    // Salidas: captura
+    // ==================================================
+
+    // Durante IDLE se limpia la secuencia anterior.
+    assign capture_reset = state[I] | reset;
+
+    assign capture_opcode = state[O] & cap_op_ok;
+    assign capture_a      = state[A] & cap_digit_ok;
+    assign capture_b      = state[B] & cap_digit_ok;
+	 assign capture_active =
+		state[O] | state[A] | state[B];
+
+    // ==================================================
+    // Salidas: administracion
+    // ==================================================
+
+    assign register_pulse = state[AW] & ~reset;
+
+    // ==================================================
+    // Salidas: motor y metodo de prueba
+    // ==================================================
+
+    assign motor_open = state[P] & ~reset;
+    assign motor_close = state[C] & ~reset;
+
+    assign movement_active = motor_open | motor_close;
+
+    assign test_start_pulse = state[TS] & ~reset;
+
+    // ==================================================
+    // Salidas: solicitudes al buzzer
+    // ==================================================
+
+    assign sound_test =
+        ~reset &
+        (
+            (state[TW] & test_running) |
+            state[TR]
+        );
+
+    assign sound_opening = motor_open;
+    assign sound_closing = motor_close;
+
+    assign sound_registered = state[RO] & ~reset;
+    assign sound_valid = state[VO] & ~reset;
+
+    // Una contrasena invalida o memoria llena.
+    assign sound_invalid =
+        ~reset &
+        (
+            state[VE] |
+            (state[AD] & result_full)
+        );
+
+endmodule
