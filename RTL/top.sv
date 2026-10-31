@@ -156,9 +156,9 @@ module top #(
     assign LED_ABRIR  = ABRIR;
     assign LED_CERRAR = CERRAR;
 
-    assign LED_Y1 = e1;
-    assign LED_Y2 = e2;
+    assign LED_Y1 = clk_slow;
+    assign LED_Y2 = ~BTN_TEST_N;
     assign LED_Y3 = e3;
     assign LED_Y4 = e4;
-    assign LED_Y5 = e5;
+    assign LED_Y5 = SW3;
 endmodule

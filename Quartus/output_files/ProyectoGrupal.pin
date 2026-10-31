@@ -74,7 +74,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 CHIP  "ProyectoGrupal"  ASSIGNED TO AN: 5CSEBA6U23I7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -177,11 +177,11 @@ VCC_AUX                      : AD15      : power  :                   : 2.5V    
 VCCPD3B4A                    : AD16      : power  :                   : 3.3V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD17      :        :                   :         : 4A        :                
 VCCPD3B4A                    : AD18      : power  :                   : 3.3V    : 3B, 4A    :                
-PWM_OUT                      : AD19      : output : 3.3-V LVTTL       :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD19      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD20      :        :                   :         : 4A        :                
 VCCPD3B4A                    : AD21      : power  :                   : 3.3V    : 3B, 4A    :                
 GND                          : AD22      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD23      :        :                   :         : 4A        :                
+S1                           : AD23      : input  : 3.3-V LVTTL       :         : 4A        : N              
 VCCPGM                       : AD24      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 GND                          : AD25      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD26      :        :                   :         : 5A        :                
@@ -234,9 +234,9 @@ VREFB4AN0                    : AF16      : power  :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF17      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4A        :                
 VCCIO4A                      : AF19      : power  :                   : 3.3V    : 4A        :                
-S3                           : AF20      : input  : 3.3-V LVTTL       :         : 4A        : N              
-BTN_TEST_N                   : AF21      : input  : 2.5 V             :         : 4A        : N              
-S2                           : AF22      : input  : 3.3-V LVTTL       :         : 4A        : N              
+PWM_OUT                      : AF20      : output : 3.3-V LVTTL       :         : 4A        : N              
+S4                           : AF21      : input  : 3.3-V LVTTL       :         : 4A        : N              
+S3                           : AF22      : input  : 3.3-V LVTTL       :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF23      :        :                   :         : 4A        :                
 GND                          : AF24      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF25      :        :                   :         : 4A        :                
@@ -261,9 +261,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG15      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG16      :        :                   :         : 4A        :                
 GND                          : AG17      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :         : 4A        :                
-S4                           : AG19      : input  : 3.3-V LVTTL       :         : 4A        : N              
-S5                           : AG20      : input  : 3.3-V LVTTL       :         : 4A        : N              
-S1                           : AG21      : input  : 3.3-V LVTTL       :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG19      :        :                   :         : 4A        :                
+TEST_RUNNING                 : AG20      : output : 3.3-V LVTTL       :         : 4A        : N              
+S2                           : AG21      : input  : 3.3-V LVTTL       :         : 4A        : N              
 VCCIO4A                      : AG22      : power  :                   : 3.3V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG24      :        :                   :         : 4A        :                
@@ -285,12 +285,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH12      :        :                   :      
 SEG_E                        : AH13      : output : 3.3-V LVTTL       :         : 4A        : Y              
 SEG_G                        : AH14      : output : 3.3-V LVTTL       :         : 4A        : Y              
 VCCIO4A                      : AH15      : power  :                   : 3.3V    : 4A        :                
-TEST_RUNNING                 : AH16      : output : 3.3-V LVTTL       :         : 4A        : Y              
+BTN_TEST_N                   : AH16      : input  : 3.3-V LVTTL       :         : 4A        : Y              
 RST_N                        : AH17      : input  : 3.3-V LVTTL       :         : 4A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH19      :        :                   :         : 4A        :                
 GND                          : AH20      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH21      :        :                   :         : 4A        :                
+S5                           : AH21      : input  : 3.3-V LVTTL       :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 4A        :                

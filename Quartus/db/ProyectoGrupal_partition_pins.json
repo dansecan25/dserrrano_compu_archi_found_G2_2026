@@ -80,6 +80,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "BTN_TEST_N",
+					"strict" : false
+				},
+				{
 					"name" : "RST_N",
 					"strict" : false
 				},
@@ -105,10 +109,6 @@
 				},
 				{
 					"name" : "CLK_50",
-					"strict" : false
-				},
-				{
-					"name" : "BTN_TEST_N",
 					"strict" : false
 				}
 			]

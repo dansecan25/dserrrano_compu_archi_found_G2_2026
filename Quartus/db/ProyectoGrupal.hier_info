@@ -10,23 +10,23 @@ SW1 => SW1.IN1
 SW2 => SW2.IN1
 SW3 => SW3.IN1
 BTN_TEST_N => BTN_TEST_N.IN1
-PWM_OUT <= pwm:u_pwm.PWM_OUT
-TEST_RUNNING <= pwm_test_ctrl:u_test.RUNNING
-SEG_A <= display_7seg:u_display.a
-SEG_B <= display_7seg:u_display.b
-SEG_C <= display_7seg:u_display.c
-SEG_D <= display_7seg:u_display.d
-SEG_E <= display_7seg:u_display.e
-SEG_F <= display_7seg:u_display.f
-SEG_G <= display_7seg:u_display.g
-LED_CLK <= clk_slow.DB_MAX_OUTPUT_PORT_TYPE
-LED_ABRIR <= flow_mux:u_mux.OUT
-LED_CERRAR <= flow_mux:u_mux.OUT
-LED_Y1 <= e1.DB_MAX_OUTPUT_PORT_TYPE
-LED_Y2 <= e2.DB_MAX_OUTPUT_PORT_TYPE
-LED_Y3 <= e3.DB_MAX_OUTPUT_PORT_TYPE
-LED_Y4 <= e4.DB_MAX_OUTPUT_PORT_TYPE
-LED_Y5 <= e5.DB_MAX_OUTPUT_PORT_TYPE
+PWM_OUT << pwm:u_pwm.PWM_OUT
+TEST_RUNNING << pwm_test_ctrl:u_test.RUNNING
+SEG_A << display_7seg:u_display.a
+SEG_B << display_7seg:u_display.b
+SEG_C << display_7seg:u_display.c
+SEG_D << display_7seg:u_display.d
+SEG_E << display_7seg:u_display.e
+SEG_F << display_7seg:u_display.f
+SEG_G << display_7seg:u_display.g
+LED_CLK << clk_slow.DB_MAX_OUTPUT_PORT_TYPE
+LED_ABRIR << flow_mux:u_mux.OUT
+LED_CERRAR << flow_mux:u_mux.OUT
+LED_Y1 << clk_slow.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y2 << BTN_TEST_N.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y3 << e3.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y4 << e4.DB_MAX_OUTPUT_PORT_TYPE
+LED_Y5 << SW3.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|clock_divider:u_div

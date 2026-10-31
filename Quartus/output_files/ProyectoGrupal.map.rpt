@@ -1,6 +1,6 @@
 Analysis & Synthesis report for ProyectoGrupal
-Fri Oct 23 17:19:45 2026
-Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Fri Oct 30 19:44:23 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
 ---------------------
@@ -81,6 +81,7 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  73. Post-Synthesis Netlist Statistics for Top Partition
  74. Elapsed Time Per Partition
  75. Analysis & Synthesis Messages
+ 76. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -107,8 +108,8 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 23 17:19:45 2026           ;
-; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Analysis & Synthesis Status     ; Successful - Fri Oct 30 19:44:23 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; ProyectoGrupal                                  ;
 ; Top-level Entity Name           ; top                                             ;
 ; Family                          ; Cyclone V                                       ;
@@ -219,8 +220,8 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -230,31 +231,31 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
-; ../RTL/clock_divider.sv          ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv    ;         ;
-; ../RTL/pwm_test_ctrl.sv          ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv    ;         ;
-; ../RTL/mode_decoder.sv           ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv     ;         ;
-; ../RTL/flow_mux.sv               ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv         ;         ;
-; ../RTL/pwm.sv                    ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv              ;         ;
-; ../RTL/counter_3.sv              ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv        ;         ;
-; ../RTL/comparator_lt_3.sv        ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv  ;         ;
-; ../RTL/display_7seg.sv           ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv     ;         ;
-; ../RTL/y_latch_bank.sv           ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv     ;         ;
-; ../RTL/password_decoder.sv       ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv ;         ;
-; ../RTL/finger_decoder.sv         ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv   ;         ;
-; ../RTL/storage_reg_8.sv          ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv    ;         ;
-; ../RTL/sr_latch.sv               ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv         ;         ;
-; ../RTL/sn74hc595.sv              ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv        ;         ;
-; ../RTL/shift_reg_8.sv            ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv      ;         ;
-; ../RTL/output_buffer_8.sv        ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv  ;         ;
-; ../RTL/d_latch.sv                ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv          ;         ;
-; ../RTL/d_flipflop.sv             ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv       ;         ;
-; ../RTL/top.sv                    ; yes             ; User SystemVerilog HDL File  ; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv              ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                             ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; ../RTL/clock_divider.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv    ;         ;
+; ../RTL/pwm_test_ctrl.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv    ;         ;
+; ../RTL/mode_decoder.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv     ;         ;
+; ../RTL/flow_mux.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv         ;         ;
+; ../RTL/pwm.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv              ;         ;
+; ../RTL/counter_3.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv        ;         ;
+; ../RTL/comparator_lt_3.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv  ;         ;
+; ../RTL/display_7seg.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv     ;         ;
+; ../RTL/y_latch_bank.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv     ;         ;
+; ../RTL/password_decoder.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv ;         ;
+; ../RTL/finger_decoder.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv   ;         ;
+; ../RTL/storage_reg_8.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv    ;         ;
+; ../RTL/sr_latch.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv         ;         ;
+; ../RTL/sn74hc595.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv        ;         ;
+; ../RTL/shift_reg_8.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv      ;         ;
+; ../RTL/output_buffer_8.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv  ;         ;
+; ../RTL/d_latch.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv          ;         ;
+; ../RTL/d_flipflop.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv       ;         ;
+; ../RTL/top.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv              ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -1308,12 +1309,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 169                         ;
+; arriav_lcell_comb     ; 167                         ;
 ;     extend            ; 5                           ;
 ;         7 data inputs ; 5                           ;
-;     normal            ; 164                         ;
+;     normal            ; 162                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
+;         1 data inputs ; 7                           ;
 ;         3 data inputs ; 12                          ;
 ;         4 data inputs ; 81                          ;
 ;         5 data inputs ; 32                          ;
@@ -1339,158 +1340,159 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Oct 23 17:19:38 2026
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Fri Oct 30 19:44:17 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoGrupal -c ProyectoGrupal
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv
-    Info (12023): Found entity 1: clock_divider File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv
-    Info (12023): Found entity 1: pwm_test_ctrl File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv Line: 12
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv
-    Info (12023): Found entity 1: mode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv
-    Info (12023): Found entity 1: flow_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv
-    Info (12023): Found entity 1: alu_add File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/result_mux.sv
-    Info (12023): Found entity 1: result_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/result_mux.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv
-    Info (12023): Found entity 1: pwm File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 7
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/opcode_decoder.sv
-    Info (12023): Found entity 1: opcode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/opcode_decoder.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/normalizer.sv
-    Info (12023): Found entity 1: normalizer File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/normalizer.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/full_adder.sv
-    Info (12023): Found entity 1: full_adder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/full_adder.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv
-    Info (12023): Found entity 1: counter_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv
-    Info (12023): Found entity 1: comparator_lt_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_sub.sv
-    Info (12023): Found entity 1: alu_sub File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_sub.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_ror.sv
-    Info (12023): Found entity 1: alu_ror File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_ror.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_rol.sv
-    Info (12023): Found entity 1: alu_rol File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_rol.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_mul.sv
-    Info (12023): Found entity 1: alu_mul File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu_mul.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv
-    Info (12023): Found entity 1: alu File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/adder_6.sv
-    Info (12023): Found entity 1: adder_6 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/adder_6.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv
-    Info (12023): Found entity 1: test_clock File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv
-    Info (12023): Found entity 1: display_7seg File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv
-    Info (12023): Found entity 1: tb_y_latch_bank File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv
-    Info (12023): Found entity 1: tb_top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv Line: 12
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv
-    Info (12023): Found entity 1: tb_password_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_decoder.sv
-    Info (12023): Found entity 1: tb_finger_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_decoder.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv
-    Info (12023): Found entity 1: y_latch_bank File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv
-    Info (12023): Found entity 1: password_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv
-    Info (12023): Found entity 1: finger_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 7
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_storage_reg_8.sv
-    Info (12023): Found entity 1: tb_storage_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_storage_reg_8.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sr_latch.sv
-    Info (12023): Found entity 1: tb_sr_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sr_latch.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sn74hc595.sv
-    Info (12023): Found entity 1: tb_sn74hc595 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_sn74hc595.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_shift_reg_8.sv
-    Info (12023): Found entity 1: tb_shift_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_shift_reg_8.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_output_buffer_8.sv
-    Info (12023): Found entity 1: tb_output_buffer_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_output_buffer_8.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_latch.sv
-    Info (12023): Found entity 1: tb_d_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_latch.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_flipflop.sv
-    Info (12023): Found entity 1: tb_d_flipflop File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_d_flipflop.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv
-    Info (12023): Found entity 1: storage_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv
-    Info (12023): Found entity 1: sr_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv Line: 8
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv
-    Info (12023): Found entity 1: sn74hc595 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv
-    Info (12023): Found entity 1: shift_reg_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv
-    Info (12023): Found entity 1: output_buffer_8 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv
-    Info (12023): Found entity 1: d_latch File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 7
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv
-    Info (12023): Found entity 1: d_flipflop File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 8
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/clock_divider.sv
+    Info (12023): Found entity 1: clock_divider File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/pwm_test_ctrl.sv
+    Info (12023): Found entity 1: pwm_test_ctrl File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/mode_decoder.sv
+    Info (12023): Found entity 1: mode_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/flow_mux.sv
+    Info (12023): Found entity 1: flow_mux File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/alu_add.sv
+    Info (12023): Found entity 1: alu_add File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/alu_add.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/result_mux.sv
+    Info (12023): Found entity 1: result_mux File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/result_mux.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/pwm.sv
+    Info (12023): Found entity 1: pwm File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/opcode_decoder.sv
+    Info (12023): Found entity 1: opcode_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/opcode_decoder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/normalizer.sv
+    Info (12023): Found entity 1: normalizer File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/normalizer.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/full_adder.sv
+    Info (12023): Found entity 1: full_adder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/full_adder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/counter_3.sv
+    Info (12023): Found entity 1: counter_3 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/comparator_lt_3.sv
+    Info (12023): Found entity 1: comparator_lt_3 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/alu_sub.sv
+    Info (12023): Found entity 1: alu_sub File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/alu_sub.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/alu_ror.sv
+    Info (12023): Found entity 1: alu_ror File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/alu_ror.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/alu_rol.sv
+    Info (12023): Found entity 1: alu_rol File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/alu_rol.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/alu_mul.sv
+    Info (12023): Found entity 1: alu_mul File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/alu_mul.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/alu.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/adder_6.sv
+    Info (12023): Found entity 1: adder_6 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/adder_6.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/test_clock.sv
+    Info (12023): Found entity 1: test_clock File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/test_clock.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/display_7seg.sv
+    Info (12023): Found entity 1: display_7seg File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_y_latch_bank.sv
+    Info (12023): Found entity 1: tb_y_latch_bank File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_y_latch_bank.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_top.sv
+    Info (12023): Found entity 1: tb_top File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_top.sv Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_password_decoder.sv
+    Info (12023): Found entity 1: tb_password_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_password_decoder.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_finger_decoder.sv
+    Info (12023): Found entity 1: tb_finger_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_finger_decoder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/y_latch_bank.sv
+    Info (12023): Found entity 1: y_latch_bank File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/password_decoder.sv
+    Info (12023): Found entity 1: password_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/finger_decoder.sv
+    Info (12023): Found entity 1: finger_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_storage_reg_8.sv
+    Info (12023): Found entity 1: tb_storage_reg_8 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_storage_reg_8.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_sr_latch.sv
+    Info (12023): Found entity 1: tb_sr_latch File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_sr_latch.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_sn74hc595.sv
+    Info (12023): Found entity 1: tb_sn74hc595 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_sn74hc595.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_shift_reg_8.sv
+    Info (12023): Found entity 1: tb_shift_reg_8 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_shift_reg_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_output_buffer_8.sv
+    Info (12023): Found entity 1: tb_output_buffer_8 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_output_buffer_8.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_d_latch.sv
+    Info (12023): Found entity 1: tb_d_latch File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_d_latch.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_d_flipflop.sv
+    Info (12023): Found entity 1: tb_d_flipflop File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_d_flipflop.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/storage_reg_8.sv
+    Info (12023): Found entity 1: storage_reg_8 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/sr_latch.sv
+    Info (12023): Found entity 1: sr_latch File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/sn74hc595.sv
+    Info (12023): Found entity 1: sn74hc595 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/shift_reg_8.sv
+    Info (12023): Found entity 1: shift_reg_8 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/output_buffer_8.sv
+    Info (12023): Found entity 1: output_buffer_8 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/d_latch.sv
+    Info (12023): Found entity 1: d_latch File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/d_flipflop.sv
+    Info (12023): Found entity 1: d_flipflop File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file de0_nano_soc_baseline.v
-    Info (12023): Found entity 1: de0_nano_soc_baseline File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/de0_nano_soc_baseline.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv
-    Info (12023): Found entity 1: top File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 20
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_result_mux.sv
-    Info (12023): Found entity 1: tb_result_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_result_mux.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm.sv
-    Info (12023): Found entity 1: tb_pwm File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_opcode_decoder.sv
-    Info (12023): Found entity 1: tb_opcode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_opcode_decoder.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_normalizer.sv
-    Info (12023): Found entity 1: tb_normalizer File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_normalizer.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_full_adder.sv
-    Info (12023): Found entity 1: tb_full_adder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_full_adder.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_counter_3.sv
-    Info (12023): Found entity 1: tb_counter_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_counter_3.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_comparator_lt_3.sv
-    Info (12023): Found entity 1: tb_comparator_lt_3 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_comparator_lt_3.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_sub.sv
-    Info (12023): Found entity 1: tb_alu_sub File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_sub.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_ror.sv
-    Info (12023): Found entity 1: tb_alu_ror File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_ror.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_rol.sv
-    Info (12023): Found entity 1: tb_alu_rol File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_rol.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_mul.sv
-    Info (12023): Found entity 1: tb_alu_mul File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_mul.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_add.sv
-    Info (12023): Found entity 1: tb_alu_add File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_add.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu.sv
-    Info (12023): Found entity 1: tb_alu File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_alu.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv
-    Info (12023): Found entity 1: tb_adder_6 File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm_test_ctrl.sv
-    Info (12023): Found entity 1: tb_pwm_test_ctrl File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm_test_ctrl.sv Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_mode_decoder.sv
-    Info (12023): Found entity 1: tb_mode_decoder File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_mode_decoder.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_flow_mux.sv
-    Info (12023): Found entity 1: tb_flow_mux File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_flow_mux.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_display_7seg.sv
-    Info (12023): Found entity 1: tb_display_7seg File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/TB/tb_display_7seg.sv Line: 4
+    Info (12023): Found entity 1: de0_nano_soc_baseline File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/de0_nano_soc_baseline.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/rtl/top.sv
+    Info (12023): Found entity 1: top File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_result_mux.sv
+    Info (12023): Found entity 1: tb_result_mux File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_result_mux.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_pwm.sv
+    Info (12023): Found entity 1: tb_pwm File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_opcode_decoder.sv
+    Info (12023): Found entity 1: tb_opcode_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_opcode_decoder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_normalizer.sv
+    Info (12023): Found entity 1: tb_normalizer File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_normalizer.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_full_adder.sv
+    Info (12023): Found entity 1: tb_full_adder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_full_adder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_counter_3.sv
+    Info (12023): Found entity 1: tb_counter_3 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_counter_3.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_comparator_lt_3.sv
+    Info (12023): Found entity 1: tb_comparator_lt_3 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_comparator_lt_3.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_alu_sub.sv
+    Info (12023): Found entity 1: tb_alu_sub File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_sub.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_alu_ror.sv
+    Info (12023): Found entity 1: tb_alu_ror File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_ror.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_alu_rol.sv
+    Info (12023): Found entity 1: tb_alu_rol File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_rol.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_alu_mul.sv
+    Info (12023): Found entity 1: tb_alu_mul File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_mul.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_alu_add.sv
+    Info (12023): Found entity 1: tb_alu_add File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_alu_add.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_alu.sv
+    Info (12023): Found entity 1: tb_alu File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_alu.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_adder_6.sv
+    Info (12023): Found entity 1: tb_adder_6 File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_adder_6.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_pwm_test_ctrl.sv
+    Info (12023): Found entity 1: tb_pwm_test_ctrl File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_pwm_test_ctrl.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_mode_decoder.sv
+    Info (12023): Found entity 1: tb_mode_decoder File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_mode_decoder.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_flow_mux.sv
+    Info (12023): Found entity 1: tb_flow_mux File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_flow_mux.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/spark/documents/1.projects/1. funda/dserrrano_compu_archi_found_g2_2026/tb/tb_display_7seg.sv
+    Info (12023): Found entity 1: tb_display_7seg File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/TB/tb_display_7seg.sv Line: 4
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:u_div" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 60
-Warning (10230): Verilog HDL assignment warning at clock_divider.sv(18): truncated value with size 32 to match size of target (27) File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 18
-Info (12128): Elaborating entity "d_flipflop" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 83
-Info (12128): Elaborating entity "d_latch" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 18
-Info (12128): Elaborating entity "sr_latch" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master|sr_latch:u_sr" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 18
-Info (12128): Elaborating entity "finger_decoder" for hierarchy "finger_decoder:u_fingers" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 75
-Warning (10036): Verilog HDL or VHDL warning at finger_decoder.sv(11): object "nS1" assigned a value but never read File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 11
-Info (12128): Elaborating entity "y_latch_bank" for hierarchy "y_latch_bank:u_ylatch" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 82
-Info (12128): Elaborating entity "password_decoder" for hierarchy "password_decoder:u_pass" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 88
-Warning (10036): Verilog HDL or VHDL warning at password_decoder.sv(12): object "nE3" assigned a value but never read File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 12
-Info (12128): Elaborating entity "sn74hc595" for hierarchy "sn74hc595:u_sr" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 97
-Info (12128): Elaborating entity "shift_reg_8" for hierarchy "sn74hc595:u_sr|shift_reg_8:u_shift" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 18
-Info (12128): Elaborating entity "storage_reg_8" for hierarchy "sn74hc595:u_sr|storage_reg_8:u_store" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 19
-Info (12128): Elaborating entity "output_buffer_8" for hierarchy "sn74hc595:u_sr|output_buffer_8:u_out" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 20
-Info (12128): Elaborating entity "mode_decoder" for hierarchy "mode_decoder:u_mode" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 113
-Info (12128): Elaborating entity "pwm_test_ctrl" for hierarchy "pwm_test_ctrl:u_test" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 119
-Info (12128): Elaborating entity "flow_mux" for hierarchy "flow_mux:u_mux" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 129
-Info (12128): Elaborating entity "pwm" for hierarchy "pwm:u_pwm" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 139
-Info (12128): Elaborating entity "counter_3" for hierarchy "pwm:u_pwm|counter_3:u_cnt" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 17
-Info (12128): Elaborating entity "comparator_lt_3" for hierarchy "pwm:u_pwm|comparator_lt_3:u_cmp" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 18
-Info (12128): Elaborating entity "display_7seg" for hierarchy "display_7seg:u_display" File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 151
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:u_div" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 60
+Warning (10230): Verilog HDL assignment warning at clock_divider.sv(18): truncated value with size 32 to match size of target (27) File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 18
+Info (12128): Elaborating entity "d_flipflop" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv Line: 83
+Info (12128): Elaborating entity "d_latch" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv Line: 18
+Info (12128): Elaborating entity "sr_latch" for hierarchy "clock_divider:u_div|d_flipflop:u_cnt0|d_latch:u_master|sr_latch:u_sr" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv Line: 18
+Info (12128): Elaborating entity "finger_decoder" for hierarchy "finger_decoder:u_fingers" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 75
+Warning (10036): Verilog HDL or VHDL warning at finger_decoder.sv(11): object "nS1" assigned a value but never read File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv Line: 11
+Info (12128): Elaborating entity "y_latch_bank" for hierarchy "y_latch_bank:u_ylatch" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 82
+Info (12128): Elaborating entity "password_decoder" for hierarchy "password_decoder:u_pass" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 88
+Warning (10036): Verilog HDL or VHDL warning at password_decoder.sv(12): object "nE3" assigned a value but never read File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv Line: 12
+Info (12128): Elaborating entity "sn74hc595" for hierarchy "sn74hc595:u_sr" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 97
+Info (12128): Elaborating entity "shift_reg_8" for hierarchy "sn74hc595:u_sr|shift_reg_8:u_shift" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 18
+Info (12128): Elaborating entity "storage_reg_8" for hierarchy "sn74hc595:u_sr|storage_reg_8:u_store" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 19
+Info (12128): Elaborating entity "output_buffer_8" for hierarchy "sn74hc595:u_sr|output_buffer_8:u_out" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv Line: 20
+Info (12128): Elaborating entity "mode_decoder" for hierarchy "mode_decoder:u_mode" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 113
+Info (12128): Elaborating entity "pwm_test_ctrl" for hierarchy "pwm_test_ctrl:u_test" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 119
+Info (12128): Elaborating entity "flow_mux" for hierarchy "flow_mux:u_mux" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 129
+Info (12128): Elaborating entity "pwm" for hierarchy "pwm:u_pwm" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 139
+Info (12128): Elaborating entity "counter_3" for hierarchy "pwm:u_pwm|counter_3:u_cnt" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 17
+Info (12128): Elaborating entity "comparator_lt_3" for hierarchy "pwm:u_pwm|comparator_lt_3:u_cmp" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv Line: 18
+Info (12128): Elaborating entity "display_7seg" for hierarchy "display_7seg:u_display" File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 151
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SEG_C" is stuck at GND File: /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 38
+    Warning (13410): Pin "SEG_C" is stuck at GND File: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/RTL/top.sv Line: 38
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/output_files/ProyectoGrupal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 187 device resources after synthesis - the final resource count might be different
@@ -1498,9 +1500,15 @@ Info (21057): Implemented 187 device resources after synthesis - the final resou
     Info (21059): Implemented 17 output pins
     Info (21061): Implemented 159 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 475 megabytes
-    Info: Processing ended: Fri Oct 23 17:19:45 2026
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Fri Oct 30 19:44:23 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/output_files/ProyectoGrupal.map.smsg.
 
 

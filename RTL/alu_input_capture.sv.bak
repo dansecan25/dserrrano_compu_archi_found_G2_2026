@@ -1,0 +1,137 @@
+
+/*
+ * Modulo: alu_input_capture
+ *
+ * Descripcion:
+ *   Almacena secuencialmente tres datos de 3 bits:
+ *     1. OpCode de la ALU.
+ *     2. Operando A.
+ *     3. Operando B.
+ *
+ *   Las habilitaciones de captura son generadas
+ *   externamente por la maquina de estados.
+ *
+ *   Solo acepta:
+ *     - OpCodes validos (0 a 4).
+ *     - Operandos validos (0 a 5).
+ *
+ *   Genera la contrasena de 9 bits mediante
+ *   la concatenacion de los tres registros.
+ *
+ * Implementacion:
+ *   - Ecuaciones booleanas de proximo estado.
+ *   - Flip-flops mediante always_ff.
+ *   - Reset sincrono activo en alto.
+ */
+
+module alu_input_capture (
+    input  logic       clk,
+    input  logic       reset,
+
+    input  logic [2:0] digit_value,
+    input  logic       digit_valid,
+    input  logic       opcode_valid,
+
+    input  logic       capture_opcode,
+    input  logic       capture_a,
+    input  logic       capture_b,
+
+    output logic [2:0] opcode,
+    output logic [2:0] operand_a,
+    output logic [2:0] operand_b,
+
+    output logic [8:0] password_out,
+    output logic       password_ready
+);
+
+    // Proximo estado de los tres registros.
+    wire [2:0] opcode_next;
+    wire [2:0] operand_a_next;
+    wire [2:0] operand_b_next;
+
+    // Habilitaciones efectivas de escritura.
+    wire en_opcode;
+    wire en_a;
+    wire en_b;
+
+    // Indican cuales datos ya fueron capturados.
+    logic opcode_ready;
+    logic a_ready;
+    logic b_ready;
+
+    wire opcode_ready_next;
+    wire a_ready_next;
+    wire b_ready_next;
+
+    // -------------------------
+    // Validacion de habilitaciones
+    // -------------------------
+
+    // La operacion debe tener un OpCode reconocido.
+    assign en_opcode = capture_opcode & opcode_valid;
+
+    // Los operandos admiten los valores de 0 a 5.
+    assign en_a = capture_a & digit_valid;
+    assign en_b = capture_b & digit_valid;
+
+    // -------------------------
+    // Ecuaciones de proximo estado
+    // -------------------------
+
+    assign opcode_next =
+        {3{~reset}} &
+        ((opcode & {3{~en_opcode}}) |
+         (digit_value & {3{en_opcode}}));
+
+    assign operand_a_next =
+        {3{~reset}} &
+        ((operand_a & {3{~en_a}}) |
+         (digit_value & {3{en_a}}));
+
+    assign operand_b_next =
+        {3{~reset}} &
+        ((operand_b & {3{~en_b}}) |
+         (digit_value & {3{en_b}}));
+
+    // -------------------------
+    // Indicadores de datos capturados
+    // -------------------------
+
+    // Una vez capturado cada dato, su indicador
+    // permanece en 1 hasta el siguiente reset.
+
+    assign opcode_ready_next =
+        ~reset & (opcode_ready | en_opcode);
+
+    assign a_ready_next =
+        ~reset & (a_ready | en_a);
+
+    assign b_ready_next =
+        ~reset & (b_ready | en_b);
+
+    // -------------------------
+    // Registros secuenciales
+    // -------------------------
+
+    always_ff @(posedge clk) begin
+        opcode       <= opcode_next;
+        operand_a    <= operand_a_next;
+        operand_b    <= operand_b_next;
+
+        opcode_ready <= opcode_ready_next;
+        a_ready      <= a_ready_next;
+        b_ready      <= b_ready_next;
+    end
+
+    // -------------------------
+    // Salidas
+    // -------------------------
+
+    // Los tres datos forman una contrasena de 9 bits.
+    assign password_out = {opcode, operand_a, operand_b};
+
+    // Indica que los tres datos ya fueron capturados.
+    assign password_ready =
+        opcode_ready & a_ready & b_ready;
+
+endmodule

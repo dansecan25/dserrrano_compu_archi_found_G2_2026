@@ -1,6 +1,6 @@
 Assembler report for ProyectoGrupal
-Fri Oct 23 17:20:17 2026
-Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Fri Oct 30 19:45:01 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: ProyectoGrupal.sof
+  5. Assembler Device Options: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/output_files/ProyectoGrupal.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Oct 23 17:20:17 2026 ;
+; Assembler Status      ; Successful - Fri Oct 30 19:45:01 2026 ;
 ; Revision Name         ; ProyectoGrupal                        ;
 ; Top-level Entity Name ; top                                   ;
 ; Family                ; Cyclone V                             ;
@@ -53,23 +53,23 @@ on the Quartus Prime software download page.
 +--------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                 ;
-+-----------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                 ;
-+-----------------------------------------------------------------------------------------------------------+
-; /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/output_files/ProyectoGrupal.sof ;
-+-----------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                ;
++--------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                ;
++--------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/output_files/ProyectoGrupal.sof ;
++--------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------+
-; Assembler Device Options: ProyectoGrupal.sof ;
-+----------------+-----------------------------+
-; Option         ; Setting                     ;
-+----------------+-----------------------------+
-; JTAG usercode  ; 0x00B2E737                  ;
-; Checksum       ; 0x00B2E737                  ;
-+----------------+-----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026/Quartus/output_files/ProyectoGrupal.sof ;
++----------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                           ;
++----------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00B3122B                                                                                                                        ;
+; Checksum       ; 0x00B3122B                                                                                                                        ;
++----------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -77,14 +77,14 @@ on the Quartus Prime software download page.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Oct 23 17:20:13 2026
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Fri Oct 30 19:44:57 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ProyectoGrupal -c ProyectoGrupal
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 514 megabytes
-    Info: Processing ended: Fri Oct 23 17:20:17 2026
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Fri Oct 30 19:45:01 2026
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

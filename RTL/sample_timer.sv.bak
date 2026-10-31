@@ -1,0 +1,51 @@
+
+/*
+ * Modulo: sample_timer
+ *
+ * Genera un pulso periodico durante captura.
+ *
+ * sample_pulse dura un ciclo de CLK.
+ *
+ * Si enable=0, reinicia el contador.
+ * Reset sincrono activo en alto.
+ *
+ * Sin if, case ni operador ternario.
+ */
+
+module sample_timer #(
+    parameter integer SAMPLE_CYCLES = 100_000_000,
+    parameter integer WIDTH = $clog2(SAMPLE_CYCLES + 1)
+)(
+    input  logic clk,
+    input  logic reset,
+    input  logic enable,
+
+    output logic sample_pulse
+);
+
+    logic [WIDTH-1:0] count;
+    wire  [WIDTH-1:0] count_next;
+
+    wire terminal_count;
+    wire count_en;
+
+    // Ultimo ciclo del periodo.
+    assign terminal_count =
+        (count == SAMPLE_CYCLES - 1);
+
+    // Pulso de un ciclo en cada intervalo.
+    assign sample_pulse =
+        enable & ~reset & terminal_count;
+
+    // Mientras enable=1 se cuenta periodicamente.
+    assign count_en =
+        ~reset & enable & ~sample_pulse;
+
+    assign count_next =
+        (count + 1'b1) & {WIDTH{count_en}};
+
+    always_ff @(posedge clk) begin
+        count <= count_next;
+    end
+
+endmodule
