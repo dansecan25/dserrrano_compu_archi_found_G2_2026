@@ -244,7 +244,6 @@ module buzzer_controller #(
     end
 
     // En silencio se fuerza el pin a cero.
-    assign buzzer_out =
-        ~reset & tone_enable & tone_q;
+    assign buzzer_out = ~reset & tone_enable;
 
 endmodule

@@ -66,7 +66,6 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tb_top -section_id eda_simulatio
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_top
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_top -section_id tb_top
 set_location_assignment PIN_AH17 -to RST_N
-set_location_assignment PIN_V12 -to CLK
 set_location_assignment PIN_E8 -to SEG_A
 set_location_assignment PIN_W12 -to SEG_B
 set_location_assignment PIN_D11 -to SEG_C
@@ -75,8 +74,6 @@ set_location_assignment PIN_AH13 -to SEG_E
 set_location_assignment PIN_AF7 -to SEG_F
 set_location_assignment PIN_AH14 -to SEG_G
 set_location_assignment PIN_W15 -to LED_CLK
-set_location_assignment PIN_Y16 -to LED_ABRIR
-set_location_assignment PIN_AA23 -to LED_CERRAR
 set_location_assignment PIN_AE26 -to LED_Y1
 set_location_assignment PIN_AF26 -to LED_Y2
 set_location_assignment PIN_V15 -to LED_Y3
@@ -541,7 +538,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW3
 set_location_assignment PIN_Y24 -to SW1
 set_location_assignment PIN_W24 -to SW2
 set_location_assignment PIN_W20 -to SW3
-set_location_assignment PIN_AH16 -to TEST_RUNNING
 set_location_assignment PIN_V11 -to CLK_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50
 set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu_input_capture.sv
@@ -627,4 +623,18 @@ set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/sample_timer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_system_timers.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/buzzer_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_buzzer_controller.sv
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BTN_TEST_N
+set_location_assignment PIN_AH16 -to BTN_TEST_N
+set_location_assignment PIN_AF4 -to BUZZER_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BUZZER_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MOTOR_CLOSE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MOTOR_OPEN
+set_location_assignment PIN_AH3 -to S0
+set_location_assignment PIN_AD5 -to S1
+set_location_assignment PIN_AG14 -to S2
+set_location_assignment PIN_AE23 -to S3
+set_location_assignment PIN_AE6 -to S4
+set_location_assignment PIN_AD23 -to S5
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -16,7 +16,7 @@ module top #(
     parameter integer SAMPLE_CYCLES     = 100_000_000,
     parameter integer MOVEMENT_CYCLES   = 50_000_000,
     parameter integer PWM_CLK_HALF      = 1563,
-    parameter integer TEST_CLK_HALF     = 3_125_000,
+    parameter integer TEST_CLK_HALF     = 75_000_000,
     parameter integer BUZZ_HALF_TEST    = 6250,
     parameter integer BUZZ_HALF_OPEN    = 7143,
     parameter integer BUZZ_HALF_CLOSE   = 5556,
@@ -240,5 +240,5 @@ module top #(
     assign LED_ABRIR  = MOTOR_OPEN;
     assign LED_CERRAR = MOTOR_CLOSE;
     assign LED_Y0=Y0; assign LED_Y1=Y1; assign LED_Y2=Y2;
-    assign LED_Y3=Y3; assign LED_Y4=Y4; assign LED_Y5=Y5;
+    assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~BTN_TEST_N;
 endmodule
