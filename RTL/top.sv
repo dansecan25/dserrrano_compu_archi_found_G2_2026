@@ -36,8 +36,21 @@ module top #(
     output wire TEST_RUNNING,
 
     output wire SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G,
-    output wire LED_CLK, LED_ABRIR, LED_CERRAR,
-    output wire LED_Y0, LED_Y1, LED_Y2, LED_Y3, LED_Y4, LED_Y5
+
+	output wire LED_CLK,
+	output wire LED_ABRIR,
+	output wire LED_CERRAR,
+
+	output wire LED_Y0, LED_Y1, LED_Y2,
+	output wire LED_Y3, LED_Y4, LED_Y5,
+
+	// Nuevos LEDs de seleccion de modo.
+	output wire LED_NORMAL,
+	output wire LED_ADMIN,
+	output wire LED_TEST,
+
+	// LED adicional para diagnosticar reset.
+	output wire LED_RESET
 );
     wire reset = ~RST_N;
 
@@ -241,4 +254,12 @@ module top #(
     assign LED_CERRAR = MOTOR_CLOSE;
     assign LED_Y0=Y0; assign LED_Y1=Y1; assign LED_Y2=Y2;
     assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~BTN_TEST_N;
+	 
+	// LEDs DE SELECCION DE MODO Y RESET
+
+	assign LED_NORMAL = sel_normal;
+	assign LED_ADMIN  = sel_admin;
+	assign LED_TEST   = sel_test;
+
+	assign LED_RESET  = reset;
 endmodule
