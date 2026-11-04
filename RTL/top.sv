@@ -285,20 +285,21 @@ module top #(
 	//   Solo LED_NORMAL+LED_TEST: el SW2 no esta activo cuando la FSM sale de IDLE.
 	//   Solo LED_ADMIN: el modo admin se capturo correctamente.
 	// ===================================================
-	logic dbg_sc_normal;   // start_capture con admin_mode=0
-	logic dbg_sc_admin;    // start_capture con admin_mode=1
-	logic dbg_invalid;
+	// ===================================================
+	// DEBUG v3: muestra estado de la FSM despues de abrir.
+	//
+	// LED_NORMAL -> door_open (nivel directo, no sticky)
+	// LED_ADMIN  -> fsm_dbg_in_I (FSM en IDLE, nivel directo)
+	// LED_TEST   -> fsm_dbg_start_capture sticky (FSM salio de IDLE hacia O)
+	// LED_RESET  -> reset activo
+	// ===================================================
+	logic dbg_start_seen;
 
 	always_ff @(posedge CLK_50 or negedge RST_N) begin
-		if (!RST_N) begin
-			dbg_sc_normal <= 1'b0;
-			dbg_sc_admin  <= 1'b0;
-			dbg_invalid   <= 1'b0;
-		end else begin
-			dbg_sc_normal <= dbg_sc_normal | (fsm_dbg_start_capture & ~sel_admin);
-			dbg_sc_admin  <= dbg_sc_admin  | (fsm_dbg_start_capture &  sel_admin);
-			dbg_invalid   <= dbg_invalid   | sound_invalid;
-		end
+		if (!RST_N)
+			dbg_start_seen <= 1'b0;
+		else
+			dbg_start_seen <= dbg_start_seen | fsm_dbg_start_capture;
 	end
 
 	assign TEST_RUNNING = t_running;
@@ -308,9 +309,9 @@ module top #(
 	assign LED_Y0=Y0; assign LED_Y1=Y1; assign LED_Y2=Y2;
 	assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~BTN_TEST_N;
 
-	// LEDs DE DIAGNOSTICO v2
-	assign LED_NORMAL = dbg_sc_normal;  // start_capture con admin_mode=0
-	assign LED_ADMIN  = dbg_sc_admin;   // start_capture con admin_mode=1
-	assign LED_TEST   = dbg_invalid;    // sound_invalid emitido
+	// LEDs DE DIAGNOSTICO v3
+	assign LED_NORMAL = door_open;           // 1 = puerta marcada como abierta
+	assign LED_ADMIN  = fsm_dbg_in_I;        // 1 = FSM en IDLE ahora mismo
+	assign LED_TEST   = dbg_start_seen;      // 1 = FSM inicio captura al menos 1 vez
 	assign LED_RESET  = reset;
 endmodule
