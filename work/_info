@@ -1,0 +1,99 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/SPARK/Documents/1.Projects/1. Funda/dserrrano_compu_archi_found_G2_2026
+T_opt
+!i145 1
+!i144 0
+!s110 1792997910
+VVI7l5SR52R>@=[@DkJH7C0
+Z2 04 17 4 work tb_password_equal fast 0
+=1-74563c29617d-6adefa16-69-51dc
+R0
+Z3 !s12f OEM100
+Z4 !s12b OEM100
+Z5 !s124 OEM10U2 
+Z6 !s135 nogc
+o-quiet -auto_acc_if_foreign -work work
+Z7 tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+Z8 OL;O;2025.2;82
+R1
+T_opt1
+!i145 1
+!i144 0
+!s110 1792998067
+VIm6a4MhUHG@K=GlL?0R[42
+R2
+=1-74563c29617d-6adefab2-257-744
+R0
+R3
+R4
+R5
+R6
+o-quiet -auto_acc_if_foreign -work work +acc
+R7
+n@_opt1
+R8
+R1
+vpassword_equal
+Z9 2RTL/password_equal.sv|TB/tb_password_equal.sv
+Z10 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z11 !s110 1792998162
+!i10b 1
+!s100 NBG^hbKXD@WmNa>X7VNM23
+IF8Y8<S>AfN`lIh2gKaVAW1
+S1
+R1
+w1792997057
+8RTL/password_equal.sv
+FRTL/password_equal.sv
+!i122 1
+L0 19 18
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z14 !s108 1792998162.000000
+!s107 TB/tb_password_equal.sv|RTL/password_equal.sv|
+Z15 !s90 -reportprogress|300|-sv|RTL/password_equal.sv|TB/tb_password_equal.sv|
+!i113 0
+Z16 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z17 tCvgOpt 0 defaultOptions 1085333592
+vtb_password_equal
+R9
+R10
+R11
+!i10b 1
+!s100 eWROnR8OzKeaiCZS5[XQJ0
+IH5KMZK<@2Oi]TA0lb2ibO2
+S1
+R1
+w1792997153
+8TB/tb_password_equal.sv
+FTB/tb_password_equal.sv
+!i122 1
+L0 3 56
+R12
+R13
+r1
+!s85 0
+31
+R14
+Z18 !s107 TB/tb_password_equal.sv|RTL/password_equal.sv|
+R15
+!i113 0
+R16
+R17

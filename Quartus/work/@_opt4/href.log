@@ -1,0 +1,13 @@
+BEGIN 1:fsm_controller:fast:work
+    state :  1:tb_top:fast:work
+END 
+BEGIN 1:top:fast:work
+    valid :  1:tb_top:fast:work
+    door_open :  1:tb_top:fast:work
+    sound_registered :  1:tb_top:fast:work
+    alu_valor :  1:tb_top:fast:work
+    test_start_pulse :  1:tb_top:fast:work
+    sound_test :  1:tb_top:fast:work
+    password_type :  1:tb_top:fast:work
+    sound_invalid :  1:tb_top:fast:work
+END 

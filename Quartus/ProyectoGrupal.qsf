@@ -18,7 +18,7 @@
 # -------------------------------------------------------------------------- #
 #
 # Quartus Prime
-# Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+# Version 25.1std.0 Build 1077 03/04/2025 SC Lite Edition
 # Date created = 22:09:37  October 09, 2026
 #
 # -------------------------------------------------------------------------- #
@@ -62,6 +62,27 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_top -section
 set_global_assignment -name EDA_TEST_BENCH_NAME tb_sr_latch -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_sr_latch
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_sr_latch -section_id tb_sr_latch
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_top -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_top
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_top -section_id tb_top
+set_location_assignment PIN_AH17 -to RST_N
+set_location_assignment PIN_E8 -to SEG_A
+set_location_assignment PIN_W12 -to SEG_B
+set_location_assignment PIN_D11 -to SEG_C
+set_location_assignment PIN_D8 -to SEG_D
+set_location_assignment PIN_AH13 -to SEG_E
+set_location_assignment PIN_AF7 -to SEG_F
+set_location_assignment PIN_AH14 -to SEG_G
+set_location_assignment PIN_W15 -to LED_CLK
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_alu -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_alu
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_alu -section_id tb_alu
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_pwm -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_pwm
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_pwm -section_id tb_pwm
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_CONV_USB_N
 set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[0]
 set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[1]
@@ -476,26 +497,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
-set_global_assignment -name EDA_TEST_BENCH_FILE ../TB/tb_sr_latch.sv -section_id tb_sr_latch
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_top -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_top -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE ../TB/tb_top.sv -section_id tb_top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S5
-set_location_assignment PIN_W20 -to S1
-set_location_assignment PIN_W21 -to S2
-set_location_assignment PIN_W24 -to S3
-set_location_assignment PIN_Y24 -to S4
-set_location_assignment PIN_AH16 -to S5
-set_location_assignment PIN_AH17 -to RST_N
-set_location_assignment PIN_V12 -to CLK
-set_location_assignment PIN_E8 -to SEG_A
-set_location_assignment PIN_W12 -to SEG_B
-set_location_assignment PIN_D11 -to SEG_C
-set_location_assignment PIN_D8 -to SEG_D
-set_location_assignment PIN_AH13 -to SEG_E
-set_location_assignment PIN_AF7 -to SEG_F
-set_location_assignment PIN_AH14 -to SEG_G
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_G
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S4
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SEG_F
@@ -511,6 +513,49 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S1
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S3
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CERRAR
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ABRIR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ABRIR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_CERRAR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y2
+set_global_assignment -name EDA_TEST_BENCH_FILE ../TB/tb_sr_latch.sv -section_id tb_sr_latch
+set_global_assignment -name EDA_TEST_BENCH_FILE ../TB/tb_top.sv -section_id tb_top
+set_global_assignment -name EDA_TEST_BENCH_FILE ../TB/tb_alu.sv -section_id tb_alu
+set_global_assignment -name EDA_TEST_BENCH_FILE ../TB/tb_pwm.sv -section_id tb_pwm
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PWM_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TEST_RUNNING
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW3
+set_location_assignment PIN_W24 -to SW1
+set_location_assignment PIN_W21 -to SW2
+set_location_assignment PIN_W20 -to SW3
+set_location_assignment PIN_V11 -to CLK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu_input_capture.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_slot.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_comparator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/clock_divider.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/pwm_test_ctrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/mode_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/flow_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/alu_add.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/result_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/pwm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/opcode_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/normalizer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/full_adder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/counter_3.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/comparator_lt_3.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/alu_sub.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/alu_ror.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/alu_rol.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/alu_mul.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/adder_6.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/test_clock.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/display_7seg.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_y_latch_bank.sv
@@ -536,23 +581,71 @@ set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/d_latch.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/d_flipflop.sv
 set_global_assignment -name VERILOG_FILE de0_nano_soc_baseline.v
 set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/top.sv
-set_location_assignment PIN_W15 -to LED_CLK
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_CLK
-set_location_assignment PIN_Y16 -to LED_ABRIR
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ABRIR
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_CERRAR
-set_location_assignment PIN_AA23 -to LED_CERRAR
-set_location_assignment PIN_AE26 -to LED_Y1
-set_location_assignment PIN_AF26 -to LED_Y2
-set_location_assignment PIN_V15 -to LED_Y3
-set_location_assignment PIN_V16 -to LED_Y4
-set_location_assignment PIN_AA24 -to LED_Y5
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y5
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y4
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y3
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y1
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y2
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_result_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_pwm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_opcode_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_normalizer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_full_adder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_counter_3.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_comparator_lt_3.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu_sub.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu_ror.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu_rol.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu_mul.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu_add.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_adder_6.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_pwm_test_ctrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_mode_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_flow_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_display_7seg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_equal.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_equal.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_comparator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_slot.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/password_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_password_memory_param.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/finger_decoder_6.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/finger_encoder_3.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_finger_input.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/alu_input_capture.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_finger_capture_integration.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/fsm_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_fsm_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/movement_timer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/sample_timer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_system_timers.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../RTL/buzzer_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../TB/tb_buzzer_controller.sv
+set_global_assignment -name SDC_FILE ProyectoGrupal.sdc
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BTN_TEST_N
+set_location_assignment PIN_AH16 -to BTN_TEST_N
+set_location_assignment PIN_AF4 -to BUZZER_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_Y0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BUZZER_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MOTOR_CLOSE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MOTOR_OPEN
+set_location_assignment PIN_AH3 -to S0
+set_location_assignment PIN_AD5 -to S1
+set_location_assignment PIN_AG14 -to S2
+set_location_assignment PIN_AE23 -to S3
+set_location_assignment PIN_AE6 -to S4
+set_location_assignment PIN_AD23 -to S5
+set_location_assignment PIN_Y24 -to SW_TYPE
+set_location_assignment PIN_AA23 -to LED_ADMIN
+set_location_assignment PIN_Y16 -to LED_NORMAL
+set_location_assignment PIN_AE26 -to LED_TEST
+set_location_assignment PIN_AA24 -to LED_RESET
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_NORMAL
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_RESET
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_TEST
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_ADMIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW_TYPE
+set_location_assignment PIN_AE24 -to PWM_OUT
+set_location_assignment PIN_D12 -to MOTOR_OPEN
+set_location_assignment PIN_AD20 -to MOTOR_CLOSE
+set_location_assignment PIN_V16 -to LED_ABRIR
+set_location_assignment PIN_V15 -to LED_CERRAR
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

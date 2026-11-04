@@ -1,98 +1,331 @@
-// Dedos -> decoder de dedos (Y) -> SR latches (solo hay salida si CLK=1) -> password_decoder (ABRIR / CERRAR)
-// ABRIR|CERRAR le entra al 74HC595 (SER). Cuando llega a la segunda salida, resetea los 5 latches Y, limpiando ABRIR/CERRAR.
-//
-//  SRCLK = CLK, RCLK = ~CLK 
-//  RST_N (activo en bajo): global reset.
-//
-// Timeline (t0 = rising edge where the code is completed):
-//  t0 high: ABRIR/CERRAR = 1   t1: QA=1   t1 falling: Q[0]=1
-//  t2: QB=1                    t2 falling: Q[1]=1 -> latches reset -> output 0
-module top (
-    input  logic S1, S2, S3, S4, S5,
-    input  logic CLK,
+/*
+ * Integracion MEF + captura + memoria + ALU + PWM + prueba + buzzer.
+ * Reloj de control: CLK_50.
+ * SW1: normal; SW2: administracion; SW3: prueba (prioridad SW3>SW2>SW1).
+ * SW_TYPE: tipo de contrasena administrada (1=abrir, 0=cerrar).
+ * BTN_TEST_N: solicitud de prueba, activo en bajo.
+ * S0: cero explicito; S1..S5: patrones termometricos.
+ * RST_N: reset general, activo en bajo.
+ *
+ * Parametros pequenos aceleran el TB; valores de produccion por defecto.
+ * PWM_CLK_HALF=1563 produce f_PWM ~ 2 kHz (50MHz/(2*1563*8)).
+ * TEST_CLK_HALF=3_125_000 produce f_TEST=8Hz; 8 ciclos/fase ~1s.
+ */
+module top #(
+    parameter integer N_PASSWORDS       = 10,
+    parameter integer SAMPLE_CYCLES     = 100_000_000,
+    parameter integer MOVEMENT_CYCLES   = 50_000_000,
+    parameter integer PWM_CLK_HALF      = 1563,
+    parameter integer TEST_CLK_HALF     = 12_500_000,
+    parameter integer BUZZ_HALF_TEST    = 6250,
+    parameter integer BUZZ_HALF_OPEN    = 7143,
+    parameter integer BUZZ_HALF_CLOSE   = 5556,
+    parameter integer BUZZ_SLOT_CYCLES  = 5_000_000,
+	 parameter integer BUZZ_CAPTURE_CYCLES = 2_500_000
+)(
+    input  logic S0, S1, S2, S3, S4, S5,
+    input  logic CLK_50,
     input  logic RST_N,
-    output logic ABRIR,
-    output logic CERRAR,
-	 output wire SEG_A,
-    output wire SEG_B,
-    output wire SEG_C,
-    output wire SEG_D,
-    output wire SEG_E,
-    output wire SEG_F,
-    output wire SEG_G,
-	 output wire LED_CLK,
-    output wire LED_ABRIR,
-    output wire LED_CERRAR,
-	 
-	 //debugging
-	 output wire LED_Y1,
-	 output wire LED_Y2,
-	 output wire LED_Y3,
-	 output wire LED_Y4,
-	 output wire LED_Y5
-	 
+    input  logic SW1, SW2, SW3,
+    input  logic SW_TYPE,
+    input  logic BTN_TEST_N,
+
+    output wire PWM_OUT,
+    output wire MOTOR_OPEN,
+    output wire MOTOR_CLOSE,
+    output wire BUZZER_OUT,
+    output wire TEST_RUNNING,
+
+    output wire SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G,
+
+	output wire LED_CLK,
+	output wire LED_ABRIR,
+	output wire LED_CERRAR,
+
+	output wire LED_Y0, LED_Y1, LED_Y2,
+	output wire LED_Y3, LED_Y4, LED_Y5,
+
+	// Nuevos LEDs de seleccion de modo.
+	output wire LED_NORMAL,
+	output wire LED_ADMIN,
+	output wire LED_TEST,
+
+	// LED adicional para diagnosticar reset.
+	output wire LED_RESET
 );
-    wire y1, y2, y3, y4, y5;
-    wire e1, e2, e3, e4, e5;
-    wire abrir_w, cerrar_w, contra_detectada;
-    wire nclk, nrst, y_reset;
-    wire [7:0] sr_q;
-    wire       sr_qh;
+    // Sincronizador de dos flip-flops para las entradas asincronas.
+    // Asi todos los bits de la MEF one-hot ven el mismo valor en cada flanco.
+    logic [11:0] async_sync1, async_sync2;
+    always_ff @(posedge CLK_50) begin
+        async_sync1 <= {~RST_N, BTN_TEST_N, SW_TYPE, SW3, SW2, SW1,
+                        S5, S4, S3, S2, S1, S0};
+        async_sync2 <= async_sync1;
+    end
+    wire reset      = async_sync2[11];
+    wire btn_test_n = async_sync2[10];
+    wire sw_type    = async_sync2[9];
+    wire sw3        = async_sync2[8];
+    wire sw2        = async_sync2[7];
+    wire sw1        = async_sync2[6];
+    wire [5:0] s_sync = async_sync2[5:0];
 
-    finger_decoder u_fingers (
-        .S1(S1), .S2(S2), .S3(S3), .S4(S4), .S5(~S5),
-        .Y1(y1), .Y2(y2), .Y3(y3), .Y4(y4), .Y5(y5)
+    // Modo: prioridad SW3 > SW2 > SW1.
+    wire sel_test, sel_admin, sel_normal;
+    assign sel_test   = sw3;
+    assign sel_admin  = sw2 & ~sw3;
+    assign sel_normal = sw1 & ~sw2 & ~sw3;
+
+    // Sensores -> one-hot -> digito y validez.
+    wire Y0,Y1,Y2,Y3,Y4,Y5;
+    wire [2:0] digit_value;
+    wire digit_valid, opcode_valid;
+
+    finger_decoder_6 u_decoder (
+        .S0(s_sync[0]),.S1(s_sync[1]),.S2(s_sync[2]),
+        .S3(s_sync[3]),.S4(s_sync[4]),.S5(s_sync[5]),
+        .Y0(Y0),.Y1(Y1),.Y2(Y2),.Y3(Y3),.Y4(Y4),.Y5(Y5)
     );
+    finger_encoder_3 u_encoder (
+        .Y0(Y0),.Y1(Y1),.Y2(Y2),.Y3(Y3),.Y4(Y4),.Y5(Y5),
+        .digit_value(digit_value),
+        .digit_valid(digit_valid),.opcode_valid(opcode_valid)
+    );
+
+    // Temporizacion y control de captura.
+    wire capture_reset, capture_opcode, capture_a, capture_b;
+    wire capture_active, sample_pulse;
+    wire [2:0] opcode, operand_a, operand_b;
+    wire [8:0] password_out;
+    wire password_ready;
+
+    alu_input_capture u_capture (
+        .clk(CLK_50),.reset(capture_reset),
+        .digit_value(digit_value),.digit_valid(digit_valid),
+        .opcode_valid(opcode_valid),
+        .capture_opcode(capture_opcode),.capture_a(capture_a),
+        .capture_b(capture_b),
+        .opcode(opcode),.operand_a(operand_a),.operand_b(operand_b),
+        .password_out(password_out),.password_ready(password_ready)
+    );
+
+    // No modificar sample_timer: generador de pulso, no reloj de FF.
+    sample_timer #(.SAMPLE_CYCLES(SAMPLE_CYCLES)) u_sample (
+        .clk(CLK_50),.reset(reset),.enable(capture_active),
+        .sample_pulse(sample_pulse)
+    );
+
+    // Banco de contrasenas y comparador (realimentacion registrada).
+    wire [9*N_PASSWORDS-1:0] stored_passwords;
+    wire [N_PASSWORDS-1:0] valid, password_type, found;
+    wire memory_full, pass_abrir, pass_cerrar;
+    wire register_pulse, selected_type;
+
+    password_comparator #(.N(N_PASSWORDS)) u_comparator (
+        .password_in(password_out),
+        .stored_passwords(stored_passwords),
+        .valid(valid),.password_type(password_type),
+        .ABRIR(pass_abrir),.CERRAR(pass_cerrar),.found(found)
+    );
+    password_memory #(.N(N_PASSWORDS)) u_memory (
+        .clk(CLK_50),.clear(reset),.register_pulse(register_pulse),
+        .password_in(password_out),.type_in(selected_type),.found(found),
+        .stored_passwords(stored_passwords),.valid(valid),
+        .password_type(password_type),.memory_full(memory_full)
+    );
+
+    // ALU: los operandos de 3 bits se extienden con ceros a 6 bits.
+    wire [2:0] alu_valor;
+    alu u_alu (
+        .A({3'b000,operand_a}),.B({3'b000,operand_b}),
+        .S(opcode),.VALOR(alu_valor)
+    );
+
+    // Temporizador de movimiento normal.
+    wire movement_active, movement_done;
+    wire normal_open, normal_close;
+    movement_timer #(.MOVEMENT_CYCLES(MOVEMENT_CYCLES)) u_movement (
+        .clk(CLK_50),.reset(reset),.enable(movement_active),
+        .done(movement_done)
+    );
+
+    // Modo de prueba original. Solo se adapta el boton de arranque:
+    // la solicitud permanece activa hasta que RUNNING se confirma.
+    // El controlador de prueba opera sobre un reloj independiente de 8 Hz.
+    wire clk_test, clk_pwm;
+    clock_divider #(.HALF_PERIOD(TEST_CLK_HALF)) u_test_clk (
+        .CLK(CLK_50),.RST_N(RST_N),.CLK_OUT(clk_test)
+    );
+    clock_divider #(.HALF_PERIOD(PWM_CLK_HALF)) u_pwm_clk (
+        .CLK(CLK_50),.RST_N(RST_N),.CLK_OUT(clk_pwm)
+    );
+
+    wire test_start_pulse, t_abrir, t_cerrar;
+    wire [2:0] valor_test;
+    wire t_running_raw, t_running;
+    logic test_command;
+    wire test_command_next;
+    logic test_sync1, test_sync2;
+    wire test_enable;
+
+    // Retener peticion para que el dominio lento pueda verla.
+    assign test_command_next = ~reset &
+        (test_start_pulse | (test_command & ~t_running));
+    always_ff @(posedge CLK_50) begin
+        test_command <= test_command_next;
+        test_sync1 <= ~reset & t_running_raw;
+        test_sync2 <= ~reset & test_sync1;
+    end
+    assign t_running = test_sync2;
+    assign test_enable = sel_test | test_command | t_running;
+
+    pwm_test_ctrl u_test (
+        .CLK(clk_test),.RST_N(RST_N),.ENABLE(test_enable),
+        .BTN_N(~test_command),
+        .TEST_OPEN(t_abrir),.TEST_CLOSE(t_cerrar),
+        .VALOR(valor_test),.RUNNING(t_running_raw)
+    );
+
+    // MEF principal. 
+	 // TODO: agregar capture_active a fsm_controller.
+    wire sound_test, sound_opening, sound_closing;
+    wire sound_registered, sound_valid, sound_invalid;
+    wire door_open;
+    wire fsm_dbg_admin_sel, fsm_dbg_in_E;
+    wire fsm_dbg_in_I, fsm_dbg_start_capture;
+    fsm_controller #(.N(N_PASSWORDS)) u_fsm (
+        .clk(CLK_50),.reset(reset),
+        .normal_mode(sel_normal),.admin_mode(sel_admin),
+        .admin_type(sw_type),
+        .test_request(sel_test & ~btn_test_n),
+        .sample_pulse(sample_pulse),
+        .digit_valid(digit_valid),.opcode_valid(opcode_valid),
+        .password_ready(password_ready),
+        .ABRIR(pass_abrir),.CERRAR(pass_cerrar),
+        .found(found),.password_type(password_type),
+        .memory_full(memory_full),
+        .movement_done(movement_done),.test_running(t_running),
+        .capture_reset(capture_reset),
+        .capture_opcode(capture_opcode),.capture_a(capture_a),
+        .capture_b(capture_b),.capture_active(capture_active),
+        .register_pulse(register_pulse),.selected_type(selected_type),
+        .motor_open(normal_open),.motor_close(normal_close),
+        .movement_active(movement_active),
+        .test_start_pulse(test_start_pulse),
+        .sound_test(sound_test),.sound_opening(sound_opening),
+        .sound_closing(sound_closing),
+        .sound_registered(sound_registered),
+        .sound_valid(sound_valid),.sound_invalid(sound_invalid),
+        .door_open(door_open),
+        .dbg_admin_sel(fsm_dbg_admin_sel),
+        .dbg_in_E(fsm_dbg_in_E),
+        .dbg_in_I(fsm_dbg_in_I),
+        .dbg_start_capture(fsm_dbg_start_capture)
+    );
+
+    // El controlador de prueba selecciona su propio VALOR.
+    // Normal usa resultado ALU solo mientras mueve la puerta.
+    wire [2:0] valor_normal, valor_selected;
+    wire test_priority;
+    wire motor_open_i, motor_close_i, motor_any;
+    assign test_priority = t_running | test_command;
+    assign motor_open_i  = ~reset & ((test_priority & t_abrir) |
+                           (~test_priority & normal_open));
+    assign motor_close_i = ~reset & ((test_priority & t_cerrar) |
+                           (~test_priority & normal_close));
+    assign motor_any = motor_open_i | motor_close_i;
+    assign valor_normal = alu_valor & {3{movement_active}};
+    assign valor_selected =
+        (valor_test & {3{test_priority}}) |
+        (valor_normal & {3{~test_priority}});
+
+    wire pwm_raw;
+    pwm u_pwm (
+        .CLK(clk_pwm),.RST_N(RST_N),
+        .VALOR(valor_selected),.PWM_OUT(pwm_raw)
+    );
+    assign PWM_OUT = pwm_raw & motor_any & ~reset;
+    assign MOTOR_OPEN  = motor_open_i;
+    assign MOTOR_CLOSE = motor_close_i;
 	 
-	 //Retenedores del número de los dedos
-    y_latch_bank u_ylatch (
-        .Y1(y1), .Y2(y2), .Y3(y3), .Y4(y4), .Y5(y5),
-        .CLK(CLK), .RESET(y_reset),
-        .E1(e1), .E2(e2), .E3(e3), .E4(e4), .E5(e5)
-    );
-	 
-	 //decoder de la contraseña Abrir=01110, Cerrar=00111
-    password_decoder u_pass (
-        .E1(e1), .E2(e2), .E3(e3), .E4(e4), .E5(e5),
-        .ABRIR(abrir_w), .CERRAR(cerrar_w)
-    );
 
-    assign contra_detectada = abrir_w | cerrar_w;
-    assign nclk   = ~CLK;
-	
-	//shift register para mantener los bits una cantidad de ciclos
-    sn74hc595 u_sr (
-        .SER(contra_detectada), .SRCLK(CLK), .SRCLR_N(RST_N),
-        .RCLK(nclk), .OE_N(1'b0), .Q(sr_q), .QH_PRIME(sr_qh)
-    );
+	// BUZZER: EVENTOS DE LA MEF Y AVISOS DE CAPTURA
+	wire buzzer_busy;
 
-    assign nrst    = ~RST_N;
-    assign y_reset = sr_q[1] | nrst;
+	buzzer_controller #(
+		 .HALF_TEST(BUZZ_HALF_TEST),
+		 .HALF_OPEN(BUZZ_HALF_OPEN),
+		 .HALF_CLOSE(BUZZ_HALF_CLOSE),
+		 .SLOT_CYCLES(BUZZ_SLOT_CYCLES),
+		 .CAP_BEEP_CYCLES(BUZZ_CAPTURE_CYCLES)
+	) u_buzzer (
+		 .clk(CLK_50),
+		 .reset(reset),
 
-    assign ABRIR  = abrir_w;
-    assign CERRAR = cerrar_w;
-	 
-	 // Display de siete segmentos, anodo comun
+		 // Sonidos continuos.
+		 .sound_test(sound_test),
+		 .sound_opening(sound_opening),
+		 .sound_closing(sound_closing),
+
+		 // Eventos de contrasena.
+		 .sound_registered(sound_registered),
+		 .sound_valid(sound_valid),
+		 .sound_invalid(sound_invalid),
+
+		 //Deteccion de inicio de captura.
+		 .capture_active(capture_active),
+		 .capture_opcode(capture_opcode),
+		 .capture_a(capture_a),
+
+		 // Salidas.
+		 .buzzer_out(BUZZER_OUT),
+		 .buzzer_busy(buzzer_busy)
+	);
+
     display_7seg u_display (
-        .X(ABRIR),
-        .Y(CERRAR),
-        .a(SEG_A),
-        .b(SEG_B),
-        .c(SEG_C),
-        .d(SEG_D),
-        .e(SEG_E),
-        .f(SEG_F),
-        .g(SEG_G)
+        .VALOR(valor_selected),
+        .a(SEG_A),.b(SEG_B),.c(SEG_C),.d(SEG_D),
+        .e(SEG_E),.f(SEG_F),.g(SEG_G)
     );
 	 
-	 assign LED_CLK = CLK;
-	 assign LED_ABRIR = ABRIR;
-	 assign LED_CERRAR = CERRAR;
-	 
-	 assign LED_Y1 = e1;
-	 assign LED_Y2 = e2;
-	 assign LED_Y3 = e3;
-	 assign LED_Y4 = e4;
-	 assign LED_Y5 = e5;
-	 
+	// ===================================================
+	// DEBUG v2: diagnostico de start_capture y admin_mode en IDLE.
+	// Se limpian con RST_N.
+	//
+	// LED_NORMAL -> start_capture ocurrio con admin_mode=0 (captura normal)
+	// LED_ADMIN  -> start_capture ocurrio con admin_mode=1 (captura admin OK)
+	// LED_TEST   -> sound_invalid emitido alguna vez
+	// LED_RESET  -> reset activo
+	//
+	// Interpretacion:
+	//   Solo LED_NORMAL+LED_TEST: el SW2 no esta activo cuando la FSM sale de IDLE.
+	//   Solo LED_ADMIN: el modo admin se capturo correctamente.
+	// ===================================================
+	logic dbg_sc_normal;   // start_capture con admin_mode=0
+	logic dbg_sc_admin;    // start_capture con admin_mode=1
+	logic dbg_invalid;
+
+	always_ff @(posedge CLK_50 or negedge RST_N) begin
+		if (!RST_N) begin
+			dbg_sc_normal <= 1'b0;
+			dbg_sc_admin  <= 1'b0;
+			dbg_invalid   <= 1'b0;
+		end else begin
+			dbg_sc_normal <= dbg_sc_normal | (fsm_dbg_start_capture & ~sel_admin);
+			dbg_sc_admin  <= dbg_sc_admin  | (fsm_dbg_start_capture &  sel_admin);
+			dbg_invalid   <= dbg_invalid   | sound_invalid;
+		end
+	end
+
+	assign TEST_RUNNING = t_running;
+	assign LED_CLK = clk_test;
+	assign LED_ABRIR  = MOTOR_OPEN;
+	assign LED_CERRAR = MOTOR_CLOSE;
+	assign LED_Y0=Y0; assign LED_Y1=Y1; assign LED_Y2=Y2;
+	assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~btn_test_n;
+
+	// LEDs DE DIAGNOSTICO v2
+	assign LED_NORMAL = dbg_sc_normal;  // start_capture con admin_mode=0
+	assign LED_ADMIN  = dbg_sc_admin;   // start_capture con admin_mode=1
+	assign LED_TEST   = dbg_invalid;    // sound_invalid emitido
+	assign LED_RESET  = reset;
 endmodule

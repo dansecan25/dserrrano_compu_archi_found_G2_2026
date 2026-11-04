@@ -1,4 +1,3 @@
-# Reading pref.tcl
 # do ProyectoGrupal_run_msim_rtl_verilog.do
 # if ![file isdirectory verilog_libs] {
 # 	file mkdir verilog_libs
@@ -9,12 +8,12 @@
 # vmap altera_ver ./verilog_libs/altera_ver
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_ver ./verilog_libs/altera_ver 
-# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Copying /home/dansecan25/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# vlog -vlog01compat -work altera_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/altera_primitives.v}
+# vlog -vlog01compat -work altera_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:35 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work altera_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/altera_primitives.v 
+# Start time: 14:11:21 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work altera_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
 # -- Compiling module cascade
@@ -95,7 +94,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 16:51:36 on Oct 12,2026, Elapsed time: 0:00:01
+# End time: 14:11:22 on Oct 23,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -104,10 +103,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap lpm_ver ./verilog_libs/lpm_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work lpm_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/220model.v}
+# vlog -vlog01compat -work lpm_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:37 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/220model.v 
+# Start time: 14:11:22 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work lpm_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
 # -- Compiling module LPM_DEVICE_FAMILIES
@@ -170,7 +169,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 16:51:38 on Oct 12,2026, Elapsed time: 0:00:01
+# End time: 14:11:22 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -179,10 +178,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap sgate_ver ./verilog_libs/sgate_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work sgate_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/sgate.v}
+# vlog -vlog01compat -work sgate_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:39 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/sgate.v 
+# Start time: 14:11:22 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work sgate_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
 # -- Compiling module mux21
@@ -223,7 +222,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 16:51:39 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:22 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -232,10 +231,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_mf_ver ./verilog_libs/altera_mf_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work altera_mf_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/altera_mf.v}
+# vlog -vlog01compat -work altera_mf_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:40 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/altera_mf.v 
+# Start time: 14:11:22 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work altera_mf_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
 # -- Compiling module ALTERA_MF_HINT_EVALUATION
@@ -364,7 +363,7 @@
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 16:51:41 on Oct 12,2026, Elapsed time: 0:00:01
+# End time: 14:11:23 on Oct 23,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_lnsim_ver
@@ -373,10 +372,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_lnsim_ver ./verilog_libs/altera_lnsim_ver 
 # Modifying modelsim.ini
-# vlog -sv -work altera_lnsim_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/altera_lnsim.sv}
+# vlog -sv -work altera_lnsim_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/altera_lnsim.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:43 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/altera_lnsim.sv 
+# Start time: 14:11:23 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work altera_lnsim_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/altera_lnsim.sv 
 # -- Compiling package altera_lnsim_functions
 # -- Compiling package altera_generic_pll_functions
 # -- Compiling module generic_pll
@@ -458,7 +457,7 @@
 # 	altera_iopll
 # 	fourteennm_altera_iopll
 # 	fourteennm_simple_iopll
-# End time: 16:51:43 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:24 on Oct 23,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_ver
@@ -467,36 +466,26 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_ver ./verilog_libs/cyclonev_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:44 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# Start time: 14:11:24 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 16:51:47 on Oct 12,2026, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 10
-# vlog -vlog01compat -work cyclonev_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:47 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
-# 
-# Top level modules:
-# End time: 16:51:49 on Oct 12,2026, Elapsed time: 0:00:02
+# End time: 14:11:25 on Oct 23,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work cyclonev_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_atoms.v}
+# vlog -vlog01compat -work cyclonev_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:49 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_atoms.v 
+# Start time: 14:11:25 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
+# 
+# Top level modules:
+# End time: 14:11:26 on Oct 23,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work cyclonev_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_atoms.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:26 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_atoms.v 
 # -- Compiling UDP CYCLONEV_PRIM_DFFE
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS_HIGH
@@ -635,7 +624,7 @@
 # 	cyclonev_mem_phy
 # 	cyclonev_oscillator
 # 	cyclonev_hps_interface_fpga2sdram
-# End time: 16:51:49 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:26 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_hssi_ver
@@ -644,18 +633,18 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_hssi_ver ./verilog_libs/cyclonev_hssi_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_hssi_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_hssi_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:52 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
+# Start time: 14:11:26 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 16:51:54 on Oct 12,2026, Elapsed time: 0:00:02
+# End time: 14:11:27 on Oct 23,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work cyclonev_hssi_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
+# vlog -vlog01compat -work cyclonev_hssi_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:54 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
+# Start time: 14:11:27 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
 # -- Compiling module cyclonev_hssi_8g_pcs_aggregate
 # -- Compiling module cyclonev_hssi_8g_rx_pcs
 # -- Compiling module cyclonev_hssi_8g_tx_pcs
@@ -754,7 +743,7 @@
 # 	arriav_hssi_avmm_interface
 # 	arriav_hssi_pma_hi_pmaif
 # 	arriav_hssi_pma_hi_xcvrif
-# End time: 16:51:55 on Oct 12,2026, Elapsed time: 0:00:01
+# End time: 14:11:27 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_pcie_hip_ver
@@ -763,30 +752,24 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_pcie_hip_ver ./verilog_libs/cyclonev_pcie_hip_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_pcie_hip_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:51:57 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# Start time: 14:11:28 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 16:51:59 on Oct 12,2026, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 6
-# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work cyclonev_pcie_hip_ver {/home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:00 on Oct 12,2026
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver /home/dansecan25/altera_lite/24.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
 # -- Compiling module cyclonev_hd_altpe2_hip_top
 # -- Compiling module arriav_hd_altpe2_hip_top
 # 
 # Top level modules:
 # 	cyclonev_hd_altpe2_hip_top
-# End time: 16:52:00 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -798,144 +781,232 @@
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:00 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv 
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/clock_divider.sv 
+# -- Compiling module clock_divider
+# 
+# Top level modules:
+# 	clock_divider
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm_test_ctrl.sv 
+# -- Compiling module pwm_test_ctrl
+# 
+# Top level modules:
+# 	pwm_test_ctrl
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/mode_decoder.sv 
+# -- Compiling module mode_decoder
+# 
+# Top level modules:
+# 	mode_decoder
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/flow_mux.sv 
+# -- Compiling module flow_mux
+# 
+# Top level modules:
+# 	flow_mux
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/pwm.sv 
+# -- Compiling module pwm
+# 
+# Top level modules:
+# 	pwm
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/counter_3.sv 
+# -- Compiling module counter_3
+# 
+# Top level modules:
+# 	counter_3
+# End time: 14:11:29 on Oct 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:29 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/comparator_lt_3.sv 
+# -- Compiling module comparator_lt_3
+# 
+# Top level modules:
+# 	comparator_lt_3
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/display_7seg.sv 
+# -- Compiling module display_7seg
+# 
+# Top level modules:
+# 	display_7seg
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/y_latch_bank.sv 
 # -- Compiling module y_latch_bank
 # 
 # Top level modules:
 # 	y_latch_bank
-# End time: 16:52:00 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:00 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/password_decoder.sv 
 # -- Compiling module password_decoder
 # 
 # Top level modules:
 # 	password_decoder
-# End time: 16:52:01 on Oct 12,2026, Elapsed time: 0:00:01
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:01 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/finger_decoder.sv 
 # -- Compiling module finger_decoder
 # 
 # Top level modules:
 # 	finger_decoder
-# End time: 16:52:01 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:01 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/storage_reg_8.sv 
 # -- Compiling module storage_reg_8
 # 
 # Top level modules:
 # 	storage_reg_8
-# End time: 16:52:01 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:01 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sr_latch.sv 
 # -- Compiling module sr_latch
 # 
 # Top level modules:
 # 	sr_latch
-# End time: 16:52:01 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:02 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/sn74hc595.sv 
 # -- Compiling module sn74hc595
 # 
 # Top level modules:
 # 	sn74hc595
-# End time: 16:52:02 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:02 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/shift_reg_8.sv 
 # -- Compiling module shift_reg_8
 # 
 # Top level modules:
 # 	shift_reg_8
-# End time: 16:52:02 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:02 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/output_buffer_8.sv 
 # -- Compiling module output_buffer_8
 # 
 # Top level modules:
 # 	output_buffer_8
-# End time: 16:52:02 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:03 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_latch.sv 
 # -- Compiling module d_latch
 # 
 # Top level modules:
 # 	d_latch
-# End time: 16:52:03 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:03 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/d_flipflop.sv 
 # -- Compiling module d_flipflop
 # 
 # Top level modules:
 # 	d_flipflop
-# End time: 16:52:03 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:03 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/RTL/top.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/RTL/top.sv 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 16:52:03 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB {C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv}
+# vlog -sv -work work +incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB {/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:52:04 on Oct 12,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB" C:/Users/dseca/Documents/Repositorios/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv 
+# Start time: 14:11:30 on Oct 23,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB" /home/dansecan25/Repositories/dserrrano_compu_archi_found_G2_2026/Quartus/../TB/tb_top.sv 
 # -- Compiling module tb_top
 # 
 # Top level modules:
 # 	tb_top
-# End time: 16:52:04 on Oct 12,2026, Elapsed time: 0:00:00
+# End time: 14:11:30 on Oct 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_top
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_top 
-# Start time: 16:52:04 on Oct 12,2026
+# Start time: 14:11:30 on Oct 23,2026
 # Loading sv_std.std
 # Loading work.tb_top
 # Loading work.top
+# Loading work.clock_divider
+# Loading work.d_flipflop
+# Loading work.d_latch
+# Loading work.sr_latch
 # Loading work.finger_decoder
 # Loading work.y_latch_bank
-# Loading work.sr_latch
 # Loading work.password_decoder
 # Loading work.sn74hc595
 # Loading work.shift_reg_8
-# Loading work.d_flipflop
-# Loading work.d_latch
 # Loading work.storage_reg_8
 # Loading work.output_buffer_8
+# Loading work.mode_decoder
+# Loading work.pwm_test_ctrl
+# Loading work.flow_mux
+# Loading work.pwm
+# Loading work.counter_3
+# Loading work.comparator_lt_3
+# Loading work.display_7seg
 # 
 # add wave *
 # view structure
@@ -943,36 +1014,46 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# 60000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | after power-up reset
-# 75000 | CLK=1 S5..S1=00111 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | 3 fingers (E3)
-# 105000 | CLK=1 S5..S1=01111 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | 4 fingers (E3,E4)
-# 135000 | CLK=1 S5..S1=11111 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | 5 fingers (E3,E4,E5) -> ABRIR
-# 145000 | CLK=0 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t0 falling: held
-# 155000 | CLK=1 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t1 high: held
-# 165000 | CLK=0 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t1 falling: held (1st output set)
-# 175000 | CLK=1 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t2 high: held
-# 185000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | t2 falling: 2nd output set -> latches reset
-# 305000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | flushed, idle
-# 320000 | CLK=1 S5..S1=00011 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | 2 fingers (E2)
-# 350000 | CLK=1 S5..S1=00111 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | 3 fingers (E2,E3)
-# 380000 | CLK=1 S5..S1=01111 | ABRIR=0 CERRAR=1 | exp 0 1 | ok=1 | 4 fingers (E2,E3,E4) -> CERRAR
-# 390000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=1 | exp 0 1 | ok=1 | t0 falling: held
-# 400000 | CLK=1 S5..S1=00000 | ABRIR=0 CERRAR=1 | exp 0 1 | ok=1 | t1 high: held
-# 410000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=1 | exp 0 1 | ok=1 | t1 falling: held (1st output set)
-# 420000 | CLK=1 S5..S1=00000 | ABRIR=0 CERRAR=1 | exp 0 1 | ok=1 | t2 high: held
-# 430000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | t2 falling: 2nd output set -> latches reset
-# 550000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | flushed, idle
-# 655000 | CLK=1 S5..S1=11111 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | E1,E3,E4,E5: ABRIR code + E1, nothing
-# 705000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | still nothing
-# 755000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | global reset
-# 830000 | CLK=1 S5..S1=11111 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | after reset E1 is gone -> ABRIR
-# 840000 | CLK=0 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t0 falling: held
-# 850000 | CLK=1 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t1 high: held
-# 860000 | CLK=0 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t1 falling: held (1st output set)
-# 870000 | CLK=1 S5..S1=00000 | ABRIR=1 CERRAR=0 | exp 1 0 | ok=1 | t2 high: held
-# 880000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | t2 falling: 2nd output set -> latches reset
-# 1000000 | CLK=0 S5..S1=00000 | ABRIR=0 CERRAR=0 | exp 0 0 | ok=1 | flushed, idle
+# 80000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | SW1 normal: idle, display 0
+# 155000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | normal ABRIR (3,4,5): display 5
+# 165000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | t0 falling: held
+# 175000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | t1 high: held
+# 185000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | t1 falling: held
+# 195000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | t2 high: held
+# 205000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | t2 falling: cleared, display 0
+# 325000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | flushed, idle
+# 400000 | SW=001 | ABRIR=0 CERRAR=1 seg=1001111 run=0 PWM=0 | exp 0 1 lit=0110000 run=0 | ok=1 | normal CERRAR (2,3,4): display 1
+# 410000 | SW=001 | ABRIR=0 CERRAR=1 seg=1001111 run=0 PWM=0 | exp 0 1 lit=0110000 run=0 | ok=1 | t0 falling: held
+# 420000 | SW=001 | ABRIR=0 CERRAR=1 seg=1001111 run=0 PWM=1 | exp 0 1 lit=0110000 run=0 | ok=1 | t1 high: held
+# 430000 | SW=001 | ABRIR=0 CERRAR=1 seg=1001111 run=0 PWM=1 | exp 0 1 lit=0110000 run=0 | ok=1 | t1 falling: held
+# 440000 | SW=001 | ABRIR=0 CERRAR=1 seg=1001111 run=0 PWM=0 | exp 0 1 lit=0110000 run=0 | ok=1 | t2 high: held
+# 450000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | t2 falling: cleared, display 0
+# 570000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | flushed, idle
+# 575000 | SW=101 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | SW3 test mode: idle, flag 0
+# 625000 | SW=101 | ABRIR=1 CERRAR=0 seg=0100100 run=1 PWM=0 | exp 1 0 lit=1011011 run=1 | ok=1 | test: open phase (value 5)
+# 785000 | SW=101 | ABRIR=0 CERRAR=1 seg=1001111 run=1 PWM=1 | exp 0 1 lit=0110000 run=1 | ok=1 | test: close phase (value 1)
+# 945000 | SW=101 | ABRIR=0 CERRAR=0 seg=0000001 run=1 PWM=0 | exp 0 0 lit=1111110 run=1 | ok=1 | test: last tap set, flag still 1
+# 965000 | SW=101 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | test: finished, flag 0
+# test: edges with value 5                       | 8 (exp 8) | ok=1
+# test: edges with value 1                       | 8 (exp 8) | ok=1
+# test: edges with flag = 1                      | 17 (exp 17) | ok=1
+# test: PWM high edges during value 5 (5/8)      | 5 (exp 5) | ok=1
+# test: PWM high edges during value 1 (1/8)      | 1 (exp 1) | ok=1
+# 1165000 | SW=101 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | test: idle after run
+# test: button held -> one run (open edges)      | 8 (exp 8) | ok=1
+# test: button held -> one run (close edges)     | 8 (exp 8) | ok=1
+# 2210000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | SW3->0 mid-test: aborted, back to normal idle
+# 2410000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | still idle
+# 2415000 | SW=010 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | SW2: reserved, all 0
+# 2455000 | SW=010 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | SW2: still 0
+# 2460000 | SW=000 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | no switch: all 0
+# 2540000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | back in normal: ABRIR, display 5
+# 2550000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | t0 falling: held
+# 2560000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | t1 high: held
+# 2570000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=0 | exp 1 0 lit=1011011 run=0 | ok=1 | t1 falling: held
+# 2580000 | SW=001 | ABRIR=1 CERRAR=0 seg=0100100 run=0 PWM=1 | exp 1 0 lit=1011011 run=0 | ok=1 | t2 high: held
+# 2590000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=1 | exp 0 0 lit=1111110 run=0 | ok=1 | t2 falling: cleared, display 0
+# 2710000 | SW=001 | ABRIR=0 CERRAR=0 seg=0000001 run=0 PWM=0 | exp 0 0 lit=1111110 run=0 | ok=1 | flushed, idle
 # === tb_top: PASSED (errors = 0) ===
-# A time value could not be extracted from the current line
-# End time: 16:59:01 on Oct 12,2026, Elapsed time: 0:06:57
+# End time: 14:32:58 on Oct 23,2026, Elapsed time: 0:21:28
 # Errors: 0, Warnings: 0
