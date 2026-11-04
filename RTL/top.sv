@@ -16,11 +16,12 @@ module top #(
     parameter integer SAMPLE_CYCLES     = 100_000_000,
     parameter integer MOVEMENT_CYCLES   = 50_000_000,
     parameter integer PWM_CLK_HALF      = 1563,
-    parameter integer TEST_CLK_HALF     = 75_000_000,
+    parameter integer TEST_CLK_HALF     = 12_500_000,
     parameter integer BUZZ_HALF_TEST    = 6250,
     parameter integer BUZZ_HALF_OPEN    = 7143,
     parameter integer BUZZ_HALF_CLOSE   = 5556,
-    parameter integer BUZZ_SLOT_CYCLES  = 5_000_000
+    parameter integer BUZZ_SLOT_CYCLES  = 5_000_000,
+	 parameter integer BUZZ_CAPTURE_CYCLES = 2_500_000
 )(
     input  logic S0, S1, S2, S3, S4, S5,
     input  logic CLK_50,
@@ -169,10 +170,13 @@ module top #(
         .VALOR(valor_test),.RUNNING(t_running_raw)
     );
 
-    // MEF principal. Se requiere agregar capture_active a fsm_controller.
+    // MEF principal. 
+	 // TODO: agregar capture_active a fsm_controller.
     wire sound_test, sound_opening, sound_closing;
     wire sound_registered, sound_valid, sound_invalid;
     wire door_open;
+    wire fsm_dbg_admin_sel, fsm_dbg_in_E;
+    wire fsm_dbg_in_I, fsm_dbg_start_capture;
     fsm_controller #(.N(N_PASSWORDS)) u_fsm (
         .clk(CLK_50),.reset(reset),
         .normal_mode(sel_normal),.admin_mode(sel_admin),
@@ -196,7 +200,11 @@ module top #(
         .sound_closing(sound_closing),
         .sound_registered(sound_registered),
         .sound_valid(sound_valid),.sound_invalid(sound_invalid),
-        .door_open(door_open)
+        .door_open(door_open),
+        .dbg_admin_sel(fsm_dbg_admin_sel),
+        .dbg_in_E(fsm_dbg_in_E),
+        .dbg_in_I(fsm_dbg_in_I),
+        .dbg_start_capture(fsm_dbg_start_capture)
     );
 
     // El controlador de prueba selecciona su propio VALOR.
@@ -223,43 +231,86 @@ module top #(
     assign PWM_OUT = pwm_raw & motor_any & ~reset;
     assign MOTOR_OPEN  = motor_open_i;
     assign MOTOR_CLOSE = motor_close_i;
+	 
 
-    // Buzzer: genera audio, MEF solo emite solicitudes.
-    wire buzzer_busy;
-    buzzer_controller #(
-        .HALF_TEST(BUZZ_HALF_TEST),
-        .HALF_OPEN(BUZZ_HALF_OPEN),
-        .HALF_CLOSE(BUZZ_HALF_CLOSE),
-        .SLOT_CYCLES(BUZZ_SLOT_CYCLES)
-    ) u_buzzer (
-        .clk(CLK_50),.reset(reset),
-        .sound_test(sound_test),
-        .sound_opening(sound_opening),
-        .sound_closing(sound_closing),
-        .sound_registered(sound_registered),
-        .sound_valid(sound_valid),
-        .sound_invalid(sound_invalid),
-        .buzzer_out(BUZZER_OUT),.buzzer_busy(buzzer_busy)
-    );
+	// BUZZER: EVENTOS DE LA MEF Y AVISOS DE CAPTURA
+	wire buzzer_busy;
+
+	buzzer_controller #(
+		 .HALF_TEST(BUZZ_HALF_TEST),
+		 .HALF_OPEN(BUZZ_HALF_OPEN),
+		 .HALF_CLOSE(BUZZ_HALF_CLOSE),
+		 .SLOT_CYCLES(BUZZ_SLOT_CYCLES),
+		 .CAP_BEEP_CYCLES(BUZZ_CAPTURE_CYCLES)
+	) u_buzzer (
+		 .clk(CLK_50),
+		 .reset(reset),
+
+		 // Sonidos continuos.
+		 .sound_test(sound_test),
+		 .sound_opening(sound_opening),
+		 .sound_closing(sound_closing),
+
+		 // Eventos de contrasena.
+		 .sound_registered(sound_registered),
+		 .sound_valid(sound_valid),
+		 .sound_invalid(sound_invalid),
+
+		 //Deteccion de inicio de captura.
+		 .capture_active(capture_active),
+		 .capture_opcode(capture_opcode),
+		 .capture_a(capture_a),
+
+		 // Salidas.
+		 .buzzer_out(BUZZER_OUT),
+		 .buzzer_busy(buzzer_busy)
+	);
 
     display_7seg u_display (
         .VALOR(valor_selected),
         .a(SEG_A),.b(SEG_B),.c(SEG_C),.d(SEG_D),
         .e(SEG_E),.f(SEG_F),.g(SEG_G)
     );
-
-    assign TEST_RUNNING = t_running;
-    assign LED_CLK = clk_test;
-    assign LED_ABRIR  = MOTOR_OPEN;
-    assign LED_CERRAR = MOTOR_CLOSE;
-    assign LED_Y0=Y0; assign LED_Y1=Y1; assign LED_Y2=Y2;
-    assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~BTN_TEST_N;
 	 
-	// LEDs DE SELECCION DE MODO Y RESET
+	// ===================================================
+	// DEBUG v2: diagnostico de start_capture y admin_mode en IDLE.
+	// Se limpian con RST_N.
+	//
+	// LED_NORMAL -> start_capture ocurrio con admin_mode=0 (captura normal)
+	// LED_ADMIN  -> start_capture ocurrio con admin_mode=1 (captura admin OK)
+	// LED_TEST   -> sound_invalid emitido alguna vez
+	// LED_RESET  -> reset activo
+	//
+	// Interpretacion:
+	//   Solo LED_NORMAL+LED_TEST: el SW2 no esta activo cuando la FSM sale de IDLE.
+	//   Solo LED_ADMIN: el modo admin se capturo correctamente.
+	// ===================================================
+	logic dbg_sc_normal;   // start_capture con admin_mode=0
+	logic dbg_sc_admin;    // start_capture con admin_mode=1
+	logic dbg_invalid;
 
-	assign LED_NORMAL = sel_normal;
-	assign LED_ADMIN  = sel_admin;
-	assign LED_TEST   = sel_test;
+	always_ff @(posedge CLK_50 or negedge RST_N) begin
+		if (!RST_N) begin
+			dbg_sc_normal <= 1'b0;
+			dbg_sc_admin  <= 1'b0;
+			dbg_invalid   <= 1'b0;
+		end else begin
+			dbg_sc_normal <= dbg_sc_normal | (fsm_dbg_start_capture & ~sel_admin);
+			dbg_sc_admin  <= dbg_sc_admin  | (fsm_dbg_start_capture &  sel_admin);
+			dbg_invalid   <= dbg_invalid   | sound_invalid;
+		end
+	end
 
+	assign TEST_RUNNING = t_running;
+	assign LED_CLK = clk_test;
+	assign LED_ABRIR  = MOTOR_OPEN;
+	assign LED_CERRAR = MOTOR_CLOSE;
+	assign LED_Y0=Y0; assign LED_Y1=Y1; assign LED_Y2=Y2;
+	assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~BTN_TEST_N;
+
+	// LEDs DE DIAGNOSTICO v2
+	assign LED_NORMAL = dbg_sc_normal;  // start_capture con admin_mode=0
+	assign LED_ADMIN  = dbg_sc_admin;   // start_capture con admin_mode=1
+	assign LED_TEST   = dbg_invalid;    // sound_invalid emitido
 	assign LED_RESET  = reset;
 endmodule

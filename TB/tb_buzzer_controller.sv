@@ -30,6 +30,9 @@ module tb_buzzer_controller;
     ) dut (
         .clk(clk),
         .reset(reset),
+		  .capture_active(1'b0),
+		  .capture_opcode(1'b0),
+		  .capture_a(1'b0),
 
         .sound_test(sound_test),
         .sound_opening(sound_opening),
@@ -41,6 +44,7 @@ module tb_buzzer_controller;
 
         .buzzer_out(buzzer_out),
         .buzzer_busy(buzzer_busy)
+		  
     );
 
     task automatic tick;

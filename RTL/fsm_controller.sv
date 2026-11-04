@@ -83,7 +83,13 @@ module fsm_controller #(
     output logic sound_invalid,
 
     // Estado logico de la puerta.
-    output logic door_open
+    output logic door_open,
+
+    // Diagnostico (visible desde top para LEDs).
+    output logic dbg_admin_sel,
+    output logic dbg_in_E,
+    output logic dbg_in_I,
+    output logic dbg_start_capture
 );
 
     // ==================================================
@@ -159,11 +165,11 @@ module fsm_controller #(
         state[I] & ~test_allowed & capture_request;
 
     assign admin_selected_next =
-        (admin_selected & ~start_capture) |
+        (admin_selected & ~start_capture & ~state[I]) |
         (admin_mode & start_capture);
 
     assign selected_type_next =
-        (selected_type_reg & ~start_capture) |
+        (selected_type_reg & ~start_capture & ~state[I]) |
         (admin_type & start_capture);
 
     assign selected_type = selected_type_reg;
@@ -231,7 +237,6 @@ module fsm_controller #(
             state[RO] |
             state[AD] |
             state[VE] |
-            (state[VO] & ~movement_ok) |
             (state[TR] & ~test_running)
           )
         );
@@ -289,9 +294,13 @@ module fsm_controller #(
         ~reset & state[V] &
         known & ~(ABRIR & CERRAR);
 
+    // Contrasena invalida o direccion bloqueada (puerta ya en la posicion pedida).
     assign next_state[VE] =
-        ~reset & state[V] &
-        (~known | (ABRIR & CERRAR));
+        ~reset &
+        (
+            (state[V] & (~known | (ABRIR & CERRAR))) |
+            (state[VO] & ~movement_ok)
+        );
 
     // Movimiento normal.
     assign next_state[P] =
@@ -420,5 +429,11 @@ module fsm_controller #(
             state[VE] |
             (state[AD] & result_full)
         );
+
+    // Diagnostico: expone senales internas como outputs sintetizables.
+    assign dbg_admin_sel    = admin_selected;
+    assign dbg_in_E         = state[E];
+    assign dbg_in_I         = state[I];
+    assign dbg_start_capture = start_capture;
 
 endmodule

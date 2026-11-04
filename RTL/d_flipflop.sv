@@ -1,10 +1,17 @@
-// Positive-edge D flip-flop (master/slave) with asynchronous active-low clear.
-// Master latch is transparent while CLK=0, slave latch while CLK=1.
-// Tie CLR_N to 1 to get a plain D flip-flop.
-//   CLR_N CLK  D | Q
-//     0    x   x | 0   (async clear)
-//     1   rise D | D
-//     1  other x | hold
+
+/*
+ * Modulo: d_flipflop
+ *
+ * Flip-flop tipo D de flanco positivo.
+ * Reset asincrono activo en bajo.
+ *
+ * Implementacion sintetizable mediante FF nativo.
+ * Conserva la interfaz original.
+ *
+ * CLR_N = 0 -> Q = 0
+ * CLR_N = 1 -> Q captura D en flanco positivo.
+ */
+
 module d_flipflop (
     input  logic D,
     input  logic CLK,
@@ -12,9 +19,14 @@ module d_flipflop (
     output logic Q,
     output logic QN
 );
-    wire nclk = ~CLK;
-    wire qm, qmn;
 
-    d_latch u_master (.D(D),  .EN(nclk), .CLR_N(CLR_N), .Q(qm), .QN(qmn));
-    d_latch u_slave  (.D(qm), .EN(CLK),  .CLR_N(CLR_N), .Q(Q),  .QN(QN));
+    always_ff @(posedge CLK or negedge CLR_N) begin
+        if (!CLR_N)
+            Q <= 1'b0;
+        else
+            Q <= D;
+    end
+
+    assign QN = ~Q;
+
 endmodule
