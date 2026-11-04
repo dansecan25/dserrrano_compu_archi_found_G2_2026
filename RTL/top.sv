@@ -53,13 +53,27 @@ module top #(
 	// LED adicional para diagnosticar reset.
 	output wire LED_RESET
 );
-    wire reset = ~RST_N;
+    // Sincronizador de dos flip-flops para las entradas asincronas.
+    // Asi todos los bits de la MEF one-hot ven el mismo valor en cada flanco.
+    logic [11:0] async_sync1, async_sync2;
+    always_ff @(posedge CLK_50) begin
+        async_sync1 <= {~RST_N, BTN_TEST_N, SW_TYPE, SW3, SW2, SW1,
+                        S5, S4, S3, S2, S1, S0};
+        async_sync2 <= async_sync1;
+    end
+    wire reset      = async_sync2[11];
+    wire btn_test_n = async_sync2[10];
+    wire sw_type    = async_sync2[9];
+    wire sw3        = async_sync2[8];
+    wire sw2        = async_sync2[7];
+    wire sw1        = async_sync2[6];
+    wire [5:0] s_sync = async_sync2[5:0];
 
     // Modo: prioridad SW3 > SW2 > SW1.
     wire sel_test, sel_admin, sel_normal;
-    assign sel_test   = SW3;
-    assign sel_admin  = SW2 & ~SW3;
-    assign sel_normal = SW1 & ~SW2 & ~SW3;
+    assign sel_test   = sw3;
+    assign sel_admin  = sw2 & ~sw3;
+    assign sel_normal = sw1 & ~sw2 & ~sw3;
 
     // Sensores -> one-hot -> digito y validez.
     wire Y0,Y1,Y2,Y3,Y4,Y5;
@@ -67,7 +81,8 @@ module top #(
     wire digit_valid, opcode_valid;
 
     finger_decoder_6 u_decoder (
-        .S0(S0),.S1(S1),.S2(S2),.S3(S3),.S4(S4),.S5(S5),
+        .S0(s_sync[0]),.S1(s_sync[1]),.S2(s_sync[2]),
+        .S3(s_sync[3]),.S4(s_sync[4]),.S5(s_sync[5]),
         .Y0(Y0),.Y1(Y1),.Y2(Y2),.Y3(Y3),.Y4(Y4),.Y5(Y5)
     );
     finger_encoder_3 u_encoder (
@@ -180,8 +195,8 @@ module top #(
     fsm_controller #(.N(N_PASSWORDS)) u_fsm (
         .clk(CLK_50),.reset(reset),
         .normal_mode(sel_normal),.admin_mode(sel_admin),
-        .admin_type(SW_TYPE),
-        .test_request(sel_test & ~BTN_TEST_N),
+        .admin_type(sw_type),
+        .test_request(sel_test & ~btn_test_n),
         .sample_pulse(sample_pulse),
         .digit_valid(digit_valid),.opcode_valid(opcode_valid),
         .password_ready(password_ready),
@@ -306,7 +321,7 @@ module top #(
 	assign LED_ABRIR  = MOTOR_OPEN;
 	assign LED_CERRAR = MOTOR_CLOSE;
 	assign LED_Y0=Y0; assign LED_Y1=Y1; assign LED_Y2=Y2;
-	assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~BTN_TEST_N;
+	assign LED_Y3=Y3; assign LED_Y4=sel_test; assign LED_Y5=~btn_test_n;
 
 	// LEDs DE DIAGNOSTICO v2
 	assign LED_NORMAL = dbg_sc_normal;  // start_capture con admin_mode=0

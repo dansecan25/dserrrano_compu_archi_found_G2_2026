@@ -174,6 +174,22 @@ module fsm_controller #(
 
     assign selected_type = selected_type_reg;
 
+    // Una captura en curso se cancela si el usuario selecciona otro modo,
+    // otro tipo de contrasena o solicita la prueba. Sin modo seleccionado
+    // la captura continua con el modo con el que inicio.
+    wire capturing;
+    wire capture_abort;
+
+    assign capturing = state[O] | state[A] | state[B];
+
+    assign capture_abort = capturing &
+        (
+            test_allowed |
+            (normal_mode & admin_selected) |
+            (admin_mode & ~admin_selected) |
+            (admin_mode & (admin_type ^ selected_type_reg))
+        );
+
     // ==================================================
     // Clasificacion previa a escritura de memoria
     // ==================================================
@@ -237,7 +253,10 @@ module fsm_controller #(
             state[RO] |
             state[AD] |
             state[VE] |
-            (state[TR] & ~test_running)
+            (state[TR] & ~test_running) |
+            capture_abort |
+            // Recuperacion: un vector sin ningun estado activo regresa a IDLE.
+            ~(|state)
           )
         );
 
@@ -246,28 +265,28 @@ module fsm_controller #(
         ~reset &
         (
             start_capture |
-            (state[O] & ~cap_op_ok)
+            (state[O] & ~cap_op_ok & ~capture_abort)
         );
 
     assign next_state[A] =
         ~reset &
         (
-            (state[O] & cap_op_ok) |
-            (state[A] & ~cap_digit_ok)
+            (state[O] & cap_op_ok & ~capture_abort) |
+            (state[A] & ~cap_digit_ok & ~capture_abort)
         );
 
     assign next_state[B] =
         ~reset &
         (
-            (state[A] & cap_digit_ok) |
-            (state[B] & ~cap_digit_ok)
+            (state[A] & cap_digit_ok & ~capture_abort) |
+            (state[B] & ~cap_digit_ok & ~capture_abort)
         );
 
     // Esperar que los tres registros se actualicen.
     assign next_state[E] =
         ~reset &
         (
-            (state[B] & cap_digit_ok) |
+            (state[B] & cap_digit_ok & ~capture_abort) |
             (state[E] & ~password_ready)
         );
 
